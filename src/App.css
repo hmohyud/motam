@@ -1,38 +1,176 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body, .app-root {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 36px 36px 36px;
+  background: #f7f7f8;
   min-height: 100vh;
+}
+
+.main-title {
+  font-size: 2rem;
+  text-align: center;
+  margin: 36px 0 10px 0;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #304060;
+}
+
+.search-input {
+  display: block;
+  margin: 0 auto 28px auto;
+  padding: 9px 15px;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 9px;
+  border: 1px solid #dbe3eb;
+  background: #fff;
+  font-size: 1.06rem;
+  font-family: inherit;
+  box-shadow: 0 1px 6px 0 rgba(100,110,140,0.05);
+  transition: border 0.17s;
+}
+.search-input:focus {
+  border: 1.4px solid #6780d6;
+  outline: none;
+}
+
+.category-bar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0 0 18px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.category-pill {
+  background: #fff;
+  color: #557;
+  border: 1.2px solid #e4e6ea;
+  border-radius: 2em;
+  padding: 7px 18px 7px 16px;
+  font-size: 1.01rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: border 0.15s, color 0.12s, background 0.14s;
+  margin: 0;
+  outline: none;
+  box-shadow: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.category-pill.selected, .category-pill:hover {
+  border-color: #b4c6eb;
+  color: #3451a1;
+  background: #f5f7fd;
 }
+
+.cat-count-pill {
+  font-size: 0.91em;
+  font-weight: 500;
+  background: transparent;
+  color: #b2b2b2;
+  border-radius: 1.4em;
+  border: 1px solid #e4e6ea;
+  padding: 2px 9px;
+  margin-left: 9px;
+  transition: background 0.13s, color 0.12s;
+}
+.category-pill.selected .cat-count-pill,
+.category-pill:hover .cat-count-pill {
+  border-color: #b4c6eb;
+  color: #3451a1;
+}
+
+
+
+.poem-list-root {
+  margin: 0 auto 16px auto;
+  max-width: 720px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.category-group {
+  margin-bottom: 28px;
+}
+
+.cat-header {
+  font-size: 1.14rem;
+  color: #4e6189;
+  margin: 18px 0 7px 0;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+  padding-left: 2px;
+  border-bottom: 1.1px solid #edeff4;
+  padding-bottom: 3px;
+}
+
+.poem-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 14px 0 rgba(50,60,90,0.055);
+  padding: 14px 20px 13px 16px;
+  margin-bottom: 11px;
+  position: relative;
+  min-height: 33px;
+  border: 1px solid #ececec;
+  transition: box-shadow 0.15s, border 0.12s;
+}
+
+.poem-card:hover {
+  box-shadow: 0 6px 18px 0 rgba(90,110,150,0.09);
+  border-color: #bcd3ec;
+}
+
+.poem-meta {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  font-size: 0.99em;
+  color: #aab3bc;
+  z-index: 2;
+  font-weight: 400;
+  opacity: 0.93;
+}
+
+.poem-title {
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  margin-top: 0;
+  word-break: break-word;
+  padding-right: 85px;
+  line-height: 1.18;
+  color: #253354;
+}
+
+.poem-body {
+  font-family: 'Georgia', 'IBM Plex Serif', serif;
+  font-size: 1.04rem;
+  white-space: pre-wrap;
+  margin: 0;
+  color: #3e424b;
+  line-height: 1.52;
+  background: none;
+  border: none;
+  padding: 0 0 2px 0;
+}
+
+.no-poems {
+  text-align: center;
+  color: #9a6e6e;
+  font-size: 1.08rem;
+  margin: 28px 0 18px 0;
+  letter-spacing: 0.03em;
+}
+
+.repo-footer {
+  margin: 28px 0 10px 0;
+  text-align: center;
+  color: #8b93a4;
+  font-size: 0.98rem;
+  letter-spacing: 0.021em;
+}
+
+

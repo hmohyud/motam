@@ -1,4 +1,5 @@
-body, .app-root {
+body,
+.app-root {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 36px 36px 36px;
@@ -26,7 +27,7 @@ body, .app-root {
   background: #fff;
   font-size: 1.06rem;
   font-family: inherit;
-  box-shadow: 0 1px 6px 0 rgba(100,110,140,0.05);
+  box-shadow: 0 1px 6px 0 rgba(100, 110, 140, 0.05);
   transition: border 0.17s;
 }
 .search-input:focus {
@@ -59,7 +60,8 @@ body, .app-root {
   box-shadow: none;
 }
 
-.category-pill.selected, .category-pill:hover {
+.category-pill.selected,
+.category-pill:hover {
   border-color: #b4c6eb;
   color: #3451a1;
   background: #f5f7fd;
@@ -81,8 +83,6 @@ body, .app-root {
   border-color: #b4c6eb;
   color: #3451a1;
 }
-
-
 
 .poem-list-root {
   margin: 0 auto 16px auto;
@@ -109,7 +109,7 @@ body, .app-root {
 .poem-card {
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 3px 14px 0 rgba(50,60,90,0.055);
+  box-shadow: 0 3px 14px 0 rgba(50, 60, 90, 0.055);
   padding: 14px 20px 13px 16px;
   margin-bottom: 11px;
   position: relative;
@@ -119,7 +119,7 @@ body, .app-root {
 }
 
 .poem-card:hover {
-  box-shadow: 0 6px 18px 0 rgba(90,110,150,0.09);
+  box-shadow: 0 6px 18px 0 rgba(90, 110, 150, 0.09);
   border-color: #bcd3ec;
 }
 
@@ -146,7 +146,7 @@ body, .app-root {
 }
 
 .poem-body {
-  font-family: 'Georgia', 'IBM Plex Serif', serif;
+  font-family: "Georgia", "IBM Plex Serif", serif;
   font-size: 1.04rem;
   white-space: pre-wrap;
   margin: 0;
@@ -173,4 +173,57 @@ body, .app-root {
   letter-spacing: 0.021em;
 }
 
-
+/* --- Responsive (Phone Mode) --- */
+@media (max-width: 600px) {
+  body,
+  .app-root {
+    padding: 0 0 18px 0 !important;
+    max-width: 100vw !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+  }
+  .main-title {
+    font-size: 1.2rem;
+    margin: 24px 0 10px 0;
+    text-align: center;
+  }
+  .poem-list-root {
+    max-width: 100vw !important;
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .poem-card {
+    width: 94vw;
+    min-width: 0;
+    max-width: 99vw;
+    box-sizing: border-box;
+    margin: 8px 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .search-input {
+    max-width: 92vw !important;
+    width: 92vw !important;
+    font-size: 0.99rem;
+    padding: 8px 8vw;
+    box-sizing: border-box;
+    margin: auto;
+    margin-bottom: 10px;
+    /* margin-left: 0 !important;
+    margin-right: 0 !important; */
+  }
+  .poem-cat-name {
+    display: none !important;
+  }
+  .poem-dot {
+    display: none !important;
+  }
+  .poem-num {
+    margin-left: 0 !important;
+  }
+}

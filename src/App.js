@@ -153,9 +153,20 @@ function App() {
                     {groupedAll[cat].map((poem, i) => (
                       <div className="poem-card" key={poem.Number + poem.Title}>
                         <div className="poem-meta">
-                          <span className="poem-chip">
+                          {/* <span className="poem-chip">
                             {cat} ·{" "}
                             {poem.Number && poem.Number.replace(/^0+/, "")}
+                          </span> */}
+                          <span className="poem-chip">
+                            <span className="poem-cat-name">
+                              {poem.Category}
+                            </span>
+                            <span className="poem-dot">
+                              {poem.Category ? " · " : ""}
+                            </span>
+                            <span className="poem-num">
+                              {poem.Number && poem.Number.replace(/^0+/, "")}
+                            </span>
                           </span>
                         </div>
                         <div className="poem-title">{poem.Title}</div>

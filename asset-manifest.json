@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/motam/static/css/main.e0233107.css",
-    "main.js": "/motam/static/js/main.0878e7bb.js",
+    "main.js": "/motam/static/js/main.249d78eb.js",
     "static/js/453.cdebca42.chunk.js": "/motam/static/js/453.cdebca42.chunk.js",
     "index.html": "/motam/index.html",
     "main.e0233107.css.map": "/motam/static/css/main.e0233107.css.map",
-    "main.0878e7bb.js.map": "/motam/static/js/main.0878e7bb.js.map",
+    "main.249d78eb.js.map": "/motam/static/js/main.249d78eb.js.map",
     "453.cdebca42.chunk.js.map": "/motam/static/js/453.cdebca42.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e0233107.css",
-    "static/js/main.0878e7bb.js"
+    "static/js/main.249d78eb.js"
   ]
 }

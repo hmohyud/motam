@@ -262,44 +262,7 @@ body,
   .category-bar { margin: 0 5px; }
 }
 
-/* ---- word cloud (fixed behind content, does NOT affect layout) ---- */
-.wordcloud-bg {
-  position: fixed;   /* fixed overlay to avoid extending/warping layout */
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;        /* content is z=2 */
-  pointer-events: none;
-  overflow: hidden;
-  filter: blur(2px);
-}
-
-/* crossfade when the set changes */
-.wc-layer {
-  position: absolute;
-  inset: 0;
-  transition: opacity 1.2s cubic-bezier(.22,.61,.36,1);
-}
-.wc-layer.fade-in  { opacity: 1; }
-.wc-layer.fade-out { opacity: 0; }
-
-/* Individual words:
-   - transform is controlled inline via CSS variables
-   - DO NOT animate transform here to avoid drift/stacking
-*/
-.wc-word {
-  position: absolute;
-  color: var(--ink);
-  text-shadow: 0 1px 0 rgba(255,255,255,0.35);
-  letter-spacing: 0.015em;
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-}
-
-/* IMPORTANT: remove any old animations that changed transform:
-   - wc-drift, wc-fadezoom, etc. (intentionally omitted) */
-
-   /* ---- word cloud (fixed behind content, fast) ---- */
+/* ---- word cloud (fixed behind content, fast & smooth) ---- */
 .wordcloud-bg {
   position: fixed;           /* overlay; never stretches layout */
   inset: 0;
@@ -311,7 +274,7 @@ body,
 
   /* performance: isolate this subtree from the rest of the page */
   contain: layout paint size style;
-  will-change: transform;    /* (defensive; parent never transforms but hints the compositor) */
+  will-change: transform;
 }
 
 /* crossfade when the set changes */
@@ -329,7 +292,7 @@ body,
 
 /* Individual words:
    - No animations touching transform (avoids jank)
-   - Keep each word on its own compositor layer and cheap to move
+   - Cheap to move each frame (compositor layer)
 */
 .wc-word {
   position: absolute;
@@ -337,19 +300,16 @@ body,
   top: 0;
 
   color: var(--ink);
-  /* LIGHTEN text-shadow; heavy shadows are expensive to rasterize on every frame */
   text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  letter-spacing: 0.015em;
 
   will-change: transform, opacity;
   backface-visibility: hidden;
-  transform: translate3d(0,0,0); /* force layer creation */
-
-  /* optional: tiny letter spacing tweaks are cheap, keep it */
-  letter-spacing: 0.015em;
+  transform: translate3d(0,0,0);
 }
 
-/* When culled (see JS), skip painting entirely */
+/* When culled (driven by JS band-pass), skip painting */
 .wc-word.is-culled {
-  visibility: hidden;         /* cheaper than display:none for absolute nodes */
-  opacity: 0;                 /* ensure it doesn’t flash in transitions */
+  visibility: hidden;  /* cheaper than display:none for abs-pos elements */
+  opacity: 0;
 }

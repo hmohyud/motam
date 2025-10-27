@@ -1,23 +1,34 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import "./Stack.css";
 
-// Card component: receives an x motion value for animation/drag
+// Front card: static mount, no post-drag animations, easy to grab
 function Card({ item, isFront, onSwiped, x }) {
   const rotate = useTransform(x, [-180, 180], [-18, 18]);
   const opacity = useTransform(x, [-180, 0, 180], [0, 1, 0]);
 
   function handleDragEnd(_, info) {
-    if (Math.abs(info.offset.x) > 90) {
-      onSwiped(info.offset.x > 0 ? "right" : "left");
+    const dx = info.offset?.x ?? 0;
+    const THRESH = 90;
+
+    // Stop any running anim immediately
+    x.stop();
+
+    if (Math.abs(dx) > THRESH) {
+      // Successful swipe: don't animate back; hand off instantly
+      onSwiped(dx > 0 ? "right" : "left");
     } else {
+      // Not enough: snap back instantly (no tween)
       x.set(0);
     }
+
+    // Re-enable selection after drag
+    document.body.style.userSelect = "";
+  }
+
+  function handleDragStart() {
+    // Make grabbing immediate (avoid text-select / image-drag feeling)
+    document.body.style.userSelect = "none";
   }
 
   return (
@@ -44,16 +55,22 @@ function Card({ item, isFront, onSwiped, x }) {
         flexDirection: "column",
         overflow: "auto",
         boxSizing: "border-box",
+        // Makes horizontal drag work smoothly while still allowing vertical scroll
+        touchAction: "pan-y",
       }}
       drag={isFront ? "x" : false}
       dragConstraints={{ left: 0, right: 0 }}
       dragElastic={0.56}
+      dragMomentum={false}           // no inertial glide
+      dragDirectionLock              // lock to horizontal once it starts
       whileTap={{ cursor: "grabbing" }}
+      onDragStart={isFront ? handleDragStart : undefined}
       onDragEnd={isFront ? handleDragEnd : undefined}
-      initial={{ scale: isFront ? 1 : 0.97, y: isFront ? 0 : 18 }}
-      animate={{ scale: isFront ? 1 : 0.97, y: isFront ? 0 : 18 }}
-      exit={{ opacity: 0, scale: 0.9, y: -30 }}
-      transition={{ type: "tween", duration: 0.09 }}
+      // Critical: never run an entrance animation on mount
+      initial={false}
+      animate={{}}                   // no mount tween
+      transition={{}}                // ensure no default tween
+      layout={false}                 // prevent layout animations
     >
       <div className="poem-title">{item.Title}</div>
       <pre className="poem-body">{item.Body}</pre>
@@ -61,7 +78,7 @@ function Card({ item, isFront, onSwiped, x }) {
   );
 }
 
-// Category Switcher: Modern pill dropdown (unchanged)
+// Category Switcher (unchanged)
 function CategorySwitcher({ category, categories, onChange }) {
   const [open, setOpen] = useState(false);
   const ref = useRef();
@@ -172,7 +189,7 @@ function CategorySwitcher({ category, categories, onChange }) {
                     onChange(cat);
                     setOpen(false);
                   }}
-                  onMouseDown={(e) => e.preventDefault()} // Don't blur button
+                  onMouseDown={(e) => e.preventDefault()}
                   role="option"
                   aria-selected={cat === category}
                   tabIndex={0}
@@ -191,19 +208,18 @@ export default function Stack({
   cardsData = [],
   startIndex = 0,
   allCategories = [],
-  onCategoryChange, // (category: string) => void
+  onCategoryChange,
   onClose,
 }) {
   const [index, setIndex] = useState(startIndex);
 
-  // Shared x value for both cards (top and next)
+  // Shared x for both cards (front + peek)
   const x = useMotionValue(0);
 
-  // Always define transforms regardless of which card is shown (to satisfy React hooks rules)
+  // Peek card responds to drag only (no own animations)
   const nextCardOpacity = useTransform(x, [0, -120, -220], [0, 0.48, 1]);
   const nextCardScale = useTransform(x, [0, -120, -220], [0.96, 1, 1]);
 
-  // Use current card's category (if stack is not empty)
   const category = cardsData.length > 0 ? cardsData[index]?.Category : "";
 
   useEffect(() => {
@@ -211,23 +227,26 @@ export default function Stack({
     if (index < 0 && cardsData.length > 0) setIndex(0);
   }, [cardsData, index]);
 
-  function next() {
+  // IMPORTANT: reset x BEFORE changing index to avoid any snap-back or tween
+  function goNext() {
+    x.stop();
+    x.set(0);
     setIndex((i) => (i < cardsData.length - 1 ? i + 1 : i));
-    x.set(0);
   }
-  function prev() {
-    setIndex((i) => (i > 0 ? i - 1 : i));
+  function goPrev() {
+    x.stop();
     x.set(0);
+    setIndex((i) => (i > 0 ? i - 1 : i));
   }
   function handleSwiped(direction) {
-    if (direction === "right") prev();
-    else next();
+    if (direction === "right") goPrev();
+    else goNext();
   }
 
   useEffect(() => {
     function handler(e) {
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") goPrev();
+      if (e.key === "ArrowRight") goNext();
       if (e.key === "Escape" && onClose) onClose();
     }
     window.addEventListener("keydown", handler);
@@ -236,7 +255,6 @@ export default function Stack({
 
   if (!cardsData.length) return null;
 
-  // --- RENDER ---
   return (
     <div
       className="stack-outer-flex"
@@ -254,7 +272,7 @@ export default function Stack({
       }}
       tabIndex={-1}
     >
-      {/* Close Button */}
+      {/* Close */}
       <button
         onClick={onClose}
         aria-label="Close stack mode"
@@ -277,7 +295,7 @@ export default function Stack({
         Close
       </button>
 
-      {/* Fixed category/number bar */}
+      {/* Top bar */}
       <div
         className="stack-fixed-info"
         style={{
@@ -305,8 +323,9 @@ export default function Stack({
           categories={allCategories}
           onChange={(cat) => {
             onCategoryChange?.(cat);
-            setIndex(0);
+            x.stop();
             x.set(0);
+            setIndex(0);
           }}
         />
         <span
@@ -321,7 +340,7 @@ export default function Stack({
         </span>
       </div>
 
-      {/* Stack Card and Arrows */}
+      {/* Stack + arrows */}
       <div
         className="stack-container"
         style={{
@@ -338,10 +357,9 @@ export default function Stack({
           boxSizing: "border-box",
         }}
       >
-        {/* Arrows */}
         <button
           className="stack-arrow stack-arrow-left"
-          onClick={prev}
+          onClick={goPrev}
           disabled={index === 0}
           aria-label="Previous"
           style={{
@@ -362,7 +380,7 @@ export default function Stack({
         </button>
         <button
           className="stack-arrow stack-arrow-right"
-          onClick={next}
+          onClick={goNext}
           disabled={index === cardsData.length - 1}
           aria-label="Next"
           style={{
@@ -381,7 +399,8 @@ export default function Stack({
         >
           &#8594;
         </button>
-        {/* Card */}
+
+        {/* Cards */}
         <div
           className="stack-card-outer"
           style={{
@@ -395,7 +414,7 @@ export default function Stack({
             position: "relative",
           }}
         >
-          {/* Next card (peek in as you drag left) */}
+          {/* Peek next (driven only by x) */}
           {index < cardsData.length - 1 && (
             <motion.div
               className="card stack-card"
@@ -414,23 +433,15 @@ export default function Stack({
                 scale: nextCardScale,
                 x: 0,
               }}
-              transition={{ type: "tween", duration: 0.09 }}
+              transition={{}} // no tween; purely tied to x
             >
               <div className="poem-title">{cardsData[index + 1]?.Title}</div>
               <pre className="poem-body">{cardsData[index + 1]?.Body}</pre>
             </motion.div>
           )}
 
-          {/* Front card (draggable) */}
-          <AnimatePresence mode="wait" initial={false}>
-            <Card
-              key={index}
-              item={cardsData[index]}
-              isFront={true}
-              onSwiped={handleSwiped}
-              x={x}
-            />
-          </AnimatePresence>
+          {/* Front card (no mount/recenter animation, easy to grab) */}
+          <Card item={cardsData[index]} isFront={true} onSwiped={handleSwiped} x={x} />
         </div>
       </div>
     </div>

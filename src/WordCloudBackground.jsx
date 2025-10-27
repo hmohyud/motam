@@ -109,7 +109,7 @@ export default function WordCloudBackground({
   poems = null,
   fontFamily = "'Caveat', cursive",
   minFont = 28,
-  maxFont = 84,
+  maxFont = 115,
   coveragePerViewport = 0.22,
   repeatWeighted = true,
 }) {

@@ -244,7 +244,7 @@ function App() {
               > */}
               S{/* </span> */}
               akina K Qutbuddin
-              <div style={{fontSize: "0.8rem", textAlign: "right"}}>poems from the heart</div>
+              <div style={{fontFamily: "Caveat", fontSize: "0.8rem", textAlign: "right"}}>poems from the heart</div>
             </h1>
             
           </div>

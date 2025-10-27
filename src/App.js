@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Papa from "papaparse";
 import Stack from "./Stack";
 import "./App.css";
+import WordCloudBackground from "./WordCloudBackground";
 
 function groupByCategory(poems) {
   const byCat = {};
@@ -183,9 +184,17 @@ function App() {
       </div>
     );
   }
+  // Use currently visible poems, or the stack when open
+  const poemsForCloud = stackMode ? stackPoems : showPoems;
 
   return (
     <div className="app-root">
+      {/* Soft animated word cloud driven by the current filter/stack */}
+      <WordCloudBackground
+        poems={poemsForCloud}
+        coverage={0.99}
+      />
+
       {/* --- Header / SVG --- */}
       {!stackMode && (
         <>
@@ -244,9 +253,9 @@ function App() {
               > */}
               S{/* </span> */}
               akina K Qutbuddin
-              <div style={{fontFamily: "Caveat", fontSize: "0.8rem", textAlign: "right"}}>poems from the heart</div>
+              <div style={{ fontFamily: "Caveat", fontSize: "0.8rem", textAlign: "right" }}>poems from the heart</div>
             </h1>
-            
+
           </div>
           <input
             className="search-input"
@@ -258,9 +267,8 @@ function App() {
             {allCat.map((cat) => (
               <button
                 key={cat}
-                className={`category-pill${
-                  currentCat === cat ? " selected" : ""
-                }`}
+                className={`category-pill${currentCat === cat ? " selected" : ""
+                  }`}
                 onClick={() => setCurrentCat(cat)}
               >
                 {cat}
@@ -282,55 +290,55 @@ function App() {
 
           {currentCat === "All"
             ? categories.map((cat) =>
-                groupedAll[cat]?.length ? (
-                  <div key={cat} className="category-group">
-                    <h2 className="cat-header">{cat}</h2>
-                    <div>
-                      {groupedAll[cat].map((poem, i) => (
-                        <div
-                          className="poem-card"
-                          key={poem.Number + poem.Title}
-                          tabIndex={0}
-                          onClick={() => handlePoemClick(i, groupedAll[cat])}
-                          style={{ cursor: "pointer" }}
-                        >
-                          <div className="poem-meta">
-                            <span className="poem-chip">
-                              <span className="poem-cat">{poem.Category}</span>
-                              <span className="poem-dot">
-                                {poem.Category ? " · " : ""}
-                              </span>
-                              <span className="poem-num">
-                                {poem.Number && poem.Number.replace(/^0+/, "")}
-                              </span>
+              groupedAll[cat]?.length ? (
+                <div key={cat} className="category-group">
+                  <h2 className="cat-header">{cat}</h2>
+                  <div>
+                    {groupedAll[cat].map((poem, i) => (
+                      <div
+                        className="poem-card"
+                        key={poem.Number + poem.Title}
+                        tabIndex={0}
+                        onClick={() => handlePoemClick(i, groupedAll[cat])}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <div className="poem-meta">
+                          <span className="poem-chip">
+                            <span className="poem-cat">{poem.Category}</span>
+                            <span className="poem-dot">
+                              {poem.Category ? " · " : ""}
                             </span>
-                          </div>
-                          <div className="poem-title">{poem.Title}</div>
-                          <pre className="poem-body">{poem.Body}</pre>
+                            <span className="poem-num">
+                              {poem.Number && poem.Number.replace(/^0+/, "")}
+                            </span>
+                          </span>
                         </div>
-                      ))}
-                    </div>
+                        <div className="poem-title">{poem.Title}</div>
+                        <pre className="poem-body">{poem.Body}</pre>
+                      </div>
+                    ))}
                   </div>
-                ) : null
-              )
-            : showPoems.map((poem, i) => (
-                <div
-                  className="poem-card"
-                  key={poem.Number + poem.Title}
-                  tabIndex={0}
-                  onClick={() => handlePoemClick(i)}
-                  style={{ cursor: "pointer" }}
-                >
-                  <div className="poem-meta">
-                    <span className="poem-chip">
-                      {/* {poem.Category} ·{" "} */}
-                      {poem.Number && poem.Number.replace(/^0+/, "")}
-                    </span>
-                  </div>
-                  <div className="poem-title">{poem.Title}</div>
-                  <pre className="poem-body">{poem.Body}</pre>
                 </div>
-              ))}
+              ) : null
+            )
+            : showPoems.map((poem, i) => (
+              <div
+                className="poem-card"
+                key={poem.Number + poem.Title}
+                tabIndex={0}
+                onClick={() => handlePoemClick(i)}
+                style={{ cursor: "pointer" }}
+              >
+                <div className="poem-meta">
+                  <span className="poem-chip">
+                    {/* {poem.Category} ·{" "} */}
+                    {poem.Number && poem.Number.replace(/^0+/, "")}
+                  </span>
+                </div>
+                <div className="poem-title">{poem.Title}</div>
+                <pre className="poem-body">{poem.Body}</pre>
+              </div>
+            ))}
         </div>
       )}
 

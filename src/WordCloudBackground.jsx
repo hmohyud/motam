@@ -105,12 +105,29 @@ export default function WordCloudBackground({
   wordCount = 80,
   opacity = [0.04, 0.12],
   debug = false,
+  mobileBreakpoint = 600,
 }) {
   const [height, setHeight] = useState(2000);
   const [visible, setVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== "undefined" && window.innerWidth <= mobileBreakpoint
+  );
+
+  // Check for mobile on resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= mobileBreakpoint);
+    };
+
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, [mobileBreakpoint]);
 
   // Measure content height
   useEffect(() => {
+    // Skip measurement on mobile
+    if (isMobile) return;
+
     const measure = () => {
       const appRoot = document.querySelector(".app-root");
       const h = Math.max(
@@ -137,12 +154,13 @@ export default function WordCloudBackground({
       window.removeEventListener("resize", measure);
       ro?.disconnect();
     };
-  }, [poems]);
+  }, [poems, isMobile]);
 
   useEffect(() => {
+    if (isMobile) return;
     const t = setTimeout(() => setVisible(true), 200);
     return () => clearTimeout(t);
-  }, []);
+  }, [isMobile]);
 
   const fullText = useMemo(() => {
     if (!poems?.length) return "";
@@ -158,7 +176,7 @@ export default function WordCloudBackground({
 
   // Generate words grouped into chunks for content-visibility optimization
   const chunks = useMemo(() => {
-    if (!wordList.length) return [];
+    if (!wordList.length || isMobile) return [];
 
     const maxFreq = wordList[0]?.[1] || 1;
     const minFreq = wordList[wordList.length - 1]?.[1] || 1;
@@ -227,9 +245,10 @@ export default function WordCloudBackground({
     }
 
     return result;
-  }, [wordList, height, density, sizeRange, opacity, debug]);
+  }, [wordList, height, density, sizeRange, opacity, debug, isMobile]);
 
-  if (!chunks.length) return null;
+  // Don't render on mobile or if no chunks
+  if (isMobile || !chunks.length) return null;
 
   return (
     <div
@@ -300,7 +319,7 @@ export default function WordCloudBackground({
               key={w.key}
               className="wc-w"
               style={{
-                left: `${w.x-3}%`,
+                left: `${w.x - 3}%`,
                 top: w.y,
                 fontSize: w.size,
                 color: `rgba(100, 125, 115, ${w.opacity})`,

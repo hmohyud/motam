@@ -26,14 +26,11 @@ function InfoModal({ isOpen, onClose }) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
-      document.body.classList.add("modal-open");
     } else {
       document.body.style.overflow = "";
-      document.body.classList.remove("modal-open");
     }
     return () => {
       document.body.style.overflow = "";
-      document.body.classList.remove("modal-open");
     };
   }, [isOpen]);
 
@@ -182,14 +179,11 @@ function IndexModal({ isOpen, onClose, poems, categoryOrder, onSelectPoem }) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
-      document.body.classList.add("modal-open");
     } else {
       document.body.style.overflow = "";
-      document.body.classList.remove("modal-open");
     }
     return () => {
       document.body.style.overflow = "";
-      document.body.classList.remove("modal-open");
     };
   }, [isOpen]);
 
@@ -357,6 +351,7 @@ function App() {
   const [readerStart, setReaderStart] = useState(0);
   const [showInfo, setShowInfo] = useState(false);
   const [showIndex, setShowIndex] = useState(false);
+  const [wordCloudData, setWordCloudData] = useState(null);
 
   useEffect(() => {
     fetch(process.env.PUBLIC_URL + "/book_categorized.json")
@@ -383,6 +378,12 @@ function App() {
         if (data.meta) setBookMeta(data.meta);
       })
       .catch((err) => console.error("Failed to load poems:", err));
+
+    // Load pre-generated word cloud data
+    fetch(process.env.PUBLIC_URL + "/wordCloudData.json")
+      .then((res) => res.json())
+      .then(setWordCloudData)
+      .catch((err) => console.warn("Word cloud data not found:", err));
   }, []);
 
   const filtered = useMemo(() => {
@@ -437,7 +438,7 @@ function App() {
 
   return (
     <div className="page-wrapper">
-      <WordCloudBackground poems={poems} />
+      <WordCloudBackground wordCloudData={wordCloudData} />
 
       <div className="app-root">
         {/* Top buttons */}

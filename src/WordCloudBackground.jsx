@@ -1,109 +1,7 @@
-import React, { useMemo, useState, useEffect, useRef } from "react";
-
-// Stop words
-const STOP = new Set([
-  "the",
-  "and",
-  "a",
-  "to",
-  "of",
-  "in",
-  "is",
-  "it",
-  "that",
-  "i",
-  "you",
-  "for",
-  "on",
-  "with",
-  "as",
-  "at",
-  "this",
-  "but",
-  "be",
-  "by",
-  "or",
-  "an",
-  "from",
-  "are",
-  "was",
-  "were",
-  "so",
-  "if",
-  "not",
-  "no",
-  "me",
-  "my",
-  "we",
-  "our",
-  "your",
-  "they",
-  "them",
-  "his",
-  "her",
-  "its",
-  "all",
-  "can",
-  "will",
-  "have",
-  "has",
-  "had",
-  "do",
-  "does",
-  "did",
-  "just",
-  "very",
-  "only",
-  "one",
-  "would",
-  "could",
-  "should",
-  "into",
-  "more",
-  "been",
-  "being",
-  "each",
-  "which",
-  "their",
-  "there",
-  "these",
-  "those",
-  "then",
-  "than",
-  "what",
-  "when",
-  "where",
-]);
-
-function extractWords(text, count = 80) {
-  const words = (text || "").toLowerCase().match(/[a-z]{3,}/g) || [];
-  const freq = {};
-  for (const w of words) {
-    if (!STOP.has(w)) freq[w] = (freq[w] || 0) + 1;
-  }
-  return Object.entries(freq)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, count);
-}
-
-function hash(str) {
-  let h = 0;
-  for (let i = 0; i < str.length; i++) {
-    h = ((h << 5) - h + str.charCodeAt(i)) | 0;
-  }
-  return h;
-}
-
-function seeded(seed) {
-  return (((Math.sin(seed) * 10000) % 1) + 1) % 1;
-}
+import React, { useMemo, useState, useEffect } from "react";
 
 export default function WordCloudBackground({
-  poems = [],
-  density = 3,
-  sizeRange = [14, 64],
-  wordCount = 80,
-  opacity = [0.04, 0.12],
+  wordCloudData = null,
   debug = false,
   mobileBreakpoint = 600,
 }) {
@@ -125,7 +23,6 @@ export default function WordCloudBackground({
 
   // Measure content height
   useEffect(() => {
-    // Skip measurement on mobile
     if (isMobile) return;
 
     const measure = () => {
@@ -154,7 +51,7 @@ export default function WordCloudBackground({
       window.removeEventListener("resize", measure);
       ro?.disconnect();
     };
-  }, [poems, isMobile]);
+  }, [isMobile]);
 
   useEffect(() => {
     if (isMobile) return;
@@ -162,42 +59,25 @@ export default function WordCloudBackground({
     return () => clearTimeout(t);
   }, [isMobile]);
 
-  const fullText = useMemo(() => {
-    if (!poems?.length) return "";
-    return poems
-      .map((p) => `${p?.title || p?.Title || ""} ${p?.body || p?.Body || ""}`)
-      .join(" ");
-  }, [poems]);
-
-  const wordList = useMemo(
-    () => extractWords(fullText, wordCount),
-    [fullText, wordCount]
-  );
-
-  // Generate words grouped into chunks for content-visibility optimization
+  // Build chunks from pre-generated data
   const chunks = useMemo(() => {
-    if (!wordList.length || isMobile) return [];
+    if (!wordCloudData?.words?.length || isMobile) return [];
 
-    const maxFreq = wordList[0]?.[1] || 1;
-    const minFreq = wordList[wordList.length - 1]?.[1] || 1;
-    const range = maxFreq - minFreq || 1;
+    const { words, totalRows, config } = wordCloudData;
+    const cols = config?.cols || 4;
+    const density = config?.density || 3;
 
-    // Grid parameters
+    // Calculate row height based on current page height
     const rows = Math.max(4, Math.ceil((height / 100) * density));
-    const cols = 4;
     const rowH = height / rows;
-    const colW = 100 / cols;
 
-    // Chunk size: group words into sections of ~500px height
+    // Chunk into ~500px sections
     const chunkHeight = 500;
     const rowsPerChunk = Math.max(1, Math.floor(chunkHeight / rowH));
     const numChunks = Math.ceil(rows / rowsPerChunk);
 
-    if (debug) {
-      console.log(
-        `[WordCloud] Height: ${height}, Rows: ${rows}, Chunks: ${numChunks}, RowsPerChunk: ${rowsPerChunk}`
-      );
-    }
+    // Only use words up to current height
+    const maxWordIndex = rows * cols;
 
     const result = [];
 
@@ -207,31 +87,19 @@ export default function WordCloudBackground({
       const chunkTop = startRow * rowH;
       const chunkHeightPx = (endRow - startRow) * rowH;
 
-      const words = [];
+      const chunkWords = [];
       for (let row = startRow; row < endRow; row++) {
         for (let col = 0; col < cols; col++) {
           const i = row * cols + col;
-          const wi =
-            (i * 7 + Math.floor(i / wordList.length) * 3) % wordList.length;
-          const [word, freq] = wordList[wi];
-          const h = hash(word + i);
-          const norm = (freq - minFreq) / range;
+          if (i >= words.length || i >= maxWordIndex) continue;
 
-          // Position relative to chunk
-          const y = (row - startRow) * rowH + seeded(h * 2) * rowH * 0.75 + 15;
+          const w = words[i];
+          // Calculate y position relative to chunk
+          const y = (row - startRow) * rowH + w.yOffset * rowH + 15;
 
-          words.push({
-            key: `w${i}`,
-            word,
-            x: col * colW + colW * 0.1 + seeded(h) * colW * 0.8,
+          chunkWords.push({
+            ...w,
             y,
-            size: Math.round(
-              sizeRange[0] + Math.pow(norm, 0.7) * (sizeRange[1] - sizeRange[0])
-            ),
-            opacity: opacity[0] + norm * (opacity[1] - opacity[0]),
-            rotate: Math.round((seeded(h * 3) - 0.5) * 18),
-            dur: 14 + Math.round(seeded(h * 4) * 20),
-            del: seeded(h * 5) * 2,
           });
         }
       }
@@ -240,14 +108,14 @@ export default function WordCloudBackground({
         id: `chunk-${c}`,
         top: chunkTop,
         height: chunkHeightPx,
-        words,
+        words: chunkWords,
       });
     }
 
     return result;
-  }, [wordList, height, density, sizeRange, opacity, debug, isMobile]);
+  }, [wordCloudData, height, isMobile]);
 
-  // Don't render on mobile or if no chunks
+  // Don't render on mobile or if no data
   if (isMobile || !chunks.length) return null;
 
   return (
@@ -319,7 +187,7 @@ export default function WordCloudBackground({
               key={w.key}
               className="wc-w"
               style={{
-                left: `${w.x - 3}%`,
+                left: `${w.x}%`,
                 top: w.y,
                 fontSize: w.size,
                 color: `rgba(100, 125, 115, ${w.opacity})`,

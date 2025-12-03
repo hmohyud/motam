@@ -1,16 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import PoemReader from "./PoemReader.js";
-
 import "./App.css";
 import WordCloudBackground from "./WordCloudBackground";
 
-function groupByCategory(poems) {
+function groupByCategory(poems, categoryOrder = []) {
   const byCat = {};
   poems.forEach((poem) => {
     if (!poem.category) return;
     if (!byCat[poem.category]) byCat[poem.category] = [];
     byCat[poem.category].push(poem);
   });
+
+  if (categoryOrder.length > 0) {
+    const ordered = {};
+    categoryOrder.forEach((cat) => {
+      if (byCat[cat]) ordered[cat] = byCat[cat];
+    });
+    return ordered;
+  }
   return byCat;
 }
 
@@ -49,7 +56,6 @@ function InfoModal({ isOpen, onClose }) {
         >
           ×
         </button>
-
         <div className="info-modal-content">
           <section className="dedication-section">
             <p className="dedication-label">Dedicated</p>
@@ -81,12 +87,9 @@ function InfoModal({ isOpen, onClose }) {
               al-Sayyida al-Fadila Fatema baisaheba
             </p>
           </section>
-
           <div className="section-divider">❧</div>
-
           <section className="foreword-section">
             <h2 className="foreword-title">Foreword</h2>
-
             <p>
               Sakina Busaheba is the embodiment of the strong Muslim
               woman—steadfast in faith, serene in adversity, radiant in love.
@@ -95,7 +98,6 @@ function InfoModal({ isOpen, onClose }) {
               lips are ever moist with the name of Ali, and her heart overflows
               with love for Husain.
             </p>
-
             <p>
               For over fifty years she was the solace—<em>sakina</em>—of her
               husband, the 53rd Dāʿī al-Muṭlaq, Syedna Khuzaima Qutbuddin (RA):
@@ -103,7 +105,6 @@ function InfoModal({ isOpen, onClose }) {
               yearns for him day and night, yet remains strong and content,
               knowing she will meet him again in heaven.
             </p>
-
             <p>
               Sakina Busaheba's lineage is luminous. She is the mother of the
               54th and present Tayyibi Dāʿī al-Muṭlaq, Syedna Taher Fakhruddin
@@ -113,7 +114,6 @@ function InfoModal({ isOpen, onClose }) {
               (RA); and granddaughter of the 49th Dāʿī, Syedna Mohammed
               Burhanuddin (RA).
             </p>
-
             <p>
               Her father, Rasul Hudood Syedi Ibrahim bhaisaheb Zainuddin, and
               her mother, al-Sayyida al-Fadila Fatema bensaheba, nurtured her in
@@ -123,7 +123,6 @@ function InfoModal({ isOpen, onClose }) {
               tasbeeh with deep focus, and completes a full reading of the
               Qur'an each day in Ramadan.
             </p>
-
             <p>
               A devoted mother of nine, she raised her children in faith,
               fortitude, and aspiration. Alongside Syedna Qutbuddin (RA), she
@@ -131,7 +130,6 @@ function InfoModal({ isOpen, onClose }) {
               and the ethic of service. Her grandchildren find in her a fountain
               of gentle affection.
             </p>
-
             <p>
               In every role—daughter, wife, mother, counsellor, teacher,
               scholar, benefactor, believer, devotee, and poet—she reflects
@@ -139,7 +137,6 @@ function InfoModal({ isOpen, onClose }) {
               is, truly, the epitome of Muslim womanhood—my mother, an
               inspiration to me and to us all.
             </p>
-
             <p>
               At a time when few women studied beyond home, she attended
               Cathedral School and Sophia College, graduating with honours in
@@ -148,7 +145,6 @@ function InfoModal({ isOpen, onClose }) {
               commentary and historical works. She has long loved Shakespeare,
               Milton, Emerson, and Frost—poets who helped shape her own voice.
             </p>
-
             <p>
               Sakina Busaheba began composing poetry in the early 1960s and
               continues to this day. This beautiful and intimate collection is a
@@ -160,7 +156,6 @@ function InfoModal({ isOpen, onClose }) {
               heart and they touch the heart—they will be recited and savoured
               for generations to come.
             </p>
-
             <p className="foreword-signature">
               <span className="signature-name">
                 Bazat Tahera binte Syedna Khuzaima Qutbuddin (RA)
@@ -176,16 +171,186 @@ function InfoModal({ isOpen, onClose }) {
   );
 }
 
+// Index Modal Component
+function IndexModal({ isOpen, onClose, poems, categoryOrder, onSelectPoem }) {
+  const [groupBy, setGroupBy] = useState("category");
+  const [sortBy, setSortBy] = useState("id");
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    if (isOpen) {
+      window.addEventListener("keydown", handleEsc);
+      return () => window.removeEventListener("keydown", handleEsc);
+    }
+  }, [isOpen, onClose]);
+
+  const sortedPoems = useMemo(() => {
+    const sorted = [...poems];
+    if (sortBy === "id") {
+      sorted.sort((a, b) => Number(a.id) - Number(b.id));
+    } else if (sortBy === "title") {
+      sorted.sort((a, b) => (a.title || "").localeCompare(b.title || ""));
+    } else if (sortBy === "category") {
+      sorted.sort((a, b) => {
+        const catA = categoryOrder.indexOf(a.category);
+        const catB = categoryOrder.indexOf(b.category);
+        if (catA !== catB) return catA - catB;
+        return Number(a.id) - Number(b.id);
+      });
+    }
+    return sorted;
+  }, [poems, sortBy, categoryOrder]);
+
+  const groupedPoems = useMemo(() => {
+    if (groupBy === "none") {
+      return { "All Poems": sortedPoems };
+    }
+    return groupByCategory(sortedPoems, categoryOrder);
+  }, [sortedPoems, groupBy, categoryOrder]);
+
+  if (!isOpen) return null;
+
+  const handlePoemClick = (poem) => {
+    const idx = poems.findIndex((p) => p.id === poem.id);
+    onSelectPoem(idx, poems);
+    onClose();
+  };
+
+  return (
+    <div className="index-modal-overlay" onClick={onClose}>
+      <div className="index-modal" onClick={(e) => e.stopPropagation()}>
+        <button
+          className="index-modal-close"
+          onClick={onClose}
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+        <div className="index-modal-header">
+          <h2 className="index-modal-title">Index</h2>
+          <div className="index-controls">
+            <div className="index-toggle-group">
+              <span className="index-toggle-label">Group</span>
+              <div className="index-toggle">
+                <button
+                  className={`index-toggle-btn ${
+                    groupBy === "category" ? "active" : ""
+                  }`}
+                  onClick={() => setGroupBy("category")}
+                >
+                  Category
+                </button>
+                <button
+                  className={`index-toggle-btn ${
+                    groupBy === "none" ? "active" : ""
+                  }`}
+                  onClick={() => setGroupBy("none")}
+                >
+                  None
+                </button>
+              </div>
+            </div>
+            <div className="index-toggle-group">
+              <span className="index-toggle-label">Sort</span>
+              <div className="index-toggle">
+                <button
+                  className={`index-toggle-btn ${
+                    sortBy === "id" ? "active" : ""
+                  }`}
+                  onClick={() => setSortBy("id")}
+                >
+                  #
+                </button>
+                <button
+                  className={`index-toggle-btn ${
+                    sortBy === "title" ? "active" : ""
+                  }`}
+                  onClick={() => setSortBy("title")}
+                >
+                  A-Z
+                </button>
+                <button
+                  className={`index-toggle-btn ${
+                    sortBy === "category" ? "active" : ""
+                  }`}
+                  onClick={() => setSortBy("category")}
+                >
+                  Cat
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="index-modal-content">
+          {Object.entries(groupedPoems).map(([category, catPoems]) => (
+            <div key={category} className="index-category-group">
+              {groupBy === "category" && (
+                <h3 className="index-category-header">
+                  {category}
+                  <span className="index-category-count">
+                    {catPoems.length}
+                  </span>
+                </h3>
+              )}
+              <ul className="index-poem-list">
+                {catPoems.map((poem) => (
+                  <li
+                    key={poem.id}
+                    className="index-poem-item"
+                    onClick={() => handlePoemClick(poem)}
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        handlePoemClick(poem);
+                      }
+                    }}
+                  >
+                    <span className="index-poem-number">{poem.id}</span>
+                    <span className="index-poem-title">{poem.title}</span>
+                    {groupBy === "none" && (
+                      <span className="index-poem-category">
+                        {poem.category}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [poems, setPoems] = useState([]);
   const [categoryOrder, setCategoryOrder] = useState([]);
   const [bookMeta, setBookMeta] = useState(null);
   const [search, setSearch] = useState("");
   const [currentCat, setCurrentCat] = useState("All");
+  const [sortBy, setSortBy] = useState("id"); // Default to numbered
   const [readerOpen, setReaderOpen] = useState(false);
   const [readerPoems, setReaderPoems] = useState([]);
   const [readerStart, setReaderStart] = useState(0);
   const [showInfo, setShowInfo] = useState(false);
+  const [showIndex, setShowIndex] = useState(false);
 
   useEffect(() => {
     fetch(process.env.PUBLIC_URL + "/book_categorized.json")
@@ -194,16 +359,11 @@ function App() {
         const poemsArray = data.poems || [];
         const poemsWithCategory = poemsArray.filter(
           (poem) =>
-            poem.title &&
-            poem.title.trim() !== "" &&
-            poem.body &&
-            poem.body.trim() !== "" &&
-            poem.category &&
-            poem.category.trim() !== ""
+            poem.title?.trim() && poem.body?.trim() && poem.category?.trim()
         );
         setPoems(poemsWithCategory);
 
-        if (data.categories && data.categories.length > 0) {
+        if (data.categories?.length > 0) {
           setCategoryOrder(data.categories);
         } else {
           const extractedCats = [
@@ -214,34 +374,57 @@ function App() {
           setCategoryOrder(extractedCats);
         }
 
-        if (data.meta) {
-          setBookMeta(data.meta);
-        }
+        if (data.meta) setBookMeta(data.meta);
       })
       .catch((err) => console.error("Failed to load poems:", err));
   }, []);
 
-  const filtered = poems.filter(
-    (poem) =>
-      (poem.title || "").toLowerCase().includes(search.toLowerCase()) ||
-      (poem.body || "").toLowerCase().includes(search.toLowerCase()) ||
-      (poem.category || "").toLowerCase().includes(search.toLowerCase())
+  const filtered = useMemo(() => {
+    return poems.filter(
+      (poem) =>
+        (poem.title || "").toLowerCase().includes(search.toLowerCase()) ||
+        (poem.body || "").toLowerCase().includes(search.toLowerCase()) ||
+        (poem.category || "").toLowerCase().includes(search.toLowerCase())
+    );
+  }, [poems, search]);
+
+  const byCat = useMemo(
+    () => groupByCategory(filtered, categoryOrder),
+    [filtered, categoryOrder]
   );
 
-  const byCat = groupByCategory(filtered);
-
-  const categories =
-    categoryOrder.length > 0
-      ? categoryOrder.filter((cat) => byCat[cat] && byCat[cat].length > 0)
-      : Object.keys(byCat);
+  const categories = useMemo(() => {
+    return categoryOrder.filter((cat) => byCat[cat]?.length > 0);
+  }, [categoryOrder, byCat]);
 
   const allCat = ["All", ...categories];
-  const showPoems = currentCat === "All" ? filtered : byCat[currentCat] || [];
-  const groupedAll = groupByCategory(showPoems);
 
-  function handlePoemClick(index, groupPoems = null) {
-    const poemsArr = groupPoems || showPoems;
-    setReaderPoems(poemsArr);
+  // Compute displayed poems based on filter and sort
+  const displayData = useMemo(() => {
+    let poemsToShow = currentCat === "All" ? filtered : byCat[currentCat] || [];
+
+    if (sortBy === "id") {
+      // Flat list sorted by ID
+      const sorted = [...poemsToShow].sort(
+        (a, b) => Number(a.id) - Number(b.id)
+      );
+      return { type: "flat", poems: sorted };
+    } else {
+      // Grouped by category
+      if (currentCat === "All") {
+        return {
+          type: "grouped",
+          groups: groupByCategory(poemsToShow, categoryOrder),
+        };
+      } else {
+        // Single category - show as flat list
+        return { type: "flat", poems: poemsToShow };
+      }
+    }
+  }, [currentCat, filtered, byCat, sortBy, categoryOrder]);
+
+  function handlePoemClick(index, groupPoems) {
+    setReaderPoems(groupPoems);
     setReaderStart(index);
     setReaderOpen(true);
   }
@@ -251,30 +434,56 @@ function App() {
       <WordCloudBackground poems={poems} />
 
       <div className="app-root">
-        {/* Info button */}
-        <button
-          className="info-button"
-          onClick={() => setShowInfo(true)}
-          aria-label="About this book"
-          title="About this book"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+        {/* Top buttons */}
+        <div className="top-buttons">
+          <button
+            className="top-button"
+            onClick={() => setShowIndex(true)}
+            aria-label="Index"
+            title="Index"
           >
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" y1="16" x2="12" y2="12"></line>
-            <line x1="12" y1="8" x2="12.01" y2="8"></line>
-          </svg>
-        </button>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="8" y1="6" x2="21" y2="6"></line>
+              <line x1="8" y1="12" x2="21" y2="12"></line>
+              <line x1="8" y1="18" x2="21" y2="18"></line>
+              <line x1="3" y1="6" x2="3.01" y2="6"></line>
+              <line x1="3" y1="12" x2="3.01" y2="12"></line>
+              <line x1="3" y1="18" x2="3.01" y2="18"></line>
+            </svg>
+          </button>
+          <button
+            className="top-button"
+            onClick={() => setShowInfo(true)}
+            aria-label="About this book"
+            title="About this book"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+          </button>
+        </div>
 
-        {/* Decorative header flourish */}
+        {/* Header */}
         <span className="flourish-container">
           <img
             src={process.env.PUBLIC_URL + "/flurish.svg"}
@@ -283,7 +492,6 @@ function App() {
           />
         </span>
 
-        {/* Main title area */}
         <div className="title-area">
           <h1 className="main-title">
             {bookMeta?.bookTitle || "From Earth to Eternity"}
@@ -304,61 +512,77 @@ function App() {
           onChange={(e) => setSearch(e.target.value)}
         />
 
-        {/* Category pills */}
-        <div className="category-bar">
-          {allCat.map((cat) => (
+        {/* Category pills with integrated sort */}
+        <div className="filter-row">
+          <div className="category-bar">
+            {allCat.map((cat) => (
+              <button
+                key={cat}
+                className={`category-pill${
+                  currentCat === cat ? " selected" : ""
+                }`}
+                onClick={() => setCurrentCat(cat)}
+              >
+                {cat}
+                <span className="cat-count-pill">
+                  {cat === "All" ? filtered.length : byCat[cat]?.length || 0}
+                </span>
+              </button>
+            ))}
+          </div>
+          <div className="sort-control">
+            <span className="sort-label">Sort:</span>
             <button
-              key={cat}
-              className={`category-pill${
-                currentCat === cat ? " selected" : ""
-              }`}
-              onClick={() => setCurrentCat(cat)}
+              className={`sort-option ${sortBy === "id" ? "active" : ""}`}
+              onClick={() => setSortBy("id")}
+              title="Sort by number"
             >
-              {cat}
-              <span className="cat-count-pill">
-                {cat === "All" ? filtered.length : byCat[cat]?.length || 0}
-              </span>
+              1-220
             </button>
-          ))}
+            <button
+              className={`sort-option ${sortBy === "category" ? "active" : ""}`}
+              onClick={() => setSortBy("category")}
+              title="Group by category"
+            >
+              By Category
+            </button>
+          </div>
         </div>
 
         {/* Poem Grid */}
         <div className="poem-list-root">
-          {showPoems.length === 0 && (
+          {displayData.type === "flat" && displayData.poems.length === 0 && (
             <div className="no-poems">No poems found.</div>
           )}
 
-          {currentCat === "All"
-            ? categories.map((cat) =>
-                groupedAll[cat]?.length ? (
+          {displayData.type === "grouped"
+            ? // Grouped by category
+              Object.entries(displayData.groups).map(([cat, catPoems]) =>
+                catPoems?.length ? (
                   <div key={cat} className="category-group">
                     <h2 className="cat-header">
                       <span className="cat-header-text">{cat}</span>
                       <span className="cat-header-count">
-                        {groupedAll[cat].length}
+                        {catPoems.length}
                       </span>
                     </h2>
                     <div>
-                      {groupedAll[cat].map((poem, i) => (
+                      {catPoems.map((poem, i) => (
                         <div
                           className="poem-card"
                           key={poem.id + "-" + poem.title}
                           tabIndex={0}
-                          onClick={() => handlePoemClick(i, groupedAll[cat])}
+                          onClick={() => handlePoemClick(i, catPoems)}
                           onKeyDown={(e) => {
                             if (e.key === "Enter" || e.key === " ") {
                               e.preventDefault();
-                              handlePoemClick(i, groupedAll[cat]);
+                              handlePoemClick(i, catPoems);
                             }
                           }}
                           role="button"
                         >
                           <div className="poem-meta">
                             <span className="poem-chip">
-                              <span className="poem-cat">{poem.category}</span>
-                              <span className="poem-dot">
-                                {poem.category ? " · " : ""}
-                              </span>
                               <span className="poem-num">{poem.id}</span>
                             </span>
                           </div>
@@ -373,22 +597,31 @@ function App() {
                   </div>
                 ) : null
               )
-            : showPoems.map((poem, i) => (
+            : // Flat list
+              displayData.poems.map((poem, i) => (
                 <div
                   className="poem-card"
                   key={poem.id + "-" + poem.title}
                   tabIndex={0}
-                  onClick={() => handlePoemClick(i)}
+                  onClick={() => handlePoemClick(i, displayData.poems)}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
-                      handlePoemClick(i);
+                      handlePoemClick(i, displayData.poems);
                     }
                   }}
                   role="button"
                 >
                   <div className="poem-meta">
-                    <span className="poem-chip">{poem.id}</span>
+                    <span className="poem-chip">
+                      {currentCat === "All" && (
+                        <>
+                          <span className="poem-cat">{poem.category}</span>
+                          <span className="poem-dot"> · </span>
+                        </>
+                      )}
+                      <span className="poem-num">{poem.id}</span>
+                    </span>
                   </div>
                   <div className="poem-title">{poem.title}</div>
                   {poem.date && <div className="poem-date">{poem.date}</div>}
@@ -409,7 +642,7 @@ function App() {
         </footer>
       </div>
 
-      {/* Poem Reader Modal */}
+      {/* Modals */}
       {readerOpen && (
         <PoemReader
           poems={readerPoems}
@@ -417,9 +650,14 @@ function App() {
           onClose={() => setReaderOpen(false)}
         />
       )}
-
-      {/* Info Modal */}
       <InfoModal isOpen={showInfo} onClose={() => setShowInfo(false)} />
+      <IndexModal
+        isOpen={showIndex}
+        onClose={() => setShowIndex(false)}
+        poems={poems}
+        categoryOrder={categoryOrder}
+        onSelectPoem={handlePoemClick}
+      />
     </div>
   );
 }

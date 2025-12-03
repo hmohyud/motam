@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Stack from "./Stack";
+import PoemReader from "./PoemReader.js";
+
 import "./App.css";
 import WordCloudBackground from "./WordCloudBackground";
 
@@ -181,14 +182,10 @@ function App() {
   const [bookMeta, setBookMeta] = useState(null);
   const [search, setSearch] = useState("");
   const [currentCat, setCurrentCat] = useState("All");
-  const [stackMode, setStackMode] = useState(false);
-  const [stackPoems, setStackPoems] = useState([]);
-  const [stackStart, setStackStart] = useState(0);
+  const [readerOpen, setReaderOpen] = useState(false);
+  const [readerPoems, setReaderPoems] = useState([]);
+  const [readerStart, setReaderStart] = useState(0);
   const [showInfo, setShowInfo] = useState(false);
-
-  function isMobile() {
-    return window.innerWidth < 600;
-  }
 
   useEffect(() => {
     fetch(process.env.PUBLIC_URL + "/book_categorized.json")
@@ -242,20 +239,11 @@ function App() {
   const showPoems = currentCat === "All" ? filtered : byCat[currentCat] || [];
   const groupedAll = groupByCategory(showPoems);
 
-  function onCategoryChange(newCat) {
-    if (isMobile()) return;
-    if (!byCat[newCat] || byCat[newCat].length === 0) return;
-    setStackPoems(byCat[newCat]);
-    setStackStart(0);
-    setStackMode(true);
-  }
-
   function handlePoemClick(index, groupPoems = null) {
-    if (isMobile()) return;
     const poemsArr = groupPoems || showPoems;
-    setStackPoems(poemsArr);
-    setStackStart(index);
-    setStackMode(true);
+    setReaderPoems(poemsArr);
+    setReaderStart(index);
+    setReaderOpen(true);
   }
 
   return (
@@ -263,172 +251,172 @@ function App() {
       <WordCloudBackground poems={poems} />
 
       <div className="app-root">
-        {!stackMode && (
-          <>
-            {/* Info button */}
+        {/* Info button */}
+        <button
+          className="info-button"
+          onClick={() => setShowInfo(true)}
+          aria-label="About this book"
+          title="About this book"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+        </button>
+
+        {/* Decorative header flourish */}
+        <span className="flourish-container">
+          <img
+            src={process.env.PUBLIC_URL + "/flurish.svg"}
+            alt=""
+            className="flourish-img"
+          />
+        </span>
+
+        {/* Main title area */}
+        <div className="title-area">
+          <h1 className="main-title">
+            {bookMeta?.bookTitle || "From Earth to Eternity"}
+          </h1>
+          <p className="subtitle">
+            {bookMeta?.subtitle || "Poems of Devotion, Gratitude, and Love"}
+          </p>
+          <p className="author-line">
+            {bookMeta?.author || "Ummul Mumineen Sakina Aaisaheba"}
+          </p>
+        </div>
+
+        {/* Search */}
+        <input
+          className="search-input"
+          placeholder="Search poems…"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+
+        {/* Category pills */}
+        <div className="category-bar">
+          {allCat.map((cat) => (
             <button
-              className="info-button"
-              onClick={() => setShowInfo(true)}
-              aria-label="About this book"
-              title="About this book"
+              key={cat}
+              className={`category-pill${
+                currentCat === cat ? " selected" : ""
+              }`}
+              onClick={() => setCurrentCat(cat)}
             >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="12" y1="16" x2="12" y2="12"></line>
-                <line x1="12" y1="8" x2="12.01" y2="8"></line>
-              </svg>
+              {cat}
+              <span className="cat-count-pill">
+                {cat === "All" ? filtered.length : byCat[cat]?.length || 0}
+              </span>
             </button>
-
-            {/* Decorative header flourish */}
-            <span className="flourish-container">
-              <img
-                src={process.env.PUBLIC_URL + "/flurish.svg"}
-                alt=""
-                className="flourish-img"
-              />
-            </span>
-
-            {/* Main title area */}
-            <div className="title-area">
-              <h1 className="main-title">
-                {bookMeta?.bookTitle || "From Earth to Eternity"}
-              </h1>
-              <p className="subtitle">
-                {bookMeta?.subtitle || "Poems of Devotion, Gratitude, and Love"}
-              </p>
-              <p className="author-line">
-                {bookMeta?.author || "Ummul Mumineen Sakina Aaisaheba"}
-              </p>
-            </div>
-
-            {/* Search */}
-            <input
-              className="search-input"
-              placeholder="Search poems…"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-
-            {/* Category pills */}
-            <div className="category-bar">
-              {allCat.map((cat) => (
-                <button
-                  key={cat}
-                  className={`category-pill${
-                    currentCat === cat ? " selected" : ""
-                  }`}
-                  onClick={() => setCurrentCat(cat)}
-                >
-                  {cat}
-                  <span className="cat-count-pill">
-                    {cat === "All" ? filtered.length : byCat[cat]?.length || 0}
-                  </span>
-                </button>
-              ))}
-            </div>
-          </>
-        )}
+          ))}
+        </div>
 
         {/* Poem Grid */}
-        {!stackMode && (
-          <div className="poem-list-root">
-            {showPoems.length === 0 && (
-              <div className="no-poems">No poems found.</div>
-            )}
+        <div className="poem-list-root">
+          {showPoems.length === 0 && (
+            <div className="no-poems">No poems found.</div>
+          )}
 
-            {currentCat === "All"
-              ? categories.map((cat) =>
-                  groupedAll[cat]?.length ? (
-                    <div key={cat} className="category-group">
-                      <h2 className="cat-header">
-                        <span className="cat-header-text">{cat}</span>
-                        <span className="cat-header-count">
-                          {groupedAll[cat].length}
-                        </span>
-                      </h2>
-                      <div>
-                        {groupedAll[cat].map((poem, i) => (
-                          <div
-                            className="poem-card"
-                            key={poem.id + "-" + poem.title}
-                            tabIndex={0}
-                            onClick={() => handlePoemClick(i, groupedAll[cat])}
-                            style={{ cursor: "pointer" }}
-                          >
-                            <div className="poem-meta">
-                              <span className="poem-chip">
-                                <span className="poem-cat">
-                                  {poem.category}
-                                </span>
-                                <span className="poem-dot">
-                                  {poem.category ? " · " : ""}
-                                </span>
-                                <span className="poem-num">{poem.id}</span>
+          {currentCat === "All"
+            ? categories.map((cat) =>
+                groupedAll[cat]?.length ? (
+                  <div key={cat} className="category-group">
+                    <h2 className="cat-header">
+                      <span className="cat-header-text">{cat}</span>
+                      <span className="cat-header-count">
+                        {groupedAll[cat].length}
+                      </span>
+                    </h2>
+                    <div>
+                      {groupedAll[cat].map((poem, i) => (
+                        <div
+                          className="poem-card"
+                          key={poem.id + "-" + poem.title}
+                          tabIndex={0}
+                          onClick={() => handlePoemClick(i, groupedAll[cat])}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              e.preventDefault();
+                              handlePoemClick(i, groupedAll[cat]);
+                            }
+                          }}
+                          role="button"
+                        >
+                          <div className="poem-meta">
+                            <span className="poem-chip">
+                              <span className="poem-cat">{poem.category}</span>
+                              <span className="poem-dot">
+                                {poem.category ? " · " : ""}
                               </span>
-                            </div>
-                            <div className="poem-title">{poem.title}</div>
-                            {poem.date && (
-                              <div className="poem-date">{poem.date}</div>
-                            )}
-                            <pre className="poem-body">{poem.body}</pre>
+                              <span className="poem-num">{poem.id}</span>
+                            </span>
                           </div>
-                        ))}
-                      </div>
+                          <div className="poem-title">{poem.title}</div>
+                          {poem.date && (
+                            <div className="poem-date">{poem.date}</div>
+                          )}
+                          <pre className="poem-body">{poem.body}</pre>
+                        </div>
+                      ))}
                     </div>
-                  ) : null
-                )
-              : showPoems.map((poem, i) => (
-                  <div
-                    className="poem-card"
-                    key={poem.id + "-" + poem.title}
-                    tabIndex={0}
-                    onClick={() => handlePoemClick(i)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <div className="poem-meta">
-                      <span className="poem-chip">{poem.id}</span>
-                    </div>
-                    <div className="poem-title">{poem.title}</div>
-                    {poem.date && <div className="poem-date">{poem.date}</div>}
-                    <pre className="poem-body">{poem.body}</pre>
                   </div>
-                ))}
+                ) : null
+              )
+            : showPoems.map((poem, i) => (
+                <div
+                  className="poem-card"
+                  key={poem.id + "-" + poem.title}
+                  tabIndex={0}
+                  onClick={() => handlePoemClick(i)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      handlePoemClick(i);
+                    }
+                  }}
+                  role="button"
+                >
+                  <div className="poem-meta">
+                    <span className="poem-chip">{poem.id}</span>
+                  </div>
+                  <div className="poem-title">{poem.title}</div>
+                  {poem.date && <div className="poem-date">{poem.date}</div>}
+                  <pre className="poem-body">{poem.body}</pre>
+                </div>
+              ))}
+        </div>
+
+        <footer className="repo-footer">
+          <div className="footer-publisher">
+            {bookMeta?.publisher || "Fatemi Dawat Publications"} ·{" "}
+            {bookMeta?.yearHijriGregorian || "1447/2025"}
           </div>
-        )}
-
-        {/* Stack Mode */}
-        {stackMode && (
-          <Stack
-            cardsData={stackPoems}
-            allCategories={categories}
-            onCategoryChange={onCategoryChange}
-            startIndex={stackStart}
-            onClose={() => setStackMode(false)}
-          />
-        )}
-
-        {!stackMode && (
-          <footer className="repo-footer">
-            <div className="footer-publisher">
-              {bookMeta?.publisher || "Fatemi Dawat Publications"} ·{" "}
-              {bookMeta?.yearHijriGregorian || "1447/2025"}
-            </div>
-            <div className="footer-copy">
-              &copy; {new Date().getFullYear()}{" "}
-              {bookMeta?.copyright || "Fatemi Dawat Publications"}
-            </div>
-          </footer>
-        )}
+          <div className="footer-copy">
+            &copy; {new Date().getFullYear()}{" "}
+            {bookMeta?.copyright || "Fatemi Dawat Publications"}
+          </div>
+        </footer>
       </div>
+
+      {/* Poem Reader Modal */}
+      {readerOpen && (
+        <PoemReader
+          poems={readerPoems}
+          startIndex={readerStart}
+          onClose={() => setReaderOpen(false)}
+        />
+      )}
 
       {/* Info Modal */}
       <InfoModal isOpen={showInfo} onClose={() => setShowInfo(false)} />

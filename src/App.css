@@ -499,3 +499,242 @@ body {
 .category-group:nth-child(3) .poem-card {
   animation-delay: 0.15s;
 }
+
+/* ---- Info Button ---- */
+.info-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(180, 195, 185, 0.45);
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--ink-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(50, 70, 60, 0.08);
+  transition: all 0.2s ease;
+}
+
+.info-button:hover {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(50, 70, 60, 0.12);
+}
+
+@media (max-width: 600px) {
+  .info-button {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ---- Info Modal ---- */
+.info-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 40, 40, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.info-modal {
+  position: relative;
+  background: #fdfdfb;
+  border-radius: 16px;
+  max-width: 640px;
+  width: 100%;
+  max-height: 85vh;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--ink-muted, #6b7c8a);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  z-index: 10;
+}
+
+.info-modal-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: var(--ink, #2a3a4a);
+}
+
+.info-modal-content {
+  padding: 48px 40px 40px;
+  overflow-y: auto;
+  max-height: 85vh;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  color: var(--ink-soft, #3d4f5f);
+  line-height: 1.7;
+}
+
+/* Dedication Section */
+.dedication-section {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.dedication-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--ink-muted, #6b7c8a);
+  margin: 0 0 20px;
+}
+
+.dedication-text {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--ink-muted, #6b7c8a);
+  margin: 0 0 16px;
+  line-height: 1.8;
+}
+
+.dedication-names {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink, #2a3a4a);
+  margin: 0 0 24px;
+  line-height: 1.9;
+}
+
+.dedication-names .honorific {
+  font-weight: 400;
+  color: var(--gold, #8b7355);
+  font-size: 0.9em;
+}
+
+/* Section Divider */
+.section-divider {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--accent, #5d7a6a);
+  opacity: 0.4;
+  margin: 32px 0;
+}
+
+/* Foreword Section */
+.foreword-section {
+  text-align: left;
+}
+
+.foreword-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--accent, #5d7a6a);
+  margin: 0 0 24px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.foreword-section p {
+  margin: 0 0 16px;
+  font-size: 1.05rem;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.foreword-section p:last-of-type:not(.foreword-signature) {
+  margin-bottom: 32px;
+}
+
+.foreword-signature {
+  text-align: right;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.signature-name {
+  display: block;
+  font-weight: 500;
+  color: var(--ink, #2a3a4a);
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.signature-title {
+  display: block;
+  font-style: italic;
+  color: var(--ink-muted, #6b7c8a);
+  font-size: 0.95rem;
+}
+
+/* Mobile adjustments for modal */
+@media (max-width: 600px) {
+  .info-modal-overlay {
+    padding: 12px;
+    align-items: flex-end;
+  }
+
+  .info-modal {
+    max-height: 90vh;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .info-modal-content {
+    padding: 40px 24px 32px;
+  }
+
+  .dedication-names {
+    font-size: 1.05rem;
+  }
+
+  .foreword-section p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .foreword-title {
+    font-size: 1.25rem;
+  }
+}

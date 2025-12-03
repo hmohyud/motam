@@ -300,7 +300,7 @@ export default function WordCloudBackground({
               key={w.key}
               className="wc-w"
               style={{
-                left: `${w.x}%`,
+                left: `${w.x-3}%`,
                 top: w.y,
                 fontSize: w.size,
                 color: `rgba(100, 125, 115, ${w.opacity})`,

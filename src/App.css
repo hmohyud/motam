@@ -170,7 +170,7 @@ body {
   font-style: italic;
 }
 
-/* ---- Filter Row (Categories + Sort) ---- */
+/* ---- Filter Row ---- */
 .filter-row {
   display: flex;
   flex-direction: column;
@@ -793,82 +793,153 @@ body {
   flex-shrink: 0;
 }
 
-/* ---- Responsive ---- */
+/* ============================================
+   RESPONSIVE - TABLET
+   ============================================ */
+@media (max-width: 768px) {
+  .app-root {
+    padding: 0 24px 28px 24px;
+  }
+
+  .title-area {
+    margin: 130px 0 24px 0;
+  }
+
+  .main-title {
+    font-size: 1.9rem;
+  }
+
+  .poem-list-root {
+    padding: 0 8px;
+  }
+
+  .poem-card {
+    padding: 16px 18px 14px 16px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE
+   ============================================ */
 @media (max-width: 600px) {
   .app-root {
-    padding: 0 0 18px 0;
+    padding: 0 16px 24px 16px;
   }
 
   .top-buttons {
-    top: 12px;
-    right: 12px;
+    top: 14px;
+    right: 14px;
     gap: 8px;
   }
 
   .top-button {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
   }
 
   .title-area {
-    margin: 120px 0 20px 0;
+    margin: 100px 0 20px 0;
   }
 
   .main-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    padding: 0 8px;
+    line-height: 1.25;
   }
 
   .subtitle {
+    font-size: 0.95rem;
+    padding: 0 12px;
+  }
+
+  .author-line {
     font-size: 1rem;
-    padding: 0 20px;
   }
 
   .flourish-img {
-    width: 200px;
-    top: 0;
+    width: 160px;
+    top: 8px;
+    opacity: 0.35;
   }
 
   .search-input {
-    max-width: 92vw;
-    width: 92vw;
+    max-width: calc(100% - 24px);
+    width: calc(100% - 24px);
+    font-size: 1rem;
+    padding: 10px 16px;
+    margin-bottom: 16px;
   }
 
   .filter-row {
-    padding: 0 12px;
+    padding: 0;
     gap: 12px;
+    margin-bottom: 20px;
   }
 
   .category-bar {
-    gap: 8px;
+    gap: 6px;
+    padding: 0 4px;
+    max-width: 100%;
   }
 
   .category-pill {
-    font-size: 0.88rem;
-    padding: 6px 14px;
+    font-size: 0.82rem;
+    padding: 6px 12px 6px 10px;
+  }
+
+  .cat-count-pill {
+    padding: 1px 6px;
+    margin-left: 5px;
+    font-size: 0.78em;
   }
 
   .sort-control {
-    gap: 6px;
+    gap: 4px;
+  }
+
+  .sort-label {
+    font-size: 0.82rem;
   }
 
   .sort-option {
-    font-size: 0.82rem;
-    padding: 4px 10px;
+    font-size: 0.8rem;
+    padding: 5px 10px;
   }
 
   .poem-list-root {
     padding: 0;
   }
 
+  /* CARDS - Keep clickable! */
   .poem-card {
-    width: 94vw;
-    margin: 10px auto;
-    padding: 16px 14px;
-    pointer-events: none;
+    margin: 0 0 12px 0;
+    padding: 14px 14px 12px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(93, 122, 106, 0.15);
+  }
+
+  .poem-card:active {
+    transform: scale(0.985);
+    background: var(--card-bg-hover);
   }
 
   .poem-card::after {
     display: none;
+  }
+
+  /* Disable hover transform on touch */
+  .poem-card:hover {
+    transform: none;
+  }
+
+  .poem-meta {
+    position: static;
+    margin-bottom: 4px;
+  }
+
+  .poem-chip {
+    font-size: 0.8rem;
   }
 
   .poem-cat,
@@ -876,11 +947,53 @@ body {
     display: none;
   }
 
-  .cat-header {
-    padding: 0 12px 8px 12px;
-    font-size: 1.15rem;
+  .poem-title {
+    font-size: 1.02rem;
+    padding-right: 0;
+    margin-bottom: 4px;
+    line-height: 1.35;
   }
 
+  .poem-date {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+
+  .poem-body {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .cat-header {
+    padding: 0 4px 6px 4px;
+    font-size: 1.05rem;
+    margin: 18px 0 10px 0;
+  }
+
+  .cat-header-count {
+    font-size: 0.78rem;
+    padding: 2px 8px;
+  }
+
+  .category-group {
+    margin-bottom: 24px;
+  }
+
+  .repo-footer {
+    margin-top: 28px;
+    padding-top: 18px;
+    font-size: 0.85rem;
+  }
+
+  .footer-publisher {
+    font-size: 0.85rem;
+  }
+
+  .footer-copy {
+    font-size: 0.78rem;
+  }
+
+  /* Modals slide up */
   .info-modal-overlay,
   .index-modal-overlay {
     padding: 0;
@@ -889,50 +1002,184 @@ body {
 
   .info-modal,
   .index-modal {
-    max-height: 92vh;
+    max-height: 90vh;
     border-radius: 20px 20px 0 0;
   }
 
   .info-modal-content {
-    padding: 40px 24px 32px;
+    padding: 28px 20px 32px;
   }
 
-  .index-modal-header {
-    padding: 20px 20px 16px;
-  }
-
-  .index-modal-title {
-    font-size: 1.35rem;
+  .dedication-label {
+    font-size: 0.78rem;
     margin-bottom: 16px;
   }
 
+  .dedication-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .dedication-names {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .section-divider {
+    margin: 24px 0;
+    font-size: 1.2rem;
+  }
+
+  .foreword-title {
+    font-size: 1.15rem;
+    margin-bottom: 16px;
+  }
+
+  .foreword-section p {
+    font-size: 0.92rem;
+    text-align: left;
+    margin-bottom: 12px;
+    line-height: 1.65;
+  }
+
+  .foreword-signature {
+    margin-top: 20px;
+    padding-top: 16px;
+  }
+
+  .signature-name {
+    font-size: 0.92rem;
+  }
+
+  .signature-title {
+    font-size: 0.82rem;
+  }
+
+  .index-modal-header {
+    padding: 20px 16px 14px;
+  }
+
+  .index-modal-title {
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+  }
+
   .index-controls {
-    gap: 20px;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .index-toggle-group {
+    gap: 6px;
+  }
+
+  .index-toggle-label {
+    font-size: 0.8rem;
+  }
+
+  .index-toggle-btn {
+    font-size: 0.8rem;
+    padding: 5px 10px;
   }
 
   .index-modal-content {
-    padding: 16px 20px 24px;
+    padding: 14px 16px 28px;
+  }
+
+  .index-category-group {
+    margin-bottom: 20px;
+  }
+
+  .index-category-header {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+  }
+
+  .index-category-count {
+    font-size: 0.75rem;
+  }
+
+  .index-poem-item {
+    padding: 10px 8px;
+    margin: 0 -8px;
+    gap: 10px;
+  }
+
+  .index-poem-number {
+    font-size: 0.78rem;
+    min-width: 22px;
+  }
+
+  .index-poem-title {
+    font-size: 0.88rem;
   }
 
   .index-poem-category {
     display: none;
   }
+}
 
-  .dedication-names {
-    font-size: 1.05rem;
+/* ============================================
+   RESPONSIVE - SMALL PHONES
+   ============================================ */
+@media (max-width: 380px) {
+  .main-title {
+    font-size: 1.35rem;
   }
 
-  .foreword-section p {
-    font-size: 1rem;
-    text-align: left;
+  .subtitle {
+    font-size: 0.88rem;
   }
 
-  .foreword-title {
-    font-size: 1.25rem;
+  .category-pill {
+    font-size: 0.78rem;
+    padding: 5px 10px 5px 8px;
+  }
+
+  .cat-count-pill {
+    padding: 1px 5px;
+    margin-left: 4px;
+  }
+
+  .poem-title {
+    font-size: 0.95rem;
+  }
+
+  .poem-body {
+    font-size: 0.85rem;
+  }
+
+  .index-controls {
+    gap: 10px;
+  }
+
+  .index-toggle-btn {
+    padding: 4px 8px;
+    font-size: 0.75rem;
   }
 }
 
-/* Card entrance animation */
+/* ============================================
+   MODAL OPEN STATE - MOBILE FIXES
+   ============================================ */
+@media (max-width: 600px) {
+  body.modal-open .title-area {
+    margin: 0;
+  }
+
+  body.modal-open .app-root {
+    /* Prevent any content from affecting modal positioning */
+    position: fixed;
+    width: 100%;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
 @keyframes card-enter {
   from {
     opacity: 0;
@@ -956,4 +1203,17 @@ body {
 }
 .category-group:nth-child(3) .poem-card {
   animation-delay: 0.15s;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .poem-card,
+  .flourish-img {
+    animation: none;
+  }
+
+  .poem-card:hover,
+  .poem-card:active {
+    transform: none;
+  }
 }

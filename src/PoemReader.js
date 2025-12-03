@@ -71,6 +71,34 @@ export default function PoemReader({ poems = [], startIndex = 0, onClose }) {
     };
   }, []);
 
+  // Touch swipe handling
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      goNext();
+    } else if (isRightSwipe) {
+      goPrev();
+    }
+  };
+
   // Handle backdrop click
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
@@ -128,7 +156,12 @@ export default function PoemReader({ poems = [], startIndex = 0, onClose }) {
         </button>
 
         {/* Poem content */}
-        <div className="poem-reader-content">
+        <div
+          className="poem-reader-content"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
           <div className="poem-reader-header">
             {category && (
               <span className="poem-reader-category">{category}</span>

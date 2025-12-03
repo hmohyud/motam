@@ -173,7 +173,7 @@ function InfoModal({ isOpen, onClose }) {
 
 // Index Modal Component
 function IndexModal({ isOpen, onClose, poems, categoryOrder, onSelectPoem }) {
-  const [groupBy, setGroupBy] = useState("category");
+  const [groupBy, setGroupBy] = useState("none");
   const [sortBy, setSortBy] = useState("id");
 
   useEffect(() => {
@@ -248,19 +248,19 @@ function IndexModal({ isOpen, onClose, poems, categoryOrder, onSelectPoem }) {
               <div className="index-toggle">
                 <button
                   className={`index-toggle-btn ${
-                    groupBy === "category" ? "active" : ""
-                  }`}
-                  onClick={() => setGroupBy("category")}
-                >
-                  Category
-                </button>
-                <button
-                  className={`index-toggle-btn ${
                     groupBy === "none" ? "active" : ""
                   }`}
                   onClick={() => setGroupBy("none")}
                 >
                   None
+                </button>
+                <button
+                  className={`index-toggle-btn ${
+                    groupBy === "category" ? "active" : ""
+                  }`}
+                  onClick={() => setGroupBy("category")}
+                >
+                  Category
                 </button>
               </div>
             </div>
@@ -283,14 +283,14 @@ function IndexModal({ isOpen, onClose, poems, categoryOrder, onSelectPoem }) {
                 >
                   A-Z
                 </button>
-                <button
+                {/* <button
                   className={`index-toggle-btn ${
                     sortBy === "category" ? "active" : ""
                   }`}
                   onClick={() => setSortBy("category")}
                 >
                   Cat
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

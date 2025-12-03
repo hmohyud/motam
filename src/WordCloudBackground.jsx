@@ -1,453 +1,319 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useMemo, useState, useEffect, useRef } from "react";
 
-/* ---------- text utils ---------- */
+// Stop words
 const STOP = new Set([
-  "the","and","a","to","of","in","is","it","that","i","you","for","on","with","as","at","this","but","be","by","or","an","from","are",
-  "was","were","so","if","then","than","into","out","up","down","over","under","not","no","yes","me","my","mine","we","our","ours",
-  "your","yours","their","theirs","he","she","they","them","his","her","hers","its","what","which","who","whom","when","where","why",
-  "how","too","very","just","only","also","all","any","each","every","few","more","most","other","some","such","can","will","shall",
-  "may","might","must","could","would","should","been","being","do","does","did","done","have","has","had","having","again","ever","never"
+  "the",
+  "and",
+  "a",
+  "to",
+  "of",
+  "in",
+  "is",
+  "it",
+  "that",
+  "i",
+  "you",
+  "for",
+  "on",
+  "with",
+  "as",
+  "at",
+  "this",
+  "but",
+  "be",
+  "by",
+  "or",
+  "an",
+  "from",
+  "are",
+  "was",
+  "were",
+  "so",
+  "if",
+  "not",
+  "no",
+  "me",
+  "my",
+  "we",
+  "our",
+  "your",
+  "they",
+  "them",
+  "his",
+  "her",
+  "its",
+  "all",
+  "can",
+  "will",
+  "have",
+  "has",
+  "had",
+  "do",
+  "does",
+  "did",
+  "just",
+  "very",
+  "only",
+  "one",
+  "would",
+  "could",
+  "should",
+  "into",
+  "more",
+  "been",
+  "being",
+  "each",
+  "which",
+  "their",
+  "there",
+  "these",
+  "those",
+  "then",
+  "than",
+  "what",
+  "when",
+  "where",
 ]);
 
-const tokenize = (text) =>
-  (text || "")
-    .toLowerCase()
-    .replace(/[^a-z0-9\s'-]/g, " ")
-    .split(/\s+/)
-    .filter(Boolean)
-    .filter((w) => !STOP.has(w) && w.length > 2 && !/^\d+$/.test(w));
-
-function countFreq(words) {
-  const m = new Map();
-  for (const w of words) m.set(w, (m.get(w) || 0) + 1);
-  return [...m.entries()].sort((a, b) => b[1] - a[1]);
+function extractWords(text, count = 80) {
+  const words = (text || "").toLowerCase().match(/[a-z]{3,}/g) || [];
+  const freq = {};
+  for (const w of words) {
+    if (!STOP.has(w)) freq[w] = (freq[w] || 0) + 1;
+  }
+  return Object.entries(freq)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, count);
 }
 
-function scale(v, inMin, inMax, outMin, outMax) {
-  if (inMax === inMin) return (outMin + outMax) / 2;
-  const t = (v - inMin) / (inMax - inMin);
-  return outMin + t * (outMax - outMin);
-}
-
-/* ---------- PRNG (seeded) ---------- */
-function hashString(str) {
-  let h = 2166136261 >>> 0;
+function hash(str) {
+  let h = 0;
   for (let i = 0; i < str.length; i++) {
-    h ^= str.charCodeAt(i);
-    h = Math.imul(h, 16777619);
+    h = ((h << 5) - h + str.charCodeAt(i)) | 0;
   }
-  return h >>> 0;
-}
-function mulberry32(seed) {
-  return function () {
-    let t = (seed += 0x6D2B79F5);
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
+  return h;
 }
 
-/* ---------- density: constant per viewport ---------- */
-function placementsPerViewport({ minFont, maxFont, coveragePerViewport }) {
-  const vw = window.innerWidth || 1200;
-  const vh = window.innerHeight || 800;
-  const avgFont = (minFont + maxFont) / 2;
-  const wordW = avgFont * 3.4;
-  const wordH = avgFont * 1.12;
-  const wordArea = Math.max(1, wordW * wordH);
-  return Math.max(1, Math.floor((vw * vh * coveragePerViewport) / wordArea));
+function seeded(seed) {
+  return (((Math.sin(seed) * 10000) % 1) + 1) % 1;
 }
 
-/* ---------- positions per-viewport slice (blue-noise-ish) ---------- */
-function bestCandidatePositionsPerViewportPx(nTotal, docHeight, seed) {
-  if (!nTotal) return [];
-  const rnd = mulberry32(seed);
-  const vh = window.innerHeight || 800;
-  const slices = Math.max(1, Math.ceil(docHeight / vh));
-  const base = Math.floor(nTotal / slices);
-  let rem = nTotal - base * slices;
-
-  const pts = [];
-  const dist2 = (a, b, sliceH) => {
-    const dx = a.x - b.x;
-    const dy = (a.y - b.y) / sliceH;
-    return dx * dx + dy * dy;
-  };
-
-  for (let s = 0; s < slices; s++) {
-    const y0 = s * vh;
-    const y1 = Math.min((s + 1) * vh, docHeight);
-    const sliceH = Math.max(1, y1 - y0);
-    const count = base + (rem > 0 ? 1 : 0);
-    if (rem > 0) rem--;
-
-    const local = [];
-    const k = 14;
-    for (let i = 0; i < count; i++) {
-      let best = null, bestMinD = -1;
-      for (let c = 0; c < k; c++) {
-        const cand = { x: rnd(), y: y0 + rnd() * sliceH };
-        let minD = Infinity;
-        for (let j = 0; j < local.length; j++) {
-          const d2 = dist2(cand, local[j], sliceH);
-          if (d2 < minD) minD = d2;
-          if (minD === 0) break;
-        }
-        if (local.length === 0) minD = Infinity;
-        if (minD > bestMinD) { bestMinD = minD; best = cand; }
-      }
-      local.push(best || { x: rnd(), y: y0 + rnd() * sliceH });
-    }
-    pts.push(...local);
-  }
-
-  return pts.map(p => ({ leftPct: Math.round(p.x * 100), docY: Math.round(p.y) }));
-}
-
-/* ---------- component ---------- */
 export default function WordCloudBackground({
-  poems = null,
-  fontFamily = "'Caveat', cursive",
-  minFont = 28,
-  maxFont = 115,
-  coveragePerViewport = 0.22,
-  repeatWeighted = true,
+  poems = [],
+  density = 3,
+  sizeRange = [14, 64],
+  wordCount = 80,
+  opacity = [0.04, 0.12],
+  debug = false,
 }) {
-  /* ----- visible text source (props or IO) ----- */
-  const [visibleText, setVisibleText] = useState("");
-  const overlayRef = useRef(null);
-  const layerARef = useRef(null);
-  const layerBRef = useRef(null);
+  const [height, setHeight] = useState(2000);
+  const [visible, setVisible] = useState(false);
 
+  // Measure content height
   useEffect(() => {
-    if (poems && poems.length) {
-      const chunks = [];
-      for (const p of poems) {
-        if (p?.Title) chunks.push(p.Title, p.Title);
-        if (p?.Body) chunks.push(p.Body);
-        if (p?.Category) chunks.push(p.Category);
-      }
-      setVisibleText(chunks.join(" "));
-      return;
+    const measure = () => {
+      const appRoot = document.querySelector(".app-root");
+      const h = Math.max(
+        appRoot?.offsetHeight || 0,
+        appRoot?.scrollHeight || 0,
+        window.innerHeight
+      );
+      if (h > 100) setHeight(h);
+    };
+
+    measure();
+    const timers = [100, 500, 1000, 2000].map((ms) => setTimeout(measure, ms));
+    window.addEventListener("resize", measure);
+
+    let ro;
+    if (window.ResizeObserver) {
+      ro = new ResizeObserver(measure);
+      const appRoot = document.querySelector(".app-root");
+      if (appRoot) ro.observe(appRoot);
     }
-
-    const io = new IntersectionObserver((entries) => {
-      const onScreen = entries.filter(e => e.isIntersecting).map(e => e.target);
-      const combined = onScreen.map((el) => {
-        const title = el.querySelector(".poem-title")?.textContent || "";
-        const body  = el.querySelector(".poem-body")?.textContent || el.textContent || "";
-        return `${title}\n${body}`;
-      }).join("\n\n");
-      setVisibleText(combined || "");
-    }, { root: null, rootMargin: "0px 0px -12% 0px", threshold: 0.12 });
-
-    const cards = Array.from(document.querySelectorAll(".poem-card"));
-    cards.forEach((el) => io.observe(el));
-
-    // initial snapshot
-    const vh = window.innerHeight || 800;
-    const initial = cards.filter((el) => {
-      const r = el.getBoundingClientRect();
-      const overlap = Math.min(r.bottom, vh) - Math.max(r.top, 0);
-      return overlap > r.height * 0.12;
-    }).map((el) => {
-      const title = el.querySelector(".poem-title")?.textContent || "";
-      const body  = el.querySelector(".poem-body")?.textContent || el.textContent || "";
-      return `${title}\n${body}`;
-    }).join("\n\n");
-    if (initial) setVisibleText(initial);
-
-    return () => io.disconnect();
-  }, [poems]);
-
-  /* ----- word frequencies & target count ----- */
-  const freqUniques = useMemo(() => countFreq(tokenize(visibleText)), [visibleText]);
-
-  const perViewport = useMemo(() => {
-    return placementsPerViewport({ minFont, maxFont, coveragePerViewport });
-  }, [minFont, maxFont, coveragePerViewport]);
-
-  const docHeight = useMemo(() => {
-    const de = document.documentElement;
-    const body = document.body || {};
-    return Math.max(
-      de.scrollHeight, de.offsetHeight, de.clientHeight,
-      body.scrollHeight || 0, body.offsetHeight || 0
-    );
-  }, [visibleText]);
-
-  const targetCount = useMemo(() => {
-    const vh = window.innerHeight || 800;
-    const slices = Math.max(1, Math.ceil(docHeight / vh));
-    return Math.max(1, perViewport * slices);
-  }, [docHeight, perViewport]);
-
-  /* ----- placements (unique once, then weighted fill) ----- */
-  const placements = useMemo(() => {
-    if (!freqUniques.length || targetCount <= 0) return [];
-
-    const uniqueOnce = freqUniques.map(([w, c]) => [w, c]);
-    if (!repeatWeighted || uniqueOnce.length >= targetCount) {
-      return uniqueOnce.slice(0, targetCount);
-    }
-
-    const remaining = targetCount - uniqueOnce.length;
-    const totalWeight = freqUniques.reduce((s, [, c]) => s + c, 0);
-    const cum = [];
-    let acc = 0;
-    for (const [w, c] of freqUniques) { acc += c / Math.max(1, totalWeight); cum.push([w, acc, c]); }
-
-    const seed = hashString(visibleText.slice(0, 4096));
-    const rand = mulberry32(seed);
-
-    function pickWeighted() {
-      const r = rand();
-      let lo = 0, hi = cum.length - 1, ans = hi;
-      while (lo <= hi) {
-        const mid = (lo + hi) >> 1;
-        if (r <= cum[mid][1]) { ans = mid; hi = mid - 1; } else { lo = mid + 1; }
-      }
-      const chosen = cum[ans] || cum[cum.length - 1];
-      const [word, , count] = chosen;
-      return [word, count];
-    }
-
-    const filled = [];
-    for (let i = 0; i < remaining; i++) filled.push(pickWeighted());
-    return uniqueOnce.concat(filled);
-  }, [freqUniques, targetCount, repeatWeighted, visibleText]);
-
-  /* ----- positions & final display ----- */
-  const cloudPositions = useMemo(() => {
-    const seed = hashString(visibleText.slice(0, 2048)) ^ placements.length;
-    return bestCandidatePositionsPerViewportPx(placements.length, docHeight, seed);
-  }, [placements.length, docHeight, visibleText]);
-
-  const display = useMemo(() => {
-    if (!placements.length) return [];
-    const counts = placements.map(([, c]) => c);
-    const maxC = Math.max(...counts), minC = Math.min(...counts);
-
-    return placements.map(([word, count], i) => {
-      const fontSize = Math.round(scale(count, minC, maxC, minFont, maxFont));
-      const pos = cloudPositions[i] || { leftPct: 50, docY: 0 };
-      const seed = hashString(`${word}:${i}`);
-      const r = mulberry32(seed);
-      const rotate = Math.round((r() - 0.5) * 10);
-      const duration = Math.round(22 + r() * 18);
-      const delay = Math.round(r() * 16);
-      const opacity = scale(count, minC, maxC, 0.10, 0.26);
-      return { id: `${word}-${i}`, word, fontSize, leftPct: pos.leftPct, docY: pos.docY, rotate, duration, delay, opacity };
-    });
-  }, [placements, cloudPositions, minFont, maxFont]);
-
-  /* ----- two-layer crossfade (no pop) ----- */
-  const [flip, setFlip] = useState(false);
-  const prevRef = useRef(display);
-  useEffect(() => { setFlip(f => !f); }, [display]);
-
-  useEffect(() => {
-    const fadingOutEl = flip ? layerBRef.current : layerARef.current;
-    if (!fadingOutEl) return;
-    const onEnd = (e) => {
-      if (e.target !== fadingOutEl) return;
-      if (e.propertyName !== "opacity") return;
-      prevRef.current = display;
-    };
-    fadingOutEl.addEventListener("transitionend", onEnd);
-    return () => fadingOutEl.removeEventListener("transitionend", onEnd);
-  }, [display, flip]);
-
-  const layerA = flip ? display : (prevRef.current || []);
-  const layerB = flip ? (prevRef.current || []) : display;
-
-  /* ----- inject minimal keyframes (once) ----- */
-  useEffect(() => {
-    if (document.getElementById("wc-float-style")) return;
-    const css = `
-      @keyframes wcFloat {
-        0%   { --floatY: -2px; }
-        50%  { --floatY:  2px; }
-        100% { --floatY: -2px; }
-      }
-      .wc-layer { will-change: opacity; }
-      .wc-word  { will-change: transform, opacity; backface-visibility: hidden; }
-    `;
-    const el = document.createElement("style");
-    el.id = "wc-float-style";
-    el.textContent = css;
-    document.head.appendChild(el);
-  }, []);
-
-  /* ----- Smooth, React-free scroll pipe: update CSS var every frame ----- */
-  useEffect(() => {
-    const root = overlayRef.current;
-    if (!root) return;
-
-    let raf = 0;
-    const tick = () => {
-      raf = requestAnimationFrame(tick);
-      root.style.setProperty("--wcScroll", (window.scrollY || 0) + "px");
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, []);
-
-  /* ----- Culling loop with MutationObserver (rebuild on crossfade) ----- */
-  useEffect(() => {
-    const root = overlayRef.current;
-    if (!root) return;
-
-    let wordEls = new Map();
-
-    const rebuild = () => {
-      wordEls = new Map();
-      for (const el of root.querySelectorAll(".wc-word")) {
-        const key = `${el.textContent}|${el.style.fontSize}|${el.style.left}`;
-        const arr = wordEls.get(key) || [];
-        arr.push(el);
-        wordEls.set(key, arr);
-      }
-    };
-
-    rebuild();
-
-    const mo = new MutationObserver(() => rebuild());
-    mo.observe(root, { subtree: true, childList: true });
-
-    const getVH = () => window.innerHeight || 800;
-    let raf = 0;
-
-    const loop = () => {
-      raf = requestAnimationFrame(loop);
-
-      const yStr = getComputedStyle(root).getPropertyValue("--wcScroll") || "0px";
-      const scrollYNow = parseFloat(yStr) || 0;
-      const topBound = scrollYNow - 200;
-      const botBound = scrollYNow + getVH() + 200;
-
-      for (const group of wordEls.values()) {
-        const anyEl = group[0];
-        const docY = parseFloat(anyEl.style.getPropertyValue("--docY")) || 0;
-        const visible = docY >= topBound && docY <= botBound;
-        for (const el of group) {
-          if (visible) el.classList.remove("is-culled");
-          else el.classList.add("is-culled");
-        }
-      }
-    };
-
-    raf = requestAnimationFrame(loop);
-    const onResize = () => {};
-    window.addEventListener("resize", onResize);
 
     return () => {
-      window.removeEventListener("resize", onResize);
-      cancelAnimationFrame(raf);
-      mo.disconnect();
+      timers.forEach(clearTimeout);
+      window.removeEventListener("resize", measure);
+      ro?.disconnect();
     };
-  }, [flip]); // rebuild when layer flips
+  }, [poems]);
+
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), 200);
+    return () => clearTimeout(t);
+  }, []);
+
+  const fullText = useMemo(() => {
+    if (!poems?.length) return "";
+    return poems
+      .map((p) => `${p?.title || p?.Title || ""} ${p?.body || p?.Body || ""}`)
+      .join(" ");
+  }, [poems]);
+
+  const wordList = useMemo(
+    () => extractWords(fullText, wordCount),
+    [fullText, wordCount]
+  );
+
+  // Generate words grouped into chunks for content-visibility optimization
+  const chunks = useMemo(() => {
+    if (!wordList.length) return [];
+
+    const maxFreq = wordList[0]?.[1] || 1;
+    const minFreq = wordList[wordList.length - 1]?.[1] || 1;
+    const range = maxFreq - minFreq || 1;
+
+    // Grid parameters
+    const rows = Math.max(4, Math.ceil((height / 100) * density));
+    const cols = 4;
+    const rowH = height / rows;
+    const colW = 100 / cols;
+
+    // Chunk size: group words into sections of ~500px height
+    const chunkHeight = 500;
+    const rowsPerChunk = Math.max(1, Math.floor(chunkHeight / rowH));
+    const numChunks = Math.ceil(rows / rowsPerChunk);
+
+    if (debug) {
+      console.log(
+        `[WordCloud] Height: ${height}, Rows: ${rows}, Chunks: ${numChunks}, RowsPerChunk: ${rowsPerChunk}`
+      );
+    }
+
+    const result = [];
+
+    for (let c = 0; c < numChunks; c++) {
+      const startRow = c * rowsPerChunk;
+      const endRow = Math.min(startRow + rowsPerChunk, rows);
+      const chunkTop = startRow * rowH;
+      const chunkHeightPx = (endRow - startRow) * rowH;
+
+      const words = [];
+      for (let row = startRow; row < endRow; row++) {
+        for (let col = 0; col < cols; col++) {
+          const i = row * cols + col;
+          const wi =
+            (i * 7 + Math.floor(i / wordList.length) * 3) % wordList.length;
+          const [word, freq] = wordList[wi];
+          const h = hash(word + i);
+          const norm = (freq - minFreq) / range;
+
+          // Position relative to chunk
+          const y = (row - startRow) * rowH + seeded(h * 2) * rowH * 0.75 + 15;
+
+          words.push({
+            key: `w${i}`,
+            word,
+            x: col * colW + colW * 0.1 + seeded(h) * colW * 0.8,
+            y,
+            size: Math.round(
+              sizeRange[0] + Math.pow(norm, 0.7) * (sizeRange[1] - sizeRange[0])
+            ),
+            opacity: opacity[0] + norm * (opacity[1] - opacity[0]),
+            rotate: Math.round((seeded(h * 3) - 0.5) * 18),
+            dur: 14 + Math.round(seeded(h * 4) * 20),
+            del: seeded(h * 5) * 2,
+          });
+        }
+      }
+
+      result.push({
+        id: `chunk-${c}`,
+        top: chunkTop,
+        height: chunkHeightPx,
+        words,
+      });
+    }
+
+    return result;
+  }, [wordList, height, density, sizeRange, opacity, debug]);
+
+  if (!chunks.length) return null;
 
   return (
     <div
-      ref={overlayRef}
-      className="wordcloud-bg"
-      aria-hidden
+      aria-hidden="true"
       style={{
-        position: "fixed",
-        inset: 0,
-        width: "100vw",
-        height: "100vh",
-        zIndex: 1,
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        height: height,
         pointerEvents: "none",
-        overflow: "hidden",
-        // "--wcScroll" is updated every frame by rAF above
+        zIndex: 0,
+        opacity: visible ? 1 : 0,
+        transition: "opacity 0.6s ease",
       }}
     >
-      {/* Layer A */}
-      <div
-        ref={layerARef}
-        className={`wc-layer ${flip ? "fade-in" : "fade-out"}`}
-        style={layerStyle}
-      >
-        {layerA.map((w) => (
-          <span
-            key={`A-${w.id}`}
-            className="wc-word"
-            style={{
-              "--docY": w.docY + "px",
-              "--rot": `${w.rotate}deg`,
-              "--floatY": "0px",
+      {debug && (
+        <div
+          style={{
+            position: "fixed",
+            top: 10,
+            right: 10,
+            background: "black",
+            color: "lime",
+            padding: "5px 10px",
+            fontSize: 12,
+            fontFamily: "monospace",
+            zIndex: 9999,
+          }}
+        >
+          H:{height} | Chunks:{chunks.length} | Words:
+          {chunks.reduce((a, c) => a + c.words.length, 0)}
+        </div>
+      )}
 
-              left: `${w.leftPct}%`,
-              top: 0,
+      <style>{`
+        @keyframes wcFloat {
+          0%, 100% { transform: translateY(0) }
+          50% { transform: translateY(-4px) }
+        }
+        .wc-chunk {
+          position: absolute;
+          left: 0;
+          right: 0;
+          content-visibility: auto;
+          contain-intrinsic-size: auto 500px;
+        }
+        .wc-w {
+          position: absolute;
+          font-family: 'Caveat', cursive;
+          text-shadow: 0 1px 3px rgba(255,255,255,0.5);
+          animation: wcFloat var(--d) ease-in-out infinite;
+          animation-delay: var(--l);
+        }
+      `}</style>
 
-              fontSize: `${w.fontSize}px`,
-              fontFamily,
-              position: "absolute",
-              opacity: w.opacity,
-
-              transform: `translate(-50%, 0)
-                translate3d(0, calc(var(--docY) - var(--wcScroll, 0px) + var(--floatY)), 0)
-                rotate(var(--rot))`,
-
-              animationName: "wcFloat",
-              animationDuration: `${w.duration}s`,
-              animationDelay: `${w.delay}s`,
-              animationTimingFunction: "ease-in-out",
-              animationIterationCount: "infinite",
-            }}
-          >
-            {w.word}
-          </span>
-        ))}
-      </div>
-
-      {/* Layer B */}
-      <div
-        ref={layerBRef}
-        className={`wc-layer ${flip ? "fade-out" : "fade-in"}`}
-        style={layerStyle}
-      >
-        {layerB.map((w) => (
-          <span
-            key={`B-${w.id}`}
-            className="wc-word"
-            style={{
-              "--docY": w.docY + "px",
-              "--rot": `${w.rotate}deg`,
-              "--floatY": "0px",
-
-              left: `${w.leftPct}%`,
-              top: 0,
-
-              fontSize: `${w.fontSize}px`,
-              fontFamily,
-              position: "absolute",
-              opacity: w.opacity,
-
-              transform: `translate(-50%, 0)
-                translate3d(0, calc(var(--docY) - var(--wcScroll, 0px) + var(--floatY)), 0)
-                rotate(var(--rot))`,
-
-              animationName: "wcFloat",
-              animationDuration: `${w.duration}s`,
-              animationDelay: `${w.delay}s`,
-              animationTimingFunction: "ease-in-out",
-              animationIterationCount: "infinite",
-            }}
-          >
-            {w.word}
-          </span>
-        ))}
-      </div>
+      {chunks.map((chunk) => (
+        <div
+          key={chunk.id}
+          className="wc-chunk"
+          style={{
+            top: chunk.top,
+            height: chunk.height,
+          }}
+        >
+          {chunk.words.map((w) => (
+            <span
+              key={w.key}
+              className="wc-w"
+              style={{
+                left: `${w.x}%`,
+                top: w.y,
+                fontSize: w.size,
+                color: `rgba(100, 125, 115, ${w.opacity})`,
+                transform: `rotate(${w.rotate}deg)`,
+                "--d": `${w.dur}s`,
+                "--l": `${w.del}s`,
+              }}
+            >
+              {w.word}
+            </span>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
-
-/* inline style for the layers */
-const layerStyle = {
-  position: "absolute",
-  inset: 0,
-  transition: "opacity 1.2s cubic-bezier(.22,.61,.36,1)",
-};

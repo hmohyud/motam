@@ -1,115 +1,197 @@
-/* Caveat (casual, neat) */
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+/* Elegant fonts for devotional poetry */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Caveat:wght@400;700&display=swap");
 
-/* ---- layout shell ---- */
+/* ---- root variables ---- */
 :root {
-  --page-bg: #f7f7f8;
-  --ink: #24334f;
-  --ink-soft: #304060;
-  --card-border: rgba(220,230,245,0.7);
-  --card-bg: rgba(255,255,255,0.70);
+  --page-bg: #f7f9f8;
+  --ink: #2a3a4a;
+  --ink-soft: #3d4f5f;
+  --ink-muted: #6b7c8a;
+  --accent: #5d7a6a;
+  --accent-light: #7a9988;
+  --gold: #8b7355;
+  --gold-soft: #a89070;
+  --card-border: rgba(180, 195, 185, 0.45);
+  --card-bg: rgba(255, 255, 255, 0.88);
+  --card-bg-hover: rgba(255, 255, 255, 0.95);
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: var(--page-bg);
+  background: #f7f9f8;
+  overflow-x: hidden;
 }
 
-body,
+body {
+  position: relative;
+}
+
+/* Full-width wrapper - height determined by content only */
+.page-wrapper {
+  position: relative;
+  width: 100%;
+  /* Don't let absolutely-positioned children extend height */
+}
+
 .app-root {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 36px 36px 36px;
   min-height: 100vh;
   position: relative;
-  z-index: 2; /* content sits above the word cloud (z=1) */
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  z-index: 1;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   color: var(--ink);
+  /* No background - let word cloud show through */
 }
 
-/* ---- header / controls ---- */
-.main-title {
-  font-size: 2rem;
+/* ---- decorative flourish ---- */
+.flourish-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.flourish-img {
+  position: absolute;
+  width: 280px;
+  height: auto;
+  opacity: 0.45;
+  z-index: 1;
+  pointer-events: none;
+  top: -10px;
+  filter: sepia(0.2) hue-rotate(-10deg);
+}
+
+/* ---- title area ---- */
+.title-area {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 150px 0 28px 0;
   text-align: center;
-  margin: 36px 0 10px 0;
-  font-weight: 700;
-  letter-spacing: -0.4px;
-  color: var(--ink-soft);
 }
 
+.main-title {
+  position: relative;
+  z-index: 2;
+  font-weight: 600;
+  font-size: 2.2rem;
+  margin: 0 0 6px 0;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.subtitle {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin: 0 0 8px 0;
+  letter-spacing: 0.03em;
+}
+
+.author-line {
+  font-family: "Caveat", cursive;
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ---- search ---- */
 .search-input {
   display: block;
   margin: 0 auto 28px auto;
-  padding: 9px 15px;
+  padding: 11px 18px;
   width: 100%;
-  max-width: 360px;
-  border-radius: 9px;
-  border: 1px solid #dbe3eb;
-  background: #fff;
-  font-size: 1.06rem;
-  font-family: inherit;
-  box-shadow: 0 1px 6px 0 rgba(100,110,140,0.05);
-  transition: border 0.17s;
-  z-index: 100;
-}
-.search-input:focus {
-  border: 1.4px solid #6780d6;
-  outline: none;
+  max-width: 380px;
+  border-radius: 24px;
+  border: 1px solid rgba(140, 160, 150, 0.35);
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  box-shadow: 0 2px 12px 0 rgba(80, 100, 90, 0.08);
+  transition: border 0.2s, box-shadow 0.2s;
   z-index: 100;
 }
 
+.search-input:focus {
+  border: 1.5px solid var(--accent);
+  outline: none;
+  box-shadow: 0 3px 16px 0 rgba(80, 120, 100, 0.12);
+}
+
+.search-input::placeholder {
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+/* ---- category bar ---- */
 .category-bar {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  margin: 0 0 18px 0;
+  margin: 0 0 24px 0;
 }
 
 .category-pill {
-  background: #fff;
-  color: #557;
-  border: 1.2px solid #e4e6ea;
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--ink-soft);
+  border: 1px solid rgba(140, 160, 150, 0.3);
   border-radius: 2em;
-  padding: 7px 18px 7px 16px;
-  font-size: 1.01rem;
+  padding: 8px 18px 8px 16px;
+  font-size: 0.95rem;
   font-weight: 500;
+  font-family: "Cormorant Garamond", Georgia, serif;
   cursor: pointer;
   display: flex;
   align-items: center;
-  transition: border 0.15s, color 0.12s, background 0.14s;
+  transition: all 0.18s ease;
   margin: 0;
   outline: none;
-  box-shadow: none;
-}
-.category-pill.selected,
-.category-pill:hover {
-  border-color: #b4c6eb;
-  color: #3451a1;
-  background: #f5f7fd;
-}
-.cat-count-pill {
-  font-size: 0.91em;
-  font-weight: 500;
-  background: transparent;
-  color: #b2b2b2;
-  border-radius: 1.4em;
-  border: 1px solid #e4e6ea;
-  padding: 2px 9px;
-  margin-left: 9px;
-  transition: background 0.13s, color 0.12s;
-}
-.category-pill.selected .cat-count-pill,
-.category-pill:hover .cat-count-pill {
-  border-color: #b4c6eb;
-  color: #3451a1;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
-/* ---- list / cards ---- */
+.category-pill.selected,
+.category-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 2px 8px rgba(80, 120, 100, 0.1);
+}
+
+.cat-count-pill {
+  font-size: 0.85em;
+  font-weight: 500;
+  background: transparent;
+  color: var(--ink-muted);
+  border-radius: 1.4em;
+  border: 1px solid rgba(140, 160, 150, 0.25);
+  padding: 2px 9px;
+  margin-left: 9px;
+  transition: all 0.15s;
+}
+
+.category-pill.selected .cat-count-pill,
+.category-pill:hover .cat-count-pill {
+  border-color: var(--accent-light);
+  color: var(--accent);
+}
+
+/* ---- poem list ---- */
 .poem-list-root {
   margin: 0 auto 16px auto;
   max-width: 720px;
@@ -117,111 +199,204 @@ body,
   padding-right: 16px;
 }
 
-.category-group { margin-bottom: 28px; }
+.category-group {
+  margin-bottom: 36px;
+}
 
 .cat-header {
-  font-size: 1.14rem;
-  color: #4e6189;
-  margin: 18px 0 7px 0;
-  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin: 24px 0 12px 0;
+  letter-spacing: 0.03em;
   font-weight: 600;
-  padding-left: 2px;
-  border-bottom: 1.1px solid #edeff4;
-  padding-bottom: 3px;
+  padding: 0 4px 8px 4px;
+  border-bottom: 1px solid rgba(140, 160, 150, 0.25);
+  font-family: "Cormorant Garamond", Georgia, serif;
 }
 
-/* Card with TRUE background blur (text stays crisp) */
+.cat-header-text {
+  position: relative;
+}
+
+.cat-header-text::before {
+  content: "✦";
+  font-size: 0.6em;
+  margin-right: 8px;
+  opacity: 0.5;
+  vertical-align: middle;
+}
+
+.cat-header-count {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+  background: rgba(255, 255, 255, 0.6);
+  padding: 2px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(140, 160, 150, 0.2);
+}
+
+/* ---- poem card ---- */
 .poem-card {
-  position: relative;            /* for ::before overlay */
-  isolation: isolate;            /* ensure correct backdrop stack */
-  border-radius: 10px;
-  padding: 14px 20px 13px 16px;
-  margin-bottom: 11px;
-  min-height: 33px;
+  position: relative;
+  isolation: isolate;
+  border-radius: 12px;
+  padding: 18px 22px 16px 20px;
+  margin-bottom: 14px;
+  min-height: 40px;
   border: 1px solid var(--card-border);
   background: var(--card-bg);
-  box-shadow: 0 3px 14px 0 rgba(50,60,90,0.055);
-  transition: box-shadow 0.15s, border 0.12s;
+  box-shadow: 0 4px 20px 0 rgba(50, 70, 60, 0.06);
+  transition: all 0.2s ease;
 }
+
 .poem-card:hover {
-  box-shadow: 0 6px 18px 0 rgba(90,110,150,0.09);
-  border-color: #bcd3ec;
+  box-shadow: 0 8px 28px 0 rgba(50, 80, 70, 0.1);
+  border-color: rgba(140, 170, 155, 0.5);
+  background: var(--card-bg-hover);
+  transform: translateY(-1px);
 }
+
 .poem-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;                    /* sit under content */
+  z-index: 0;
   pointer-events: none;
-  -webkit-backdrop-filter: blur(10px) saturate(1.05);
-  backdrop-filter: blur(10px) saturate(1.05);
-  background: rgba(255,255,255,0.18);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
+  backdrop-filter: blur(12px) saturate(1.1);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: inherit;
 }
-.poem-card > * { position: relative; z-index: 1; }
+
+.poem-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Decorative corner accent */
+.poem-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--accent-light) 0%, transparent 50%);
+  opacity: 0.12;
+  border-radius: 12px 0 12px 0;
+  pointer-events: none;
+  z-index: 0;
+}
 
 .poem-meta {
   position: absolute;
-  top: 15px;
-  right: 18px;
-  font-size: 0.99em;
-  color: #aab3bc;
+  top: 16px;
+  right: 20px;
+  font-size: 0.92em;
+  color: var(--ink-muted);
   z-index: 2;
   font-weight: 400;
-  opacity: 0.93;
+  opacity: 0.85;
+  font-family: "Cormorant Garamond", Georgia, serif;
 }
 
 .poem-title {
-  font-size: 1.12rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   margin-top: 0;
   word-break: break-word;
-  padding-right: 85px;
-  line-height: 1.18;
-  color: #253354;
+  padding-right: 80px;
+  line-height: 1.25;
+  color: var(--ink);
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.poem-date {
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--gold-soft);
+  margin-bottom: 8px;
+  font-family: "Caveat", cursive;
+  letter-spacing: 0.02em;
 }
 
 .poem-body {
-  font-family: "Georgia", "IBM Plex Serif", serif;
-  font-size: 1.04rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.08rem;
   white-space: pre-wrap;
   margin: 0;
-  color: #3e424b;
-  line-height: 1.52;
+  color: var(--ink-soft);
+  line-height: 1.65;
   background: none;
   border: none;
-  padding: 0 0 2px 0;
+  padding: 0 0 4px 0;
 }
 
 .no-poems {
   text-align: center;
-  color: #9a6e6e;
-  font-size: 1.08rem;
-  margin: 28px 0 18px 0;
-  letter-spacing: 0.03em;
+  color: var(--ink-muted);
+  font-size: 1.1rem;
+  font-style: italic;
+  margin: 36px 0 24px 0;
+  letter-spacing: 0.02em;
 }
 
+/* ---- footer ---- */
 .repo-footer {
-  margin: 28px 0 10px 0;
+  margin: 48px 0 16px 0;
   text-align: center;
-  color: #8b93a4;
-  font-size: 0.98rem;
-  letter-spacing: 0.021em;
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  padding-top: 24px;
+  border-top: 1px solid rgba(140, 160, 150, 0.2);
+}
+
+.footer-publisher {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  margin-bottom: 4px;
+  color: var(--gold-soft);
+}
+
+.footer-copy {
+  font-size: 0.85rem;
 }
 
 /* ---- responsive ---- */
 @media (max-width: 600px) {
-  body, .app-root {
+  body,
+  .app-root {
     padding: 0 0 18px 0 !important;
     max-width: 100vw !important;
     margin: 0 auto !important;
   }
 
+  .title-area {
+    margin: 120px 0 20px 0;
+  }
+
   .main-title {
-    font-size: 1.2rem;
-    margin: 24px 0 10px 0;
-    text-align: center;
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+
+  .author-line {
+    font-size: 1rem;
+  }
+
+  .flourish-img {
+    width: 200px;
+    top: 0;
   }
 
   .poem-list-root {
@@ -238,78 +413,89 @@ body,
     width: 94vw;
     min-width: 0;
     max-width: 99vw;
-    margin: 8px 0;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin: 10px 0;
+    padding: 16px 14px;
     pointer-events: none;
+  }
+
+  .poem-card::after {
+    display: none;
   }
 
   .search-input {
     max-width: 92vw !important;
     width: 92vw !important;
-    font-size: 0.99rem;
-    padding: 8px 8vw;
+    font-size: 1rem;
+    padding: 10px 18px;
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
 
-  .poem-cat-name,
   .poem-cat,
-  .poem-dot { display: none !important; }
+  .poem-dot {
+    display: none !important;
+  }
 
-  .poem-num { margin-left: 0 !important; }
+  .poem-num {
+    margin-left: 0 !important;
+  }
 
-  .category-bar { margin: 0 5px; }
+  .category-bar {
+    margin: 0 8px 16px 8px;
+    gap: 8px;
+  }
+
+  .category-pill {
+    font-size: 0.88rem;
+    padding: 6px 14px;
+  }
+
+  .cat-header {
+    padding: 0 12px 8px 12px;
+    font-size: 1.15rem;
+  }
 }
 
-/* ---- word cloud (fixed behind content, fast & smooth) ---- */
-.wordcloud-bg {
-  position: fixed;           /* overlay; never stretches layout */
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;                /* content is z=2 */
-  pointer-events: none;
-  overflow: hidden;
+/* ---- word cloud background ---- */
+/* Styles are inline in the component */
 
-  /* performance: isolate this subtree from the rest of the page */
-  contain: layout paint size style;
-  will-change: transform;
+/* ---- subtle animations ---- */
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
 }
 
-/* crossfade when the set changes */
-.wc-layer {
-  position: absolute;
-  inset: 0;
-  transition: opacity 1.2s cubic-bezier(.22,.61,.36,1);
-  will-change: opacity;
-
-  /* keep layers isolated, prevents accidental repaints from siblings */
-  contain: layout paint style;
-}
-.wc-layer.fade-in  { opacity: 1; }
-.wc-layer.fade-out { opacity: 0; }
-
-/* Individual words:
-   - No animations touching transform (avoids jank)
-   - Cheap to move each frame (compositor layer)
-*/
-.wc-word {
-  position: absolute;
-  left: 50%;
-  top: 0;
-
-  color: var(--ink);
-  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
-  letter-spacing: 0.015em;
-
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-  transform: translate3d(0,0,0);
+.flourish-img {
+  animation: gentle-float 6s ease-in-out infinite;
 }
 
-/* When culled (driven by JS band-pass), skip painting */
-.wc-word.is-culled {
-  visibility: hidden;  /* cheaper than display:none for abs-pos elements */
-  opacity: 0;
+/* Subtle entrance animation for cards */
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.poem-card {
+  animation: card-enter 0.4s ease-out backwards;
+}
+
+.category-group:nth-child(1) .poem-card {
+  animation-delay: 0.05s;
+}
+.category-group:nth-child(2) .poem-card {
+  animation-delay: 0.1s;
+}
+.category-group:nth-child(3) .poem-card {
+  animation-delay: 0.15s;
 }

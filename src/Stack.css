@@ -1,13 +1,13 @@
+/* Stack card styles */
 .stack-card {
   border-radius: 18px;
   background: linear-gradient(120deg, #f7f7f8 60%, #e4f3e6 100%);
   box-shadow: 0 8px 28px 0 rgba(60, 100, 90, 0.09),
     0 1.5px 5px 0 rgba(80, 140, 100, 0.03);
   border: 1.5px solid #e5f1e9;
-  /* Good, even padding all around: */
   padding: 26px !important;
   color: #223325;
-  font-family: "Georgia", "IBM Plex Serif", serif;
+  font-family: 'Cormorant Garamond', Georgia, 'IBM Plex Serif', serif;
   font-size: 1.07rem;
   letter-spacing: 0.01em;
   overflow: auto;
@@ -19,11 +19,10 @@
   max-width: 520px;
   min-height: 120px;
   max-height: 70vh;
-  /* Center content vertically if small: */
   box-sizing: border-box;
 }
 
-.poem-title {
+.stack-card .poem-title {
   font-size: 1.18rem;
   font-weight: 700;
   margin-bottom: 10px;
@@ -31,10 +30,11 @@
   color: #1f3328;
   word-break: break-word;
   line-height: 1.22;
+  padding-right: 0;
 }
 
-.poem-body {
-  font-family: "Georgia", "IBM Plex Serif", serif;
+.stack-card .poem-body {
+  font-family: 'Cormorant Garamond', Georgia, 'IBM Plex Serif', serif;
   font-size: 1.04rem;
   color: #2a3e31;
   line-height: 1.54;
@@ -56,10 +56,30 @@
   color: #184f34;
 }
 
+/* Stack arrows */
+.stack-arrow {
+  color: #5d7a6a;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.stack-arrow:hover:not(:disabled) {
+  color: #3d5a4a;
+  opacity: 1 !important;
+}
+
 @media (max-width: 600px) {
   .stack-card {
     padding: 16px 8px 16px 8px !important;
     min-width: 88vw;
     max-width: 97vw;
+  }
+  
+  .stack-arrow {
+    display: none;
+  }
+  
+  .stack-fixed-info {
+    font-size: 0.95rem !important;
+    padding: 6px 16px !important;
   }
 }

@@ -2,6 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import "./Stack.css";
 
+// Helper to get field value (supports both uppercase CSV and lowercase JSON)
+const getField = (item, field) => {
+  if (!item) return "";
+  const lower = field.toLowerCase();
+  const upper = field.charAt(0).toUpperCase() + field.slice(1);
+  return item[lower] || item[upper] || "";
+};
+
 // Front card: static mount, no post-drag animations, easy to grab
 function Card({ item, isFront, onSwiped, x }) {
   const rotate = useTransform(x, [-180, 180], [-18, 18]);
@@ -30,6 +38,9 @@ function Card({ item, isFront, onSwiped, x }) {
     // Make grabbing immediate (avoid text-select / image-drag feeling)
     document.body.style.userSelect = "none";
   }
+
+  const title = getField(item, "title");
+  const body = getField(item, "body");
 
   return (
     <motion.div
@@ -61,19 +72,19 @@ function Card({ item, isFront, onSwiped, x }) {
       drag={isFront ? "x" : false}
       dragConstraints={{ left: 0, right: 0 }}
       dragElastic={0.56}
-      dragMomentum={false}           // no inertial glide
-      dragDirectionLock              // lock to horizontal once it starts
+      dragMomentum={false} // no inertial glide
+      dragDirectionLock // lock to horizontal once it starts
       whileTap={{ cursor: "grabbing" }}
       onDragStart={isFront ? handleDragStart : undefined}
       onDragEnd={isFront ? handleDragEnd : undefined}
       // Critical: never run an entrance animation on mount
       initial={false}
-      animate={{}}                   // no mount tween
-      transition={{}}                // ensure no default tween
-      layout={false}                 // prevent layout animations
+      animate={{}} // no mount tween
+      transition={{}} // ensure no default tween
+      layout={false} // prevent layout animations
     >
-      <div className="poem-title">{item.Title}</div>
-      <pre className="poem-body">{item.Body}</pre>
+      <div className="poem-title">{title}</div>
+      <pre className="poem-body">{body}</pre>
     </motion.div>
   );
 }
@@ -220,7 +231,9 @@ export default function Stack({
   const nextCardOpacity = useTransform(x, [0, -120, -220], [0, 0.48, 1]);
   const nextCardScale = useTransform(x, [0, -120, -220], [0.96, 1, 1]);
 
-  const category = cardsData.length > 0 ? cardsData[index]?.Category : "";
+  // Get category using helper (supports both cases)
+  const category =
+    cardsData.length > 0 ? getField(cardsData[index], "category") : "";
 
   useEffect(() => {
     if (index > cardsData.length - 1) setIndex(cardsData.length - 1);
@@ -254,6 +267,12 @@ export default function Stack({
   }, [index, cardsData.length, onClose]);
 
   if (!cardsData.length) return null;
+
+  // Get next card fields
+  const nextTitle =
+    index < cardsData.length - 1 ? getField(cardsData[index + 1], "title") : "";
+  const nextBody =
+    index < cardsData.length - 1 ? getField(cardsData[index + 1], "body") : "";
 
   return (
     <div
@@ -435,13 +454,18 @@ export default function Stack({
               }}
               transition={{}} // no tween; purely tied to x
             >
-              <div className="poem-title">{cardsData[index + 1]?.Title}</div>
-              <pre className="poem-body">{cardsData[index + 1]?.Body}</pre>
+              <div className="poem-title">{nextTitle}</div>
+              <pre className="poem-body">{nextBody}</pre>
             </motion.div>
           )}
 
           {/* Front card (no mount/recenter animation, easy to grab) */}
-          <Card item={cardsData[index]} isFront={true} onSwiped={handleSwiped} x={x} />
+          <Card
+            item={cardsData[index]}
+            isFront={true}
+            onSwiped={handleSwiped}
+            x={x}
+          />
         </div>
       </div>
     </div>

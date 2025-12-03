@@ -461,6 +461,8 @@ body {
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
   animation: slideUp 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes slideUp {
@@ -499,34 +501,88 @@ body {
   color: var(--ink);
 }
 
+.info-modal-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  padding: 20px 40px 0;
+  border-bottom: 1px solid rgba(140, 160, 150, 0.15);
+  flex-shrink: 0;
+}
+
+.info-tab {
+  padding: 12px 28px;
+  border: none;
+  background: none;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.info-tab:hover {
+  color: var(--ink-soft);
+}
+
+.info-tab.active {
+  color: var(--accent);
+}
+
+.info-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px 2px 0 0;
+}
+
 .info-modal-content {
-  padding: 48px 40px 40px;
+  padding: 32px 40px 40px;
   overflow-y: auto;
-  max-height: 85vh;
+  flex: 1;
   font-family: "Cormorant Garamond", Georgia, serif;
   color: var(--ink-soft);
   line-height: 1.7;
 }
 
-.dedication-section {
-  text-align: center;
-  margin-bottom: 32px;
+.scroll-indicator {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--ink-muted);
+  opacity: 0.6;
+  animation: bounce 1.5s ease-in-out infinite;
+  pointer-events: none;
 }
 
-.dedication-label {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--ink-muted);
-  margin: 0 0 20px;
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(5px);
+  }
+}
+
+.dedication-section {
+  text-align: center;
+  padding: 20px 0;
 }
 
 .dedication-text {
   font-size: 1.05rem;
   font-style: italic;
   color: var(--ink-muted);
-  margin: 0 0 16px;
-  line-height: 1.8;
+  margin: 0 0 24px;
+  line-height: 1.9;
 }
 
 .dedication-names {
@@ -543,6 +599,13 @@ body {
   font-size: 0.9em;
 }
 
+.dedication-divider {
+  font-size: 1.5rem;
+  color: var(--accent);
+  opacity: 0.4;
+  margin: 28px 0;
+}
+
 .section-divider {
   text-align: center;
   font-size: 1.5rem;
@@ -553,6 +616,7 @@ body {
 
 .foreword-section {
   text-align: left;
+  padding-bottom: 24px;
 }
 
 .foreword-title {
@@ -1007,12 +1071,21 @@ body {
   }
 
   .info-modal-content {
-    padding: 28px 20px 32px;
+    padding: 24px 20px 32px;
   }
 
-  .dedication-label {
-    font-size: 0.78rem;
-    margin-bottom: 16px;
+  .scroll-indicator {
+    bottom: 12px;
+  }
+
+  .info-modal-tabs {
+    padding: 16px 16px 0;
+    gap: 0;
+  }
+
+  .info-tab {
+    padding: 10px 20px;
+    font-size: 0.95rem;
   }
 
   .dedication-text {
@@ -1025,6 +1098,11 @@ body {
     font-size: 0.98rem;
     line-height: 1.8;
     margin-bottom: 20px;
+  }
+
+  .dedication-divider {
+    margin: 20px 0;
+    font-size: 1.2rem;
   }
 
   .section-divider {
@@ -1163,21 +1241,6 @@ body {
 }
 
 /* ============================================
-   MODAL OPEN STATE - MOBILE FIXES
-   ============================================ */
-@media (max-width: 600px) {
-  body.modal-open .title-area {
-    margin: 0;
-  }
-
-  body.modal-open .app-root {
-    /* Prevent any content from affecting modal positioning */
-    position: fixed;
-    width: 100%;
-  }
-}
-
-/* ============================================
    ANIMATIONS
    ============================================ */
 @keyframes card-enter {
@@ -1208,7 +1271,8 @@ body {
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   .poem-card,
-  .flourish-img {
+  .flourish-img,
+  .scroll-indicator {
     animation: none;
   }
 

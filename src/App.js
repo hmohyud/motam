@@ -23,6 +23,10 @@ function groupByCategory(poems, categoryOrder = []) {
 
 // Info Modal Component
 function InfoModal({ isOpen, onClose }) {
+  const [activeTab, setActiveTab] = useState("dedication");
+  const [showScrollHint, setShowScrollHint] = useState(true);
+  const contentRef = React.useRef(null);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -44,6 +48,21 @@ function InfoModal({ isOpen, onClose }) {
     }
   }, [isOpen, onClose]);
 
+  // Reset scroll hint when tab changes
+  useEffect(() => {
+    setShowScrollHint(true);
+    if (contentRef.current) {
+      contentRef.current.scrollTop = 0;
+    }
+  }, [activeTab]);
+
+  // Check if scrolled near bottom
+  const handleScroll = (e) => {
+    const { scrollTop, scrollHeight, clientHeight } = e.target;
+    const nearBottom = scrollTop + clientHeight >= scrollHeight - 50;
+    setShowScrollHint(!nearBottom);
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -56,116 +75,156 @@ function InfoModal({ isOpen, onClose }) {
         >
           ×
         </button>
-        <div className="info-modal-content">
-          <section className="dedication-section">
-            <p className="dedication-label">Dedicated</p>
-            <p className="dedication-text">
-              in humble thanksgiving
-              <br />
-              for their countless blessings
-              <br />
-              to the radiant Da'is
-            </p>
-            <p className="dedication-names">
-              Syedna Taher Saifuddin <span className="honorific">(RA)</span>
-              <br />
-              Syedna Mohammed Burhanuddin{" "}
-              <span className="honorific">(RA)</span>
-              <br />
-              Syedna Khuzaima Qutbuddin <span className="honorific">(RA)</span>
-              <br />
-              Syedna Taher Fakhruddin <span className="honorific">(TUS)</span>
-            </p>
-            <p className="dedication-text">
-              and with heartfelt gratitude
-              <br />
-              to my beloved, respected parents
-            </p>
-            <p className="dedication-names">
-              Rasul Hudood Syedi Ibrahim bhaisaheb Zainuddin
-              <br />
-              al-Sayyida al-Fadila Fatema baisaheba
-            </p>
-          </section>
-          <div className="section-divider">❧</div>
-          <section className="foreword-section">
-            <h2 className="foreword-title">Foreword</h2>
-            <p>
-              Sakina Busaheba is the embodiment of the strong Muslim
-              woman—steadfast in faith, serene in adversity, radiant in love.
-              She stands firm through calamity yet greets every soul with a
-              smile. Her heart rejoices in gratitude through fire and rain. Her
-              lips are ever moist with the name of Ali, and her heart overflows
-              with love for Husain.
-            </p>
-            <p>
-              For over fifty years she was the solace—<em>sakina</em>—of her
-              husband, the 53rd Dāʿī al-Muṭlaq, Syedna Khuzaima Qutbuddin (RA):
-              his companion in light and darkness alike. After his passing, she
-              yearns for him day and night, yet remains strong and content,
-              knowing she will meet him again in heaven.
-            </p>
-            <p>
-              Sakina Busaheba's lineage is luminous. She is the mother of the
-              54th and present Tayyibi Dāʿī al-Muṭlaq, Syedna Taher Fakhruddin
-              (TUS); wife of the 53rd Dāʿī, Syedna Khuzaima Qutbuddin (RA);
-              sister-in-law of the 52nd Dāʿī, Syedna Mohammed Burhanuddin (RA);
-              daughter-in-law and niece of the 51st Dāʿī, Syedna Taher Saifuddin
-              (RA); and granddaughter of the 49th Dāʿī, Syedna Mohammed
-              Burhanuddin (RA).
-            </p>
-            <p>
-              Her father, Rasul Hudood Syedi Ibrahim bhaisaheb Zainuddin, and
-              her mother, al-Sayyida al-Fadila Fatema bensaheba, nurtured her in
-              faith and learning. Guided by their example—and blessed by the
-              teachings and nazaraat of Syedna Taher Saifuddin (RA)—she grew in
-              both scholarship and devotion. She prays for hours, recites
-              tasbeeh with deep focus, and completes a full reading of the
-              Qur'an each day in Ramadan.
-            </p>
-            <p>
-              A devoted mother of nine, she raised her children in faith,
-              fortitude, and aspiration. Alongside Syedna Qutbuddin (RA), she
-              inculcated in them—sons and daughters—the importance of education
-              and the ethic of service. Her grandchildren find in her a fountain
-              of gentle affection.
-            </p>
-            <p>
-              In every role—daughter, wife, mother, counsellor, teacher,
-              scholar, benefactor, believer, devotee, and poet—she reflects
-              resilience, sincerity, devotion, warmth, generosity and grace. She
-              is, truly, the epitome of Muslim womanhood—my mother, an
-              inspiration to me and to us all.
-            </p>
-            <p>
-              At a time when few women studied beyond home, she attended
-              Cathedral School and Sophia College, graduating with honours in
-              English literature and a B.Ed., also teaching there for two years.
-              She reads widely and now especially appreciates political
-              commentary and historical works. She has long loved Shakespeare,
-              Milton, Emerson, and Frost—poets who helped shape her own voice.
-            </p>
-            <p>
-              Sakina Busaheba began composing poetry in the early 1960s and
-              continues to this day. This beautiful and intimate collection is a
-              mirror of her life and her faith—of devotion, gratitude, and love.
-              Within these pages are 220 poems in praise of Allah, in awe at the
-              circle of life, in remembrance of the Panjetan Paak, and in
-              devotion to the Da'is of her time—many written in elegy for her
-              noble husband, Syedna Khuzaima Qutbuddin (RA). They come from the
-              heart and they touch the heart—they will be recited and savoured
-              for generations to come.
-            </p>
-            <p className="foreword-signature">
-              <span className="signature-name">
-                Bazat Tahera binte Syedna Khuzaima Qutbuddin (RA)
-              </span>
-              <span className="signature-title">
-                AlBabtain Laudian Professor of Arabic, University of Oxford
-              </span>
-            </p>
-          </section>
+
+        <div className="info-modal-tabs">
+          <button
+            className={`info-tab ${activeTab === "dedication" ? "active" : ""}`}
+            onClick={() => setActiveTab("dedication")}
+          >
+            Dedication
+          </button>
+          <button
+            className={`info-tab ${activeTab === "foreword" ? "active" : ""}`}
+            onClick={() => setActiveTab("foreword")}
+          >
+            Foreword
+          </button>
         </div>
+
+        <div
+          className="info-modal-content"
+          ref={contentRef}
+          onScroll={handleScroll}
+        >
+          {activeTab === "dedication" && (
+            <section className="dedication-section">
+              <p className="dedication-text">
+                in humble thanksgiving
+                <br />
+                for their countless blessings
+                <br />
+                to the radiant Da'is
+              </p>
+              <p className="dedication-names">
+                Syedna Taher Saifuddin <span className="honorific">(RA)</span>
+                <br />
+                Syedna Mohammed Burhanuddin{" "}
+                <span className="honorific">(RA)</span>
+                <br />
+                Syedna Khuzaima Qutbuddin{" "}
+                <span className="honorific">(RA)</span>
+                <br />
+                Syedna Taher Fakhruddin <span className="honorific">(TUS)</span>
+              </p>
+              <div className="dedication-divider">❧</div>
+              <p className="dedication-text">
+                and with heartfelt gratitude
+                <br />
+                to my beloved, respected parents
+              </p>
+              <p className="dedication-names">
+                Rasul Hudood Syedi Ibrahim bhaisaheb Zainuddin
+                <br />
+                al-Sayyida al-Fadila Fatema baisaheba
+              </p>
+            </section>
+          )}
+
+          {activeTab === "foreword" && (
+            <section className="foreword-section">
+              <p>
+                Sakina Busaheba is the embodiment of the strong Muslim
+                woman—steadfast in faith, serene in adversity, radiant in love.
+                She stands firm through calamity yet greets every soul with a
+                smile. Her heart rejoices in gratitude through fire and rain.
+                Her lips are ever moist with the name of Ali, and her heart
+                overflows with love for Husain.
+              </p>
+              <p>
+                For over fifty years she was the solace—<em>sakina</em>—of her
+                husband, the 53rd Dāʿī al-Muṭlaq, Syedna Khuzaima Qutbuddin
+                (RA): his companion in light and darkness alike. After his
+                passing, she yearns for him day and night, yet remains strong
+                and content, knowing she will meet him again in heaven.
+              </p>
+              <p>
+                Sakina Busaheba's lineage is luminous. She is the mother of the
+                54th and present Tayyibi Dāʿī al-Muṭlaq, Syedna Taher Fakhruddin
+                (TUS); wife of the 53rd Dāʿī, Syedna Khuzaima Qutbuddin (RA);
+                sister-in-law of the 52nd Dāʿī, Syedna Mohammed Burhanuddin
+                (RA); daughter-in-law and niece of the 51st Dāʿī, Syedna Taher
+                Saifuddin (RA); and granddaughter of the 49th Dāʿī, Syedna
+                Mohammed Burhanuddin (RA).
+              </p>
+              <p>
+                Her father, Rasul Hudood Syedi Ibrahim bhaisaheb Zainuddin, and
+                her mother, al-Sayyida al-Fadila Fatema bensaheba, nurtured her
+                in faith and learning. Guided by their example—and blessed by
+                the teachings and nazaraat of Syedna Taher Saifuddin (RA)—she
+                grew in both scholarship and devotion. She prays for hours,
+                recites tasbeeh with deep focus, and completes a full reading of
+                the Qur'an each day in Ramadan.
+              </p>
+              <p>
+                A devoted mother of nine, she raised her children in faith,
+                fortitude, and aspiration. Alongside Syedna Qutbuddin (RA), she
+                inculcated in them—sons and daughters—the importance of
+                education and the ethic of service. Her grandchildren find in
+                her a fountain of gentle affection. In every role—daughter,
+                wife, mother, counsellor, teacher, scholar, benefactor,
+                believer, devotee, and poet—she reflects resilience, sincerity,
+                devotion, warmth, generosity and grace. She is, truly, the
+                epitome of Muslim womanhood—my mother, an inspiration to me and
+                to us all.
+              </p>
+              <p>
+                At a time when few women studied beyond home, she attended
+                Cathedral School and Sophia College, graduating with honours in
+                English literature and a B.Ed., also teaching there for two
+                years. She reads widely and now especially appreciates political
+                commentary and historical works. She has long loved Shakespeare,
+                Milton, Emerson, and Frost—poets who helped shape her own voice.
+              </p>
+              <p>
+                Sakina Busaheba began composing poetry in the early 1960s and
+                continues to this day. This beautiful and intimate collection is
+                a mirror of her life and her faith—of devotion, gratitude, and
+                love. Within these pages are 220 poems in praise of Allah, in
+                awe at the circle of life, in remembrance of the Panjetan Paak,
+                and in devotion to the Da'is of her time—many written in elegy
+                for her noble husband, Syedna Khuzaima Qutbuddin (RA). They come
+                from the heart and they touch the heart—they will be recited and
+                savoured for generations to come.
+              </p>
+              <p className="foreword-signature">
+                <span className="signature-name">
+                  Bazat Tahera binte Syedna Khuzaima Qutbuddin (RA)
+                </span>
+                <span className="signature-title">
+                  AlBabtain Laudian Professor of Arabic, University of Oxford
+                </span>
+              </p>
+            </section>
+          )}
+        </div>
+
+        {/* Scroll indicator */}
+        {activeTab === "foreword" && showScrollHint && (
+          <div className="scroll-indicator">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -248,19 +307,19 @@ function IndexModal({ isOpen, onClose, poems, categoryOrder, onSelectPoem }) {
               <div className="index-toggle">
                 <button
                   className={`index-toggle-btn ${
-                    groupBy === "none" ? "active" : ""
-                  }`}
-                  onClick={() => setGroupBy("none")}
-                >
-                  None
-                </button>
-                <button
-                  className={`index-toggle-btn ${
                     groupBy === "category" ? "active" : ""
                   }`}
                   onClick={() => setGroupBy("category")}
                 >
                   Category
+                </button>
+                <button
+                  className={`index-toggle-btn ${
+                    groupBy === "none" ? "active" : ""
+                  }`}
+                  onClick={() => setGroupBy("none")}
+                >
+                  None
                 </button>
               </div>
             </div>
@@ -283,14 +342,14 @@ function IndexModal({ isOpen, onClose, poems, categoryOrder, onSelectPoem }) {
                 >
                   A-Z
                 </button>
-                {/* <button
+                <button
                   className={`index-toggle-btn ${
                     sortBy === "category" ? "active" : ""
                   }`}
                   onClick={() => setSortBy("category")}
                 >
                   Cat
-                </button> */}
+                </button>
               </div>
             </div>
           </div>

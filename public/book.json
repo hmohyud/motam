@@ -1,0 +1,3108 @@
+{
+  "meta": {
+    "bookTitle": "From Earth to Eternity",
+    "subtitle": "Poems of Devotion, Gratitude, and Love",
+    "author": "Ummul Mumineen Sakina Aaisaheba",
+    "publisher": "Fatemi Dawat Publications",
+    "yearHijriGregorian": "1447/2025",
+    "copyright": "Fatemi Dawat Publications, 2025"
+  },
+  "toc": [
+    {
+      "title": "I Have Achieved Everything",
+      "page": 13
+    },
+    {
+      "title": "So, We Swam",
+      "page": 14
+    },
+    {
+      "title": "The Potter and the Pot",
+      "page": 15
+    },
+    {
+      "title": "What Fear Do I Have of Death",
+      "page": 16
+    },
+    {
+      "title": "Hurr Chooses Husain",
+      "page": 17
+    },
+    {
+      "title": "When the Waves Engulf",
+      "page": 18
+    },
+    {
+      "title": "Fakhruddin Maula",
+      "page": 19
+    },
+    {
+      "title": "What Do You Say",
+      "page": 20
+    },
+    {
+      "title": "I Am Part of Husain",
+      "page": 21
+    },
+    {
+      "title": "When You Left Me",
+      "page": 22
+    },
+    {
+      "title": "Iqra - The First Command",
+      "page": 23
+    },
+    {
+      "title": "Heaven Is Waiting for You",
+      "page": 24
+    },
+    {
+      "title": "\"In the Name of Allah, Read!\"",
+      "page": 25
+    },
+    {
+      "title": "The Lionesses of Karbala",
+      "page": 26
+    },
+    {
+      "title": "The Sun Rises",
+      "page": 27
+    },
+    {
+      "title": "The Boulder",
+      "page": 28
+    },
+    {
+      "title": "My Maula Is Taller Than the Mountain",
+      "page": 29
+    },
+    {
+      "title": "Calm Depths",
+      "page": 30
+    },
+    {
+      "title": "Where Does It Come From",
+      "page": 31
+    },
+    {
+      "title": "I Miss Him",
+      "page": 32
+    },
+    {
+      "title": "Born Unto You",
+      "page": 33
+    },
+    {
+      "title": "Aqa Mohammed Burhanuddin",
+      "page": 34
+    },
+    {
+      "title": "The Search for the Real",
+      "page": 35
+    },
+    {
+      "title": "The Moon in Ali's House",
+      "page": 37
+    },
+    {
+      "title": "Yaa Ali",
+      "page": 38
+    },
+    {
+      "title": "One Day, Two Faces",
+      "page": 39
+    },
+    {
+      "title": "Think of Husain",
+      "page": 40
+    },
+    {
+      "title": "The Extravagant Painter",
+      "page": 41
+    },
+    {
+      "title": "Only You",
+      "page": 42
+    },
+    {
+      "title": "By the Grace of the Divine Pen",
+      "page": 43
+    },
+    {
+      "title": "The Weight of Being Alone",
+      "page": 45
+    },
+    {
+      "title": "O Maula Ali",
+      "page": 46
+    },
+    {
+      "title": "The Price of a Promise",
+      "page": 47
+    },
+    {
+      "title": "The Pain is in the Pulse",
+      "page": 48
+    },
+    {
+      "title": "Follow Me",
+      "page": 49
+    },
+    {
+      "title": "Rejoice, O Mumineen",
+      "page": 51
+    },
+    {
+      "title": "The Story of Husain",
+      "page": 52
+    },
+    {
+      "title": "Allah Created a Magnificent Man",
+      "page": 53
+    },
+    {
+      "title": "A Tear is an Amazing Thing",
+      "page": 54
+    },
+    {
+      "title": "From \"La Ilaha\" to \"Illa -llah\"",
+      "page": 55
+    },
+    {
+      "title": "Being is Life",
+      "page": 56
+    },
+    {
+      "title": "Come to the Door of Ali",
+      "page": 57
+    },
+    {
+      "title": "Life-Giving Water",
+      "page": 58
+    },
+    {
+      "title": "Subhan Allah",
+      "page": 59
+    },
+    {
+      "title": "The Transience of Glory",
+      "page": 60
+    },
+    {
+      "title": "When the Sun Lies Down",
+      "page": 61
+    },
+    {
+      "title": "Earth Accepts",
+      "page": 62
+    },
+    {
+      "title": "You Accept the Light of Faiz, O Syedna Taher Saifuddin",
+      "page": 63
+    },
+    {
+      "title": "The Twelfth Night",
+      "page": 64
+    },
+    {
+      "title": "Truth is Here",
+      "page": 65
+    },
+    {
+      "title": "O Mumin",
+      "page": 66
+    },
+    {
+      "title": "The Big Question",
+      "page": 67
+    },
+    {
+      "title": "Come to the Qubba of Qutbuddin Maula",
+      "page": 68
+    },
+    {
+      "title": "Raudat un Noor",
+      "page": 69
+    },
+    {
+      "title": "The Waterfall",
+      "page": 70
+    },
+    {
+      "title": "The Seed of Man",
+      "page": 71
+    },
+    {
+      "title": "The Gift of a Child",
+      "page": 72
+    },
+    {
+      "title": "A Baby Child",
+      "page": 73
+    },
+    {
+      "title": "The Path of Islam and Imaan",
+      "page": 74
+    },
+    {
+      "title": "The Perfect Man",
+      "page": 75
+    },
+    {
+      "title": "Islam is Beautiful",
+      "page": 76
+    },
+    {
+      "title": "O Husain",
+      "page": 77
+    },
+    {
+      "title": "Mazoon-e-Dawat, O Maula Burhanuddin",
+      "page": 79
+    },
+    {
+      "title": "He Came to Khadija",
+      "page": 80
+    },
+    {
+      "title": "You Win Either Way",
+      "page": 81
+    },
+    {
+      "title": "When Will We Meet Again",
+      "page": 82
+    },
+    {
+      "title": "At the Feet of Husain",
+      "page": 83
+    },
+    {
+      "title": "The Accounting",
+      "page": 84
+    },
+    {
+      "title": "Life Everlasting",
+      "page": 85
+    },
+    {
+      "title": "The Grief of Husain",
+      "page": 86
+    },
+    {
+      "title": "The Aura of the Holy Five",
+      "page": 87
+    },
+    {
+      "title": "Justice from Allah",
+      "page": 88
+    },
+    {
+      "title": "The Holy Five Reunited",
+      "page": 89
+    },
+    {
+      "title": "The Six Trees",
+      "page": 90
+    },
+    {
+      "title": "In Thanksgiving",
+      "page": 92
+    },
+    {
+      "title": "When Love Lasts Through Old Age",
+      "page": 93
+    },
+    {
+      "title": "Heaven's Doorstep",
+      "page": 94
+    },
+    {
+      "title": "Hurr at the Crossroads",
+      "page": 95
+    },
+    {
+      "title": "Inspire Me, O Allah",
+      "page": 96
+    },
+    {
+      "title": "The Creator and the Created",
+      "page": 98
+    },
+    {
+      "title": "The Spark of Faith",
+      "page": 99
+    },
+    {
+      "title": "Tayyib after Tayyib unto Eternity",
+      "page": 100
+    },
+    {
+      "title": "You Are With Me",
+      "page": 101
+    },
+    {
+      "title": "It Is Just",
+      "page": 102
+    },
+    {
+      "title": "I Found You There",
+      "page": 103
+    },
+    {
+      "title": "How Shall We Thank You",
+      "page": 104
+    },
+    {
+      "title": "Karbala is Husain and Husain is Karbala",
+      "page": 105
+    },
+    {
+      "title": "My Dream Will Become a Reality",
+      "page": 106
+    },
+    {
+      "title": "O Mazoon-e-Dawat!",
+      "page": 107
+    },
+    {
+      "title": "The Fusion of Extremes",
+      "page": 108
+    },
+    {
+      "title": "He Wills and It Is",
+      "page": 109
+    },
+    {
+      "title": "God Transcendent",
+      "page": 110
+    },
+    {
+      "title": "The Last Debt",
+      "page": 111
+    },
+    {
+      "title": "Savour Now",
+      "page": 112
+    },
+    {
+      "title": "We Are Home",
+      "page": 113
+    },
+    {
+      "title": "Why?",
+      "page": 114
+    },
+    {
+      "title": "Without You",
+      "page": 115
+    },
+    {
+      "title": "How Shall I Go On",
+      "page": 116
+    },
+    {
+      "title": "How Do I Miss You",
+      "page": 117
+    },
+    {
+      "title": "The Mind and the Heart",
+      "page": 118
+    },
+    {
+      "title": "You Are Not Seen",
+      "page": 119
+    },
+    {
+      "title": "A Vacuum",
+      "page": 120
+    },
+    {
+      "title": "That Is Enough for Me",
+      "page": 121
+    },
+    {
+      "title": "Dying Is About Life",
+      "page": 122
+    },
+    {
+      "title": "I Will Be",
+      "page": 123
+    },
+    {
+      "title": "Under the Spectacular Canopy",
+      "page": 124
+    },
+    {
+      "title": "Age Overtakes Me",
+      "page": 125
+    },
+    {
+      "title": "Questions of the World",
+      "page": 126
+    },
+    {
+      "title": "By His Grace",
+      "page": 127
+    },
+    {
+      "title": "A Tear for Husain",
+      "page": 128
+    },
+    {
+      "title": "Everything",
+      "page": 129
+    },
+    {
+      "title": "No Regrets",
+      "page": 130
+    },
+    {
+      "title": "How Can We Repay You",
+      "page": 131
+    },
+    {
+      "title": "The Gateway",
+      "page": 132
+    },
+    {
+      "title": "Enter, O Mumin",
+      "page": 133
+    },
+    {
+      "title": "What's Heaven For",
+      "page": 134
+    },
+    {
+      "title": "A Crescendo of Joy",
+      "page": 135
+    },
+    {
+      "title": "The Space Between",
+      "page": 136
+    },
+    {
+      "title": "A Punishment That Is Beautiful",
+      "page": 137
+    },
+    {
+      "title": "Music of the Rain",
+      "page": 138
+    },
+    {
+      "title": "Bears Witness",
+      "page": 139
+    },
+    {
+      "title": "What Is Faith",
+      "page": 140
+    },
+    {
+      "title": "To Know Allah",
+      "page": 141
+    },
+    {
+      "title": "The Canopy of the Skies",
+      "page": 142
+    },
+    {
+      "title": "A Life That Will Be",
+      "page": 143
+    },
+    {
+      "title": "A Place in Heaven",
+      "page": 144
+    },
+    {
+      "title": "The Gift of Allah",
+      "page": 145
+    },
+    {
+      "title": "Hope",
+      "page": 146
+    },
+    {
+      "title": "That's All I Wish For",
+      "page": 147
+    },
+    {
+      "title": "Water Was Denied to You",
+      "page": 148
+    },
+    {
+      "title": "The Essence of a Tear",
+      "page": 149
+    },
+    {
+      "title": "From the Ashes of Karbala",
+      "page": 150
+    },
+    {
+      "title": "Remember the Creator",
+      "page": 151
+    },
+    {
+      "title": "I Am Grateful",
+      "page": 152
+    },
+    {
+      "title": "Lead Me to Heaven",
+      "page": 153
+    },
+    {
+      "title": "What Is Life",
+      "page": 154
+    },
+    {
+      "title": "I Am Blessed",
+      "page": 155
+    },
+    {
+      "title": "On the Path of Salvation",
+      "page": 156
+    },
+    {
+      "title": "Safe From Heat and Cold",
+      "page": 157
+    },
+    {
+      "title": "The Sun Will Rise Again",
+      "page": 158
+    },
+    {
+      "title": "Overflowing Bliss",
+      "page": 159
+    },
+    {
+      "title": "Yesterday and Tomorrow",
+      "page": 160
+    },
+    {
+      "title": "The Path to Heaven",
+      "page": 161
+    },
+    {
+      "title": "The Final Message",
+      "page": 162
+    },
+    {
+      "title": "To Reach Heaven",
+      "page": 163
+    },
+    {
+      "title": "The Two Paths",
+      "page": 164
+    },
+    {
+      "title": "The Colour Green",
+      "page": 165
+    },
+    {
+      "title": "Eight Paradises",
+      "page": 166
+    },
+    {
+      "title": "The Gates of Heaven",
+      "page": 167
+    },
+    {
+      "title": "What Is Death",
+      "page": 168
+    },
+    {
+      "title": "Time Is on the Move",
+      "page": 169
+    },
+    {
+      "title": "What Is Hope",
+      "page": 170
+    },
+    {
+      "title": "No Escape",
+      "page": 171
+    },
+    {
+      "title": "What Is Love",
+      "page": 172
+    },
+    {
+      "title": "The Forgiveness and the Anger",
+      "page": 173
+    },
+    {
+      "title": "This Is Your Home for Eternity",
+      "page": 174
+    },
+    {
+      "title": "The Work of Creation",
+      "page": 175
+    },
+    {
+      "title": "Where Is the Soul",
+      "page": 176
+    },
+    {
+      "title": "A Tree Without Roots",
+      "page": 177
+    },
+    {
+      "title": "A Drop Becomes an Ocean",
+      "page": 178
+    },
+    {
+      "title": "That Is Life on Earth",
+      "page": 179
+    },
+    {
+      "title": "The Beginning of Mercy",
+      "page": 180
+    },
+    {
+      "title": "Let Us Dance Together, Wind",
+      "page": 181
+    },
+    {
+      "title": "I Am Proud to Be a Woman",
+      "page": 182
+    },
+    {
+      "title": "Sorry, Sir",
+      "page": 183
+    },
+    {
+      "title": "The Miracle of Faith",
+      "page": 184
+    },
+    {
+      "title": "If a Calamity Befalls Me",
+      "page": 185
+    },
+    {
+      "title": "The Mumin Tree",
+      "page": 186
+    },
+    {
+      "title": "No End",
+      "page": 187
+    },
+    {
+      "title": "From Where to Where",
+      "page": 188
+    },
+    {
+      "title": "Through Fire to Heaven",
+      "page": 189
+    },
+    {
+      "title": "O Merciful One",
+      "page": 190
+    },
+    {
+      "title": "Washed Away",
+      "page": 191
+    },
+    {
+      "title": "When Will the Sun Rise Again",
+      "page": 192
+    },
+    {
+      "title": "Like a Date Palm",
+      "page": 193
+    },
+    {
+      "title": "The Mercy of Rain",
+      "page": 194
+    },
+    {
+      "title": "What Is Heaven",
+      "page": 195
+    },
+    {
+      "title": "Hope Begins to Emerge",
+      "page": 196
+    },
+    {
+      "title": "The Orchestra of Nature",
+      "page": 197
+    },
+    {
+      "title": "The Final Call",
+      "page": 198
+    },
+    {
+      "title": "What Is Time",
+      "page": 199
+    },
+    {
+      "title": "For the Love of Ali",
+      "page": 200
+    },
+    {
+      "title": "Mercy from Allah",
+      "page": 201
+    },
+    {
+      "title": "Every Child",
+      "page": 202
+    },
+    {
+      "title": "The Soul Makes Us Human",
+      "page": 203
+    },
+    {
+      "title": "Eternity or the Snake",
+      "page": 204
+    },
+    {
+      "title": "From Earth to Eternity",
+      "page": 205
+    },
+    {
+      "title": "Fatema, Heart of the Holy Five",
+      "page": 206
+    },
+    {
+      "title": "The Colour of Islam",
+      "page": 207
+    },
+    {
+      "title": "Water of Faith",
+      "page": 208
+    },
+    {
+      "title": "My Hope is Heaven",
+      "page": 209
+    },
+    {
+      "title": "In the First Instance",
+      "page": 210
+    },
+    {
+      "title": "When You Lose Your Faith",
+      "page": 211
+    },
+    {
+      "title": "Maula Ali Is Everywhere",
+      "page": 212
+    },
+    {
+      "title": "Qutbuddin Maula",
+      "page": 213
+    },
+    {
+      "title": "When it Comes to the Creator",
+      "page": 214
+    },
+    {
+      "title": "Who is Allah",
+      "page": 215
+    },
+    {
+      "title": "The Only Question is Why",
+      "page": 216
+    },
+    {
+      "title": "The Awakening in Heaven",
+      "page": 217
+    },
+    {
+      "title": "What Will Heaven Be Like",
+      "page": 218
+    },
+    {
+      "title": "Out With the Dross",
+      "page": 219
+    },
+    {
+      "title": "The Cycle of Being",
+      "page": 220
+    },
+    {
+      "title": "The Rain of Life",
+      "page": 221
+    },
+    {
+      "title": "When You Went Away",
+      "page": 222
+    },
+    {
+      "title": "The Milk of Faith",
+      "page": 223
+    },
+    {
+      "title": "You Are Everywhere",
+      "page": 224
+    },
+    {
+      "title": "When Life Begins",
+      "page": 225
+    },
+    {
+      "title": "The Shortest Road",
+      "page": 226
+    },
+    {
+      "title": "Spring Will Come",
+      "page": 227
+    },
+    {
+      "title": "If There Is Hope in Heaven",
+      "page": 228
+    },
+    {
+      "title": "My Loved Ones Are Waiting",
+      "page": 229
+    },
+    {
+      "title": "The Ladder of Faith",
+      "page": 230
+    },
+    {
+      "title": "I Have a Prayer in my Heart",
+      "page": 231
+    },
+    {
+      "title": "O Lion of Allah",
+      "page": 232
+    },
+    {
+      "title": "The Horror of Karbala",
+      "page": 233
+    },
+    {
+      "title": "Compensation",
+      "page": 234
+    },
+    {
+      "title": "Still Waiting",
+      "page": 235
+    },
+    {
+      "title": "Man Can Endure Pain",
+      "page": 236
+    },
+    {
+      "title": "A Chance to Believe",
+      "page": 237
+    },
+    {
+      "title": "When I See You",
+      "page": 238
+    }
+  ],
+  "sections": [
+    {
+      "type": "front_matter_raw",
+      "body": "From Earth to Eternity\nPoems of Devotion, Gratitude, and Love\n \n\n\nwritten by\nUmmul Mumineen Sakina Aaisaheba\nwife of Syedna Khuzaima Qutbuddin (RA)\n\n\n\n\n\n\nFatemi Dawat Publications\n1447/2025\n________________\n\n\nCopyright \nFatemi Dawat Publications, 2025\n________________\n\n\nDedicated \nin humble thanksgiving \nfor their countless blessings \nto the radiant Da’is\nSyedna Taher Saifuddin (RA)\nSyedna Mohammed Burhanuddin (RA)\nSyedna Khuzaima Qutbuddin (RA)\nSyedna Taher Fakhruddin (TUS)\n\n\nand with heartfelt gratitude \nto my beloved, respected parents\nRasul Hudood Syedi Ibrahim bhaisaheb Zainuddin\nal-Sayyida al-Fadila Fatema baisaheba\n\n\n\n\n________________\n\n\nForeword\nSakina Busaheba is the embodiment of the strong Muslim woman—steadfast in faith, serene in adversity, radiant in love. She stands firm through calamity yet greets every soul with a smile. Her heart rejoices in gratitude through fire and rain. Her lips are ever moist with the name of Ali, and her heart overflows with love for Husain.\nFor over fifty years she was the solace—sakina—of her husband, the 53rd Dāʿī al-Muṭlaq, Syedna Khuzaima Qutbuddin (RA): his companion in light and darkness alike. After his passing, she yearns for him day and night, yet remains strong and content, knowing she will meet him again in heaven.\nSakina Busaheba’s lineage is luminous. She is the mother of the 54th and present Tayyibi Dāʿī al-Muṭlaq, Syedna Taher Fakhruddin (TUS); wife of the 53rd Dāʿī, Syedna Khuzaima Qutbuddin (RA); sister-in-law of the 52nd Dāʿī, Syedna Mohammed Burhanuddin (RA); daughter-in-law and niece of the 51st Dāʿī, Syedna Taher Saifuddin (RA); and granddaughter of the 49th Dāʿī, Syedna Mohammed Burhanuddin (RA).\nHer father, Rasul Hudood Syedi Ibrahim bhaisaheb Zainuddin, and her mother, al-Sayyida al-Fadila Fatema bensaheba, nurtured her in faith and learning. Guided by their example—and blessed by the teachings and nazaraat of Syedna Taher Saifuddin (RA)—she grew in both scholarship and devotion. She prays for hours, recites tasbeeh with deep focus, and completes a full reading of the Qur’an each day in Ramadan. \nA devoted mother of nine, she raised her children in faith, fortitude, and aspiration. Alongside Syedna Qutbuddin (RA), she inculcated in them—sons and daughters—the importance of education and the ethic of service. Her grandchildren find in her a fountain of gentle affection. In every role—daughter, wife, mother, counsellor, teacher, scholar, benefactor, believer, devotee, and poet—she reflects resilience, sincerity, devotion, warmth, generosity and grace. She is, truly, the epitome of Muslim womanhood—my mother, an inspiration to me and to us all.\nAt a time when few women studied beyond home, she attended Cathedral School and Sophia College, graduating with honours in English literature and a B.Ed., also teaching there for two years. She reads widely and now especially appreciates political commentary and historical works. She has long loved Shakespeare, Milton, Emerson, and Frost—poets who helped shape her own voice.\nSakina Busaheba began composing poetry in the early 1960s and continues to this day. This beautiful and intimate collection is a mirror of her life and her faith—of devotion, gratitude, and love. Within these pages are 220 poems in praise of Allah, in awe at the circle of life, in remembrance of the Panjetan Paak, and in devotion to the Da’is of her time—many written in elegy for her noble husband, Syedna Khuzaima Qutbuddin (RA). They come from the heart and they touch the heart—they will be recited and savoured for generations to come.\nBazat Tahera binte Syedna Khuzaima Qutbuddin (RA)\nAlBabtain Laudian Professor of Arabic, University of Oxford\n\n\n________________"
+    },
+    {
+      "type": "toc_raw",
+      "body": "Poems\n\n\nI Have Achieved Everything        13\nSo, We Swam        14\nThe Potter and the Pot        15\nWhat Fear Do I Have of Death        16\nHurr Chooses Husain        17\nWhen the Waves Engulf        18\nFakhruddin Maula        19\nWhat Do You Say        20\nI Am Part of Husain        21\nWhen You Left Me        22\nIqra — The First Command        23\nHeaven Is Waiting for You        24\n“In the Name of Allah, Read!”        25\nThe Lionesses of Karbala        26\nThe Sun Rises        27\nThe Boulder        28\nMy Maula Is Taller Than the Mountain        29\nCalm Depths        30\nWhere Does It Come From        31\nI Miss Him        32\nBorn Unto You        33\nAqa Mohammed Burhanuddin        34\nThe Search for the Real        35\nThe Moon in Ali’s House        37\nYaa Ali        38\nOne Day, Two Faces        39\nThink of Husain        40\nThe Extravagant Painter        41\nOnly You        42\nBy the Grace of the Divine Pen        43\nThe Weight of Being Alone        45\nO Maula Ali        46\nThe Price of a Promise        47\nThe Pain is in the Pulse        48\nFollow Me        49\nRejoice, O Mumineen        51\nThe Story of Husain        52\nAllah Created a Magnificent Man        53\nA Tear is an Amazing Thing        54\nFrom “La Ilaha” to “Illa -llah”        55\nBeing is Life        56\nCome to the Door of Ali        57\nLife-Giving Water        58\nSubhan Allah        59\nThe Transience of Glory        60\nWhen the Sun Lies Down        61\nEarth Accepts        62\nYou Accept the Light of Faiz, O Syedna Taher Saifuddin        63\nThe Twelfth Night        64\nTruth is Here        65\nO Mumin        66\nThe Big Question        67\nCome to the Qubba of Qutbuddin Maula        68\nRaudat un Noor        69\nThe Waterfall        70\nThe Seed of Man        71\nThe Gift of a Child        72\nA Baby Child        73\nThe Path of Islam and Imaan        74\nThe Perfect Man        75\nIslam is Beautiful        76\nO Husain        77\nMazoon-e-Dawat, O Maula Burhanuddin        79\nHe Came to Khadija        80\nYou Win Either Way        81\nWhen Will We Meet Again        82\nAt the Feet of Husain        83\nThe Accounting        84\nLife Everlasting        85\nThe Grief of Husain        86\nThe Aura of the Holy Five        87\nJustice from Allah        88\nThe Holy Five Reunited        89\nThe Six Trees        90\nIn Thanksgiving        92\nWhen Love Lasts Through Old Age        93\nHeaven’s Doorstep        94\nHurr at the Crossroads        95\nInspire Me, O Allah        96\nThe Creator and the Created        98\nThe Spark of Faith        99\nTayyib after Tayyib unto Eternity        100\nYou Are With Me        101\nIt Is Just        102\nI Found You There        103\nHow Shall We Thank You        104\nKarbala is Husain and Husain is Karbala        105\nMy Dream Will Become a Reality        106\nO Mazoon-e-Dawat!        107\nThe Fusion of Extremes        108\nHe Wills and It Is        109\nGod Transcendent        110\nThe Last Debt        111\nSavour Now        112\nWe Are Home        113\nWhy?        114\nWithout You        115\nHow Shall I Go On        116\nHow Do I Miss You        117\nThe Mind and the Heart        118\nYou Are Not Seen        119\nA Vacuum        120\nThat Is Enough for Me        121\nDying Is About Life        122\nI Will Be        123\nUnder the Spectacular Canopy        124\nAge Overtakes Me        125\nQuestions of the World        126\nBy His Grace        127\nA Tear for Husain        128\nEverything        129\nNo Regrets        130\nHow Can We Repay You        131\nThe Gateway        132\nEnter, O Mumin        133\nWhat’s Heaven For        134\nA Crescendo of Joy        135\nThe Space Between        136\nA Punishment That Is Beautiful        137\nMusic of the Rain        138\nBears Witness        139\nWhat Is Faith        140\nTo Know Allah        141\nThe Canopy of the Skies        142\nA Life That Will Be        143\nA Place in Heaven        144\nThe Gift of Allah        145\nHope        146\nThat’s All I Wish For        147\nWater Was Denied to You        148\nThe Essence of a Tear        149\nFrom the Ashes of Karbala        150\nRemember the Creator        151\nI Am Grateful        152\nLead Me to Heaven        153\nWhat Is Life        154\nI Am Blessed        155\nOn the Path of Salvation        156\nSafe From Heat and Cold        157\nThe Sun Will Rise Again        158\nOverflowing Bliss        159\nYesterday and Tomorrow        160\nThe Path to Heaven        161\nThe Final Message        162\nTo Reach Heaven        163\nThe Two Paths        164\nThe Colour Green        165\nEight Paradises        166\nThe Gates of Heaven        167\nWhat Is Death        168\nTime Is on the Move        169\nWhat Is Hope        170\nNo Escape        171\nWhat Is Love        172\nThe Forgiveness and the Anger        173\nThis Is Your Home for Eternity        174\nThe Work of Creation        175\nWhere Is the Soul        176\nA Tree Without Roots        177\nA Drop Becomes an Ocean        178\nThat Is Life on Earth        179\nThe Beginning of Mercy        180\nLet Us Dance Together, Wind        181\nI Am Proud to Be a Woman        182\nSorry, Sir        183\nThe Miracle of Faith        184\nIf a Calamity Befalls Me        185\nThe Mumin Tree        186\nNo End        187\nFrom Where to Where        188\nThrough Fire to Heaven        189\nO Merciful One        190\nWashed Away        191\nWhen Will the Sun Rise Again        192\nLike a Date Palm        193\nThe Mercy of Rain        194\nWhat Is Heaven        195\nHope Begins to Emerge        196\nThe Orchestra of Nature        197\nThe Final Call        198\nWhat Is Time        199\nFor the Love of Ali        200\nMercy from Allah        201\nEvery Child        202\nThe Soul Makes Us Human        203\nEternity or the Snake        204\nFrom Earth to Eternity        205\nFatema, Heart of the Holy Five        206\nThe Colour of Islam        207\nWater of Faith        208\nMy Hope is Heaven        209\nIn the First Instance        210\nWhen You Lose Your Faith        211\nMaula Ali Is Everywhere        212\nQutbuddin Maula        213\nWhen it Comes to the Creator        214\nWho is Allah        215\nThe Only Question is Why        216\nThe Awakening in Heaven        217\nWhat Will Heaven Be Like        218\nOut With the Dross        219\nThe Cycle of Being        220\nThe Rain of Life        221\nWhen You Went Away        222\nThe Milk of Faith        223\nYou Are Everywhere        224\nWhen Life Begins        225\nThe Shortest Road        226\nSpring Will Come        227\nIf There Is Hope in Heaven        228\nMy Loved Ones Are Waiting        229\nThe Ladder of Faith        230\nI Have a Prayer in my Heart        231\nO Lion of Allah        232\nThe Horror of Karbala        233\nCompensation        234\nStill Waiting        235\nMan Can Endure Pain        236\nA Chance to Believe        237\nWhen I See You        238"
+    }
+  ],
+  "poems": [
+    {
+      "title": "I Have Achieved Everything",
+      "page": 13,
+      "date": null,
+      "body": "In silent, contemplative moments,\nI think to myself\nthat I have achieved nothing:\nno might, no muscle,\nno strength, no space,\nno purpose, no pride,\nso pathetic, so puny.\n\n\nBut then I think of you, O Maula Ali,\nmy heart throbbing your name,\nyour love pervading my soul,\neach drop of my blood,\neach breath I take,\ncalling out to you, O Maula Ali.\n\n\nAnd I say\nI have achieved everything.",
+      "id": 1,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "So, We Swam",
+      "page": 14,
+      "date": "2016",
+      "body": "It is the time of the seclusion of the Imam.\nMen of God suffer,\nmen of faith, men of grace, men of honour suffer.\n\n\nAnd you, my beloved, suffered.\nA life spent in suffering —\nand then you were gone.\n\n\nWe were rudderless,\nadrift in a turbulent ocean.\nBut you had taught us to swim,\nto swim against adversity.\n\n\nSo … we swam.",
+      "id": 2,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Potter and the Pot",
+      "page": 15,
+      "date": null,
+      "body": "The Almighty\ncreated the mighty man.\nBut is there any comparison\nbetween the potter\nand the pot?",
+      "id": 3,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "What Fear Do I Have of Death",
+      "page": 16,
+      "date": null,
+      "body": "With the name of Allah on my lips,\nwith the faith of Mohammed and Ali in my heart,\nwith the tears of Fatema to wash away my sins,\nwith the love of Hasan and Husain in my blood —\n\n\nwhat fear do I have of death?",
+      "id": 4,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Hurr Chooses Husain",
+      "page": 17,
+      "date": null,
+      "body": "It is a tale of Hurr,\ncommander of the army of Yazid.\n\n\nHe has a choice.\nEvery human has a choice.\nHe is the master of his every action.\n\n\nThe distance between paradise and hellfire\nis eons apart,\nyet they are as close\nas the two beatings of a human heart.\n\n\nAnd Hurr\nchooses Husain.",
+      "id": 5,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "When the Waves Engulf",
+      "page": 18,
+      "date": null,
+      "body": "When the waves engulf them like shadows,\nthey call upon God,\nsincere in their faith, pure in their plea.\nBut when He delivers them safely to the shore,\nsome turn lukewarm once more.\n“And none deny Our signs except the ungrateful traitor.”",
+      "id": 6,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Fakhruddin Maula",
+      "page": 19,
+      "date": null,
+      "body": "I was walking in the storm,\nholding Qutbuddin Maula’s hand.\nThere was thunder and lightning;\nit was dark and wet.\n\n\nThen I looked up —\nand Fakhruddin Maula\nwas holding my hand.\n\n\nLet the storm rage!\nI knew I was safe.\nFrom one benevolent father\nto another benevolent father,\nI had nothing to fear.",
+      "id": 7,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "What Do You Say",
+      "page": 20,
+      "date": null,
+      "body": "What do you say to a friend\nwho gives you a helping hand?\nThank you.\n\n\nWhat do you say to your parents\nwho have given you life and nurtured you?\nI am eternally grateful.\n\n\nWhat do you say to Mohammed and Ali\nwho have given you heaven\nand saved you from hell?\n\n\nOur hearts are full\nand our lips silent.",
+      "id": 8,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "I Am Part of Husain",
+      "page": 21,
+      "date": null,
+      "body": "Rasulullah, the Prophet of Islam, has said:\nI am part of Husain,\nand Husain is part of me.\n\n\nO Yazid, O Shimr —\ndid you slay the Prophet\nin Karbala?",
+      "id": 9,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "When You Left Me",
+      "page": 22,
+      "date": null,
+      "body": "When you left me,\nthe rose lost its bloom,\nthe sun lost its shine,\nthe moon lost its coolness,\nthe stars lost their sparkle,\nthe mountains lost their majesty.\n\n\nWhen will we meet again?\n\n\nWhen we meet again,\nwill you hold my hand,\nand lead me\ninto heavenly bliss?",
+      "id": 10,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Iqra - The First Command",
+      "page": 23,
+      "date": null,
+      "body": "It was an age of ignorance —\nignorance of the Oneness of Allah,\nignorance of modesty,\nignorance of peace,\nignorance of the worth of women.\n\n\nThen Jibreel descended upon Mohammed\nwith a message from the Lord of all worlds,\nsaying, “In the name of Allah, recite! — Iqra.”\n\n\nAnd ignorance was dispelled,\ndarkness gave way to light,\nand the radiance of Islam\nspread and enveloped the world.",
+      "id": 11,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Heaven Is Waiting for You",
+      "page": 24,
+      "date": null,
+      "body": "Heaven has countless meanings —\nit is here, upon this earth,\nit is in the person of the Imam and Dai,\nit lies at a mother’s feet,\nit is near, it is far.\nFor a Mumin, it is a certainty.\n\n\nBut O my brothers and sisters in faith,\nask yourselves —\ndo you want to be a master there, or a slave?\n\n\nDo good here, and you shall be a master.\nDo evil, and you shall be a slave.\nThe choice is yours.\n\n\nYet remember —\nheaven is waiting for you.",
+      "id": 12,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "\"In the Name of Allah, Read!\"",
+      "page": 25,
+      "date": null,
+      "body": "“In the name of Allah, read!”\n\n\nWhy would Allah command Mohammed to read?\nBecause Mohammed could read the why and wherefore of the farthest sky,\nthe reason for the sun, moon, and stars.\nthe mystery of the human soul.\n\n\nHe knew the secrets hidden in the deepest ocean,\nthe majesty of the highest mountain.\nHe knew what had passed before him,\nand what was yet to come,\neven unto the Last Day.\n\n\nAnd the Quran says:\n“There is no wet or dry thing but it is contained in the Quran.”\n\n\nThat Quran is Mohammed.",
+      "id": 13,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Lionesses of Karbala",
+      "page": 26,
+      "date": null,
+      "body": "It is the evening of Ashura.\nHusain and his seventy-two have been slain,\nno man remains, save for Zainul Abedin.\n\n\nThen from the hot sands arise the heroines of Karbala,\nof the house of Ali and Fatema,\nof the house of Mohammed and Khadija.\n\n\nTheir very names speak of suffering,\nof endurance beyond measure,\nbeyond the grasp of the mind,\nbeyond the strength of flesh,\ninto the realm where pain itself falls silent.\n\n\nYet they suffered.\nThey witnessed.\nThey endured.\n\n\nThey were the women of Karbala\nwho stood with their men,\nhungered and thirsted with their men,\nand when their men were gone,\nthey remained\nwithout father or brother,\nwithout husband or son.\n\n\nThey lived for one purpose —\nto serve their Maula, Ali Zainul Abedin,\nto fulfill the dying wish of their brother, Husain.\n\nHow could they rise\nafter seeing the slaughter of Husain?\nHow could they look upon the ruins of hope\nand still stand tall?\n\n\nFrom those very sands, two lionesses rose —\nZainab and Umme Kulsum.\nTheir voices shook the palaces of power,\ntheir roar brought Yazid and his throne\ncrashing to the ground.\n\n\nAnd the name of Husain\nreverberated through the ages,\nechoing still,\nforever.",
+      "id": 14,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Sun Rises",
+      "page": 27,
+      "date": null,
+      "body": "The sun rises,\nand darkness melts away.\nNaseem, the gentle morning breeze,\nwhispers through the air.\nAll is well with the world.\n\n\nMumineen beseech their Maula,\ntheir Maula answers with blessings unbound.\nLife stirs anew,\nhope awakens once more.\nAll is well with the world.",
+      "id": 15,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Boulder",
+      "page": 28,
+      "date": null,
+      "body": "A boulder hurtles down the slope,\ncrushing tender, juicy saplings,\ncruelly trampling small blue flowers.\n\n\nBelow lies a village\nwith human interests, human joys, human tears.\nBut I have no hope,\nsave a single, screeching will\nto stop it\nfrom reaching its tragic end.\n\n\nAnd forever echoes the eternal, infinite How?\nHow? Why?\n\n\nPerhaps the ground gave way beneath its weight.\nPerhaps no vines had grown\nto bind it to the mountaintop.\nPerhaps it deliberately wrenched its gaze away\nfrom the fleecy cloud above,\nthat veiled the peak\nfrom scrutiny, from understanding, from nearness.\n\n\nO God of the clouds,\nsave the village from destruction.\nHalt the boulder’s headlong fall\nby Your mercy,\nthat reaches even\nto the deep mires of evil.",
+      "id": 16,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "My Maula Is Taller Than the Mountain",
+      "page": 29,
+      "date": null,
+      "body": "If calamity were to descend upon the tallest mountain,\nas it fell upon you, O Maula Ali,\nthe mountain would crumble to dust.\n\n\nIf floods were to engulf the earth,\nas sorrow drowned your soul, O Maula Ali,\nthe waters would sweep away all that is green and living.\n\n\nIf earthquakes were to rend the ground,\nas grief tore through your life, O Maula Ali,\nthe earth would become a gaping chasm.\n\n\nYet you, my Maula,\nare taller than the mountain,\npurer than the water,\nstronger than the trembling earth.",
+      "id": 17,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Calm Depths",
+      "page": 30,
+      "date": "1963",
+      "body": "Calm depths\nin fathoms upon fathoms of blue,\nlike an underground stream,\ncrystal-clear, cool, and pure.\n\n\nOr like the swaying silence,\nthe deep peace of the setting sun,\nwhere light glances from fresh, wet leaves\ngreen with life,\nvibrant with health.\n\n\nSpectators watch in awe,\nmarveling at the miracle of life,\nof knowledge, of love,\nof tenderness, of strength.\n\n\nWho is He?\nCan we bear to open our eyes\nto such brilliance?\n\n\nOnly when He draws us\ninto the depths of His gaze,\ninto His mercy, His bounty.\n\n\nNot love for another,\nfor He has made us\nHis own.",
+      "id": 18,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Where Does It Come From",
+      "page": 31,
+      "date": "14 July 1963",
+      "body": "Where does it come from?\nDoes it flow from His open arms?\nIt is a mystery —\nfor men still sorrow,\nfor men still die,\nfor men still linger, watching the birds fly,\nwatching the rainbow disappear.\n\n\nBut where — or how?\nThe rain falls to caress the seedling,\nlying hidden beneath the ground,\nguarding its secret, thirsting in silence.\n\n\nAs Time flows, so shall it flow on,\nunending, though men close their hearts and eyes,\nand turn their backs —\nstill it seeps through scent and sound,\ntill they are worn with ache and wonder.",
+      "id": 19,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "I Miss Him",
+      "page": 32,
+      "date": "August 1963",
+      "body": "I miss him\nas the earth misses the sun\nwhen night is overcast,\nas the trees stand bare\nwithout the birds that sing.",
+      "id": 20,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Born Unto You",
+      "page": 33,
+      "date": "August 1963",
+      "body": "All that is beautiful and true\nis bound with You, my Lord —\nthe surge of life, the pulse of confidence,\nthe surer step, steadfast in wisdom,\nmaking the world gleam green and deep,\nfresh from cooling, falling rain;\nthe sun shining on dew-laden flowers,\nheavy with mercy, overcome,\nurging them to rise with the joy of embrace,\nor simply to bring a smile to waiting lips.\n\n\nTo behold this vast, perplexing, magnificent\ncreation of joy and exuberance\nis to behold Your work, my Lord,\nthe shaping of Your artistic hands.\n\n\nThe earth may spin itself into a living meteor,\nyet You will take my love,\nflowing through my lifeblood,\nand draw me into Your immortal being —\nliving in love,\ntill thought dissolves,\nand I am born unto You.",
+      "id": 21,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Aqa Mohammed Burhanuddin",
+      "page": 34,
+      "date": null,
+      "body": "You are the Dai of Husain,\nbringing his message of patience and pain,\nwith barakaat that fall like gentle rain —\nAqa Mohammed Burhanuddin.\n\n\nA priceless pearl among Doat Mutlaqeen,\nbeloved son of Aqa Taher Saifuddin,\nthe light of their lineage, serene —\nAqa Mohammed Burhanuddin.\n\n\nTo you we bow our heads in shukur and humility,\nseeking your gaze, the gift of closest sublimity,\nalive within us through all eternity —\nAqa Mohammed Burhanuddin.\n\n\nMy daughter, Tahera Bazat,\nmay she forever remain in your khidmat,\nand give her all in the service of Dawat —\nAqa Mohammed Burhanuddin.\n\n\nMay you live in glory everlasting,\nwith all the blessing of creation never ending,\nyour glory ever and ever and ever increasing —\nAqa Mohammed Burhanuddin.",
+      "id": 22,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Search for the Real",
+      "page": 35,
+      "date": null,
+      "body": "All that glitters is not gold,\nall that shines is not real,\nall who claim to speak the truth\nare not always true.\n\n\nBut, O God, how shall I find\nthe gold, the real, the truth?\nI have not the eye of a jeweler,\nnor the skill of a craftsman,\nnor the wisdom of a sage.\n\n\nAnd He says:\ndo not look far,\ndo not seek the dazzle,\ndo not search for the truth —\nlook for Me.\n\n\nThen silence gathers our voices,\nour eyes roam the horizon,\nand the heart whispers —\nAllah.",
+      "id": 23,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Moon in Ali's House",
+      "page": 37,
+      "date": null,
+      "body": "It was a night of rejoicing.\nThe full moon had entered Ali’s house.\nThe heavens lit up.\nThe earth gleamed lush and full.\n\n\nThen tragedy struck.\nThe moon no longer dwells in Ali’s home.\nKicked by cruel feet,\nslapped by cruel hands —\nFatema is no more.\n\n\nAli is alone —\nFatema is no more.\nThe children weep —\nFatema is no more.\nThe earth is dark —\nFatema is no more.\n\n\nYet, behold!\nThe heavens light up —\nFatema is here.",
+      "id": 24,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Yaa Ali",
+      "page": 38,
+      "date": null,
+      "body": "In the inner precincts of the Kaaba,\nA child is born.\nHis name is Ali.\n\n\nThe first to be taken into Mohammed’s arms is the infant Ali.\nThe one nurtured in Mohammed’s house is the child Ali.\nThe first to embrace Islam is the young Ali.\n\n\nIn Hijra, to sleep in Mohammed’s bed is Ali.\nIn Badr, the shield of Mohammed is Ali.\nIn Uhud, the companion of Mohammed is Ali.\nIn Khandaq, in Khaibar, the Lion of God is Ali.\n\n\nThe spouse of Fatema is Ali.\nThe father of Hasan and Husain is Ali.\nIn Ghadeer, the chosen successor of Mohammed is Ali,\nAfter Mohammed death, the one who buries him is Ali.\n\n\nIn the heavens, there is Ali.\nIn North, South, East, and West, there is Ali.\nAt the Lake of Kausar, there is Ali.\n\n\nWith hands raised in supplication, I plead:\nGrant me a sip of that pure water, Yaa Ali!",
+      "id": 25,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "One Day, Two Faces",
+      "page": 39,
+      "date": null,
+      "body": "The Day of Judgement and Doomsday are one.\nFor the wicked, it is the end — Doomsday.\nFor the faithful, it is reckoning — Judgement Day.\nThere are debts to pay,\nbut mercy awaits.\nFor them,\nheaven is assured.",
+      "id": 26,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Think of Husain",
+      "page": 40,
+      "date": null,
+      "body": "When you are alone, think of Husain.\nWhen grief overwhelms you, think of Husain.\nWhen you are thirsty, think of Husain.\nWhen you cradle a child, think of Husain.\nWhen you come to a wedding, think of Husain.\nWhen you are in pain, think of Husain.\nWhen you feel forsaken, think of Husain.\n\n\nYou are never forsaken.\nHusain is with you.",
+      "id": 27,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Extravagant Painter",
+      "page": 41,
+      "date": "January 1961",
+      "body": "The extravagant painter\nEver the same, and eternally vivid,\nHe paints the horizon in scarlet, orange, and gold,\nthe landscape in soothing greens of every hue,\nlighting monotony\nwith dainty flowers,\nand men’s minds\nwith the highest sentiments,\nwith ideals of eternity.\n\n\nHis touch purifies into beauty;\nHis truth is beauty,\nHis light is beauty,\nHis love, creation, compassion,\nbears no comparison.\n\n\nThe black trees at night reach up to the sky;\nthey sing and wave praises in the morning light.\nThe wasteland stretches far away,\nyet here and there blooms the fruitfulness\nof indescribable loveliness.\n\n\nHe holds the universe\nin the palm of His hand,\nyet has the tenderness\nto reach the innermost recesses\nof the human soul.",
+      "id": 28,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Only You",
+      "page": 42,
+      "date": null,
+      "body": "All else is transient, ever changing.\nOnly You remain, constant, unchanging.\n\n\nGrant me a sign, a whisper of assurance.\nLook upon me with mercy,\na smile upon Your lips,\nanswering my silent plea.",
+      "id": 29,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "By the Grace of the Divine Pen",
+      "page": 43,
+      "date": null,
+      "body": "The future is bleak —\nit is as it was, as it is.\n\n\nIf death should come in twenty years,\nthe tale will remain the same.\nNo growth, no service, no khidmat.\n\n\nTomorrow I may bow my head,\nbut today I ask: why?\n\n\nForgive my sins.\nGrant me the chance to serve.\nGive strength to my pen—\nby the grace of the Divine Pen.\n\n\nLet me write of the Lord’s glory,\nof His Creation, His Prophet, His Ali.\nLet me write of the Imams—\ntheir saintliness, their perfection.\n\n\nLet me show the world\nthe power of faith,\nthe power of conviction,\nthe power of will.\n\n\nWhat else is open to me?\nAll other doors are closed.\nI stand alone,\nhedged in, suffocated.\n\n\nLet me pour my heart into words.\nGrant me the thought, give me the words,\nfor both come from You.\n\n\nLet them rise to You in praise,\nlet them rise to You in repentance.\nLet them find depth at Your door\nin prostration, in supplication, in plea.\n\n\nDo not turn them away.\nDo not reject them.\nFor I have none to turn to,\nnor do I wish to.\n\n\nIf You are my hope,\nthen I place my hope in none other.",
+      "id": 30,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Weight of Being Alone",
+      "page": 45,
+      "date": null,
+      "body": "What it is to be alone,\nalone in a crowd,\nalone among loved ones.\n\n\nSitting solitary at night, with all asleep:\nthe trees silent,\nthe wind silent,\nthe birds, the people, silent.\n\n\nTo be alone — I like it.\nTo feel alone — that is tragic.\n\n\nTo be given sight, then cast into darkness.\nEars to hear with, then the silence of abandoned loneliness.\nThe wish to give, and no one to receive.\nTo love, and nothing in return.\n\n\nFrustration. Hopelessness.\nA blank wall at every turn.\nDays pass by, and nights,\nnothing accomplished, nothing fulfilled.\n\n\nSo much fruit unplucked,\nso much water unharnessed,\nso much good intention wasted.\n\n\nDeath will come barging in tomorrow,\nand the question will be:\nWhat have you done?\nWhat have you done with the time given you?\n\n\nAnd I will bow my head in shame.\nNo excuse. No pleading.\nI have done nothing,\naffected nothing,\naccomplished nothing.\n\n\nBut no. There is still time.\nI will prepare provisions for my journey\nand return home.",
+      "id": 31,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "O Maula Ali",
+      "page": 46,
+      "date": null,
+      "body": "O Maula Ali!\nYou are the blaze of the sun,\nthe coolness of the moon,\nthe sparkle of the stars,\nthe rhythm of the turning spheres.\n\n\nYou are life-giving rain,\nthe sweetness of honey,\nthe fragrance of the rose.\n\n\nYou are my all —\nthe ecstasy lies in reaching you.",
+      "id": 32,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Price of a Promise",
+      "page": 47,
+      "date": null,
+      "body": "My brothers and sisters in faith,\nwhat is the price of a promise?\n\n\nIt was paid in the heat and sand of Karbala.\nIt lives in the sacrifice of the seventy-two,\nin the blood of Ali Asghar and Ali Akbar,\nin the torment of thirst,\nin the mashki of Abbas,\nin the slaughter of Husain.\n\n\nThe price of a promise\nis everlasting peace.",
+      "id": 33,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Pain is in the Pulse",
+      "page": 48,
+      "date": null,
+      "body": "The pain is in the pulse,\nthe strength is in the blood.\nThe ache is in the heart,\nthe loss is in the child.\nThe bereavement is in the brother,\nthe courage is in the kin,\nthe loyalty is in the seventy-two.\n\n\nO Husain!\nThey have not slaughtered you,\nfor you have risen.",
+      "id": 34,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Follow Me",
+      "page": 49,
+      "date": null,
+      "body": "Allah has created beauty\nout of dull, drab dust,\nHe has woven a thousand colours:\nof leaves and flowers,\nof birds and beasts.\n\n\nFrom the one, He created the many.\nFrom death, He brought forth life.\n\n\nThe mighty tree sleeps within the seed,\nthe free spirit is entrapped in clay.\nWill gross matter weigh the spirit down,\nor will the spirit raise it to itself?\nWill the seed burst forth into a tree,\nor decay into the mud it came from?\n\n\nThen Allah sends His Prophet to show the way —\nthe way to life beyond death:\nthe death of ignorance,\nthe death of disbelief,\nthe death of imprisonment of the soul.\n\n\nHe says, Follow Me,\nand I will lead you to eternal life,\nto freedom, to knowledge, to belief.\n\n\nHe asks:\nWhy the earth?\nWhy the sky, the stars, the sun?\nWhy beauty, and why decay?\nWhy man, and why you?\n\n\nHe says, Follow Me, and I will answer your why,\nand your why for and wherein.\n\n\nHe asks:\nWhy beauty and ugliness?\nWhy pure and impure?\nWhy good and evil?\nWhy contentment and despair?\nWhy abundance and starvation?\n\n\n\n\nFor all, there is an answer:\nAllah is All-Knowing, All-Powerful.",
+      "id": 35,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Rejoice, O Mumineen",
+      "page": 51,
+      "date": null,
+      "body": "Rejoice! Rejoice!\nBe happy and gay!\nWe shall leave this mud and quagmire,\nand find salvation with our Maula,\nAnd immunity from hell and hellfire.\n\nRejoice! Rejoice! O Mumineen!\nFor Mohammed is our saviour from pain,\nand Ali, Fatema, Hasan, and Husain —\ntheir barakaat fall upon us like showers of rain.",
+      "id": 36,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Story of Husain",
+      "page": 52,
+      "date": null,
+      "body": "The story of Husain,\nthe tragedy of Karbala,\nwritten not with the pen but with blood.\nMaula Husain, with a thousand wounds,\nlife ebbing out with each faltering step —\nthe anguish of the earth, the sky, and the throne above,\nthe anguish of the sea, the air.",
+      "id": 37,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Allah Created a Magnificent Man",
+      "page": 53,
+      "date": null,
+      "body": "Allah created a magnificent man,\ngave him a sublime soul,\ngave him unsurpassed strength,\ngave him a marvellous mind.\n\n\nBut…\nman is clever but also cruel,\nman is kind but also a killer,\nman is wise but also a vagrant.\n\n\nAllah is all-knowing and all-seeing,\neven to the deepest recess of the human heart —\nand judgement lies beyond the grave.",
+      "id": 38,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "A Tear is an Amazing Thing",
+      "page": 54,
+      "date": null,
+      "body": "A tear is an amazing thing,\nit brings together the heart, soul, mind, and body\ninto a small drop of water flowing from the eyes.\n\n\nWhat is the price of that tear?\nIf it is for joy, it brings happiness,\nif it is for grief, it brings sadness.\n\n\nBut if the tears of a Mumin are for Husain,\nthey will earn him eight heavens.\nIf they are Fatema’s tears for a Mumin,\nthey will save him from hellfire\nand grant him entry into Jannat and life everlasting.\n\n\nSo, Mumin,\ncry your heart out —\nheaven awaits you.",
+      "id": 39,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "From \"La Ilaha\" to \"Illa -llah\"",
+      "page": 55,
+      "date": null,
+      "body": "To turn La Ilaha into Illa -llah,\nto turn the hopeless into hope,\nignorance into light,\nhell into heaven,\ndeath into life,\nsorrow into ecstasy,\ndarkness into dawn —\n\n\ncome, O Mumin,\ncome to Islam and to Iman,\nand you are home.",
+      "id": 40,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Being is Life",
+      "page": 56,
+      "date": null,
+      "body": "Being is life.\nLife is breath, thought, and love.\n\nLife is also to believe —\nbelieve in Allah,\nHis Prophet, and Ali,\ntheir successors, the Imams,\ntheir successors, the Dais.\n\n\nO Mumin, believe —\nheaven is here in their shade,\nand heaven is your destiny tomorrow.",
+      "id": 41,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Come to the Door of Ali",
+      "page": 57,
+      "date": null,
+      "body": "Come one, come all,\ncome to the door of Ali.\nMan, woman, child,\ncome to the door of Ali.\nAll of humanity,\ncome as you are.\n\n\nUnburden your hearts,\nshed your pain and weariness,\nlay down your sorrow,\nleave behind your fear.\n\n\nCome to the door of Ali —\nthe door of forgiveness,\nthe door of hope,\nthe door of fulfilment,\nthe door of mercy,\nthe door where the troubles of the world\nare washed away.\n\n\nCome one, come all —\ncome to the door of Ali.",
+      "id": 42,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Life-Giving Water",
+      "page": 58,
+      "date": null,
+      "body": "The Quran says, “From water We have created every living thing,”\nbut there is no water in Karbala.\nThe Furat is close by,\nbut there is no water with Husain.\n\n\nThe seventy-two do not sacrifice their lives for water.\nAbbas, Ali Akbar, Ali Asghar,\nthey do not die for water.\n\n\nThey gaze upon Husain,\nthey see the pond of Kausar in the blades of swords,\nthey see Ali standing beside the pond of Kausar,\nand they ride toward the enemy,\nsmiling, joyous.\n\n\nThey are going home,\nhome to heaven,\nhome to everlasting life with Husain.\nWhat more can they hope for,\nask for,\npray for?\n\n\nThat in truth\nis life-giving water.",
+      "id": 43,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Subhan Allah",
+      "page": 59,
+      "date": null,
+      "body": "Allah created the cosmos.\nWhy, where, when, how? Allah knows.\nThe farthest heavens, the nearest hells,\nAllah created the earth,\nin all its grandeur and minutiae.\n\n\nFrom the first man\nto generations unending.\nHe created the Holy Five —\nMohammed, Ali, Fatema, Hasan, Husain.\n\n\nSubhan Allah,\nSubhan Allah,\nSubhan Allah!",
+      "id": 44,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Transience of Glory",
+      "page": 60,
+      "date": null,
+      "body": "Knowing yet deceiving himself\nMan takes pleasure in temporary gains\nWhen the eternity of nature is unnoticed.\n\n\nAll have turned out to see the queen,\nneglecting their work,\nenduring discomfort\nfor a fleeting glimpse of transient royalty\npassing as a flash before the eyes,\nacknowledging the homage of thousands,\nadored for the mere quality of a name.\n\n\nThere is more peace\nin the soft lapping of waves\nas they run through the pebbles on the shore,\nor in the swarm of white\nas the doves bob with tranquillity.\n\n\nKnowing, yet deceiving himself,\nman takes pleasure in temporary gains,\nwhile the eternity of nature\npasses unnoticed.",
+      "id": 45,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "When the Sun Lies Down",
+      "page": 61,
+      "date": "December 1960",
+      "body": "The sun pillows on billowy clouds,\nsoftly laying to sleep as night creeps on,\nits fierce brightness subdued,\nmolten, turning to a furnace of red.\n\n\nA turbulent heart keeps vigil.\nBirds swoop and soar\nwith gliding grace,\nframed against a violet sky,\nbidding farewell to the dying sun.\n\n\nOthers have suffered before me,\nand will suffer after me,\nbut time stands still today —\nand it hurts like hell.",
+      "id": 46,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Earth Accepts",
+      "page": 62,
+      "date": null,
+      "body": "The sunbeam reaches the earth,\nthe earth accepts and all is aglow.\nThe rain falls,\nthe land drinks thirstily,\nand the brown turns green and lush.\n\n\nThe trees offer themselves,\nthe birds swoop in,\nand it is lonely no more.",
+      "id": 47,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "You Accept the Light of Faiz, O Syedna Taher Saifuddin",
+      "page": 63,
+      "date": null,
+      "body": "Your acceptance, O most exalted one,\nof the dazzling light of faiz,\nis the acceptance of lightning,\nthe comprehension of a powerful intellect.\n\n\nYou accept from the Imam,\nand disseminate,\nso that the light of eternity may flow,\nglowing bright,\nillumining our understanding.\n\n\nYou are the gate of heaven.\nThrough you we enter\nand glimpse His holiness.",
+      "id": 48,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Twelfth Night",
+      "page": 64,
+      "date": null,
+      "body": "It is the twelfth night of the month of Rabi the First.\nThe moon is shining, the stars are twinkling,\nthe silence is complete.\nGod’s good creation is waiting —\nthe spheres, the stones, the dust,\nthe butterflies, the birds,\nthe fish, the foam,\nthe forests, the flowers,\nwaiting, waiting,\nwaiting for the birth of a godly child  —\n\n\na child pure and perfect,\na child graceful and good,\na child beautiful,\na child who always was and always will be —\nMohammed, Mehmood.\n\n\nIn the barren sands of Bat’ha,\nin the holy precinct of the Kaaba,\nin the house of Abdullah and Aamenah,\na child is born.\n\nRejoice! Rejoice!\nBe happy and joyful!\nGive thanks to Allah in prostration and pray\nwith reverence in your heart and say:\nLa Ilaha Illa -llah,\nMohammadun Rasulullah,\nAliyyun Waliullah.",
+      "id": 49,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Truth is Here",
+      "page": 65,
+      "date": "November 1976",
+      "body": "Truth is here.\nTruth is oh so near.\n\n\nTouch it\nand you will feel its gentleness.\nReach out\nand you will feel its hold.\n\n\nWhen you find truth,\ndo not let go\ntill life itself lets go.\n\n\nWhen hands grow slack,\nwhen the grip unfolds,\nwhen the curtain rises,\ntruth stands before you,\nface to face.",
+      "id": 50,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "O Mumin",
+      "page": 66,
+      "date": null,
+      "body": "O Mumin,\ncry your eyes out —\nit is still not enough for Husain.\n\n\nBeat your chest,\ntill your hands are numb —\nit is still not enough for Husain.\n\n\nFor Husain gave his life for you,\nHusain sacrificed his sons for you,\nhe sacrificed his beloved brother for you,\nhe sacrificed his loyal seventy-two for you.\n\n\nO Mumin,\nif you cry for him, it is not enough.\nIf you beat your chest, it is not enough.\nEven if you die for him,\nit is not enough.\n\n\nBut keep crying for Husain,\nkeep beating your chest for Husain.\nAllah has a paradise\nwaiting for those who do.",
+      "id": 51,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Big Question",
+      "page": 67,
+      "date": null,
+      "body": "The big question is — why?\nWhy this universe?\nWhy the sun, the moon, the stars?\nWhy the earth,\nthis inhabitable, hospitable place?\n\n\nWhy life-giving oxygen?\nWhy plants of a thousand kinds?\nWhy animals of a thousand kinds?\nWhy man?\n\n\nThe when and wherefore are secondary —\nthe question is why.\n\n\nBut He knows\nand Maula knows.",
+      "id": 52,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Come to the Qubba of Qutbuddin Maula",
+      "page": 68,
+      "date": null,
+      "body": "Come to the Qubba of Qutbuddin Maula,\ncome to the shade of the date trees,\ncome to the shade of the Quran.\n\n\nCome to where your prayers are heard,\ncome to where your wishes are granted,\ncome to where your heart is unburdened.\n\n\nCome, come, Mumineen —\nQutbuddin Maula is ready to give.\nIf you ask him, he will give.\nHe will give even if you don’t.",
+      "id": 53,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Raudat un Noor",
+      "page": 69,
+      "date": "2022",
+      "body": "Raudat un Noor —\na rhapsody of marble,\nan elevation in the hills,\na light in the darkness,\na hope amidst despair,\na vision fulfilled.\n\n\nAn elevation touching the skies,\na dream made reality.\n\n\nCome one, come all —\nlet the shade of the Quran cover you,\nlet your wishes come true,\nlet your prayers be answered.\n\n\nFor inside lies a Maula with a heart like the sea —\nhe will answer your prayers.",
+      "id": 54,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Waterfall",
+      "page": 70,
+      "date": null,
+      "body": "How beautiful is the waterfall,\nhow splendid,\nhow magnificent.\n\n\nThe broad sheet of water cascading down,\nhow awesome.\nYet, does it hurt\nwhen it dashes against the rocks?\n\n\nIs the spray that rises\na cry of its wail?\nThe rainbow that springs from it —\ndoes its beauty come from its raw ache?\n\n\nThen the power is reduced to calmness —\na pool of pure, cool water,\na place of contemplation and thought,\na place of peace after pain.",
+      "id": 55,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Seed of Man",
+      "page": 71,
+      "date": null,
+      "body": "Allah has created life through me.\nThrough love, through intimacy, He has created\nthis small child, so helpless, so helpless —\nno will, no volition,\nno strength, no reason.\n\n\nBut in him is the seed of man —\nthe seed of mind and intellect,\nthe seed of emotion and passion,\nthe seed of good and evil.\n\n\nA seed becoming a being —\na trickle becoming a torrent.\n\n\nMan can fly higher than the birds,\nhe can dive deeper than the fishes,\nhe can scale the highest mountain,\nhe can touch the moon —\n\n\nwith the power of his mind,\nthe strength of his intellect,\nthe will of his soul.",
+      "id": 56,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Gift of a Child",
+      "page": 72,
+      "date": null,
+      "body": "Accidents, my friend?\nAccidents never happen.\nAllah wills all, plans all, ordains all, sustains all.\n\n\nA small raindrop falls,\nfor it should.\nIt would not,\nif it should not.\n\n\nA snowflake flutters to the ground,\nfor it should.\n\n\nAn ant is trampled by unknowing feet,\nan ant is not trampled unknown.\n\n\nA pebble falls into the stream.\nHe knows.\nA leaf flutters to the ground.\nHe knows.\nA man thinks, feels.\nHe knows.\n\n\nThis gift of a child is for you,\nthis child is for you.\nHe knows.",
+      "id": 57,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "A Baby Child",
+      "page": 73,
+      "date": "1964",
+      "body": "By the spinning of the heavens,\nwas a baby born.\nBy the light of the stars,\nwas a baby born.\nBy the wafting of the winds,\nwas a baby born.\nBy the abundance of water,\nwas a baby born.\nBy the generosity of the earth,\nwas a baby born.\n\n\nMan and woman —\nyou are the recipients of Allah’s bounty and blessing.\nYou have been given the essence\nof the sun, the stars, the heaven, and the earth.\n\n\nYou have created,\nnay, Allah has created\na gift for you —\na baby child.",
+      "id": 58,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Path of Islam and Imaan",
+      "page": 74,
+      "date": null,
+      "body": "Follow the straight path\nand you reach your goal.\nVeer from it,\nand you land in hell.\n\n\nThe straight path is narrow and sharp.\nBut follow it steadily,\nfollow it diligently,\nand you reach your goal.",
+      "id": 59,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Perfect Man",
+      "page": 75,
+      "date": null,
+      "body": "Who is the perfect man,\none who is fair of face,\none who is pure of heart,\none who is trustworthy — al-Amin,\none who is generous,\nmost importantly,\none who is chosen by Allah?\n\nMohammed, whom the ignorant call unlettered,\nwho read the message of Islam,\nwho read the magnificent Quran,\nwho dispelled ignorance with wisdom,\nwho prophesied the coming of Judgement Day,\nwho made lowly man capable of reaching heaven.\n\n\nHe is the perfect man.",
+      "id": 60,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Islam is Beautiful",
+      "page": 76,
+      "date": null,
+      "body": "Islam is beautiful,\nIslam is graceful.\nIslam pervades the home.\n\nIslam is tolerant,\nIslam is vast.\nIslam encompasses the world in its heart.\n\n\nIt gives solace in old age,\nand is the light that shines\nthrough the darkness of the world\nto the worlds beyond.",
+      "id": 61,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "O Husain",
+      "page": 77,
+      "date": null,
+      "body": "O Husain!\nI pray to the Almighty,\nI pray to you.\nStay in my heart,\nstay inside of my heart always,\nthat I may feel your pain to ease my own,\nthat my blood may pulse\nwith the sorrow of your tragedy,\nfor that is my only solace.\n\n\nI know that when my heart reaches out to you,\nwhen my whole being entreats you, begs you, implores you,\nyou will answer my call,\nyou will give me solace,\nyou will give me patience and forbearance,\nyou will give me the strength to carry on —\nfor how else to endure\nfrom day to day, from hour to hour?\n\n\nSilently, one endures —\nand the beloved is silent,\nwatching, knowing not what to do.\n\n\nHusain is in heaven,\nI stand next to his Zarih —\nthat hallowed and sacred place\nwhere God and His angels\nbear every word uttered\nto the Throne of the Almighty.\n\n\nWhere sinners come,\nand their sins are forgiven.\nI am a sinner — not worthy to stand by that hallowed place,\nI am dust,\nI am a speck of dust —\nbut he hears my voice.\n\n\nHe has said so.\nAnd if not — what will happen\nto the inner voice\nthat nobody cares to listen to?\n\n\nO Husain —\nit will suffocate,\nand be forever silent.\n\n\nBut you, O Husain —\nyou breathe life into silence,\nturning grief into remembrance,\nand remembrance into light.\nYou make sorrow a prayer,\nand silence\na song of love.",
+      "id": 62,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Mazoon-e-Dawat, O Maula Burhanuddin",
+      "page": 79,
+      "date": null,
+      "body": "The sunbeams reach the earth,\nthe earth accepts, and all is aglow.\nThe rain falls, the land drinks thirstily,\nand the parched soil grows lush and green.\nThe trees offer their branches,\nthe birds fly in, and the earth is lonely no more.\n\n\nThe light of divine inspiration shines,\nMazoon-e-Dawat receives and gathers,\nfaiz is aglow and flowing,\nthe showers of wisdom fall,\nhe accepts.\n\n\nThe desert blooms,\nhis saintly spirituality beckons,\nthe children of Dawat, through him, accept.\nSolace prevails and despair is dispelled.\n\n\nO exalted guide, Maula Burhanuddin,\nyour higher acceptance, born of insight rare,\nprovides the gateway wherein, entering, Mumineen\nexperience a personality compelling,\ncomprehend the light of eternity,\na force ennobling —\nthrough you, they know, realize, and serve\nbeloved Dai Taher Saifuddin.\n\n\n1960s",
+      "id": 63,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "He Came to Khadija",
+      "page": 80,
+      "date": null,
+      "body": "O Allah,\nwho cares for His creation —\nwhy did You abandon Your Prophet\nwhen he conveyed Your message of peace and Islam?\n\n\nHe was laughed at,\nhe was ridiculed,\nhe was desecrated,\nhe was tortured.\n\n\nAnd He replies:\nWe sent him Khadija\nto serve him,\nto solace him,\nto calm him,\nto comfort him,\nto share his pain with him.\n\n\nSo, after the tribulations of the Meccans,\nhe came to Khadija.\nHe was home.",
+      "id": 64,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "You Win Either Way",
+      "page": 81,
+      "date": null,
+      "body": "Death and life are two parts of one truth.\nIn death, there is loss of life.\nIn life, there is victory over death.\n\n\nNeither surpasses the other,\nfor in death, for a Mumin,\nheaven is his abode,\nand in life, he strives for that excellence.\n\n\nO Mumin,\nyou win either way —\nliving or dying.",
+      "id": 65,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "When Will We Meet Again",
+      "page": 82,
+      "date": null,
+      "body": "How do I miss you?\nLet me count the ways —\n\n\nas the setting sun yearns to rise again,\nas the sliver of the moon longs to be full again,\nas the earth yearns for the rain,\nas the rain anticipates the rainbow,\nas the trees welcome the birds,\nas the roses share their fragrance —\nso, I miss you.\n\n\nWhen will we meet again?",
+      "id": 66,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "At the Feet of Husain",
+      "page": 83,
+      "date": null,
+      "body": "Husain has come to Karbala,\nwith his women and children,\nand an army of seventy-two.\n\n\nThey are loyal in their love for Husain,\nthey are sure in their salvation with Husain,\nthey are true in trust with Husain.\n\n\nThey are nurtured by the nobility of Husain,\nthey are grateful for the generosity of Husain,\nthey feel pain for the pain of Husain.\n\n\nThey will be the shield against the killing of Husain,\nthey will fight unto death in defense of Husain,\nthey will give their lives for love of Husain.\n\n\nThen they will be forever in paradise\nat the feet of Husain.",
+      "id": 67,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Accounting",
+      "page": 84,
+      "date": null,
+      "body": "The earth accepts all —\nthe rich, the poor,\nthe king, the slave,\nthe man, the woman,\nthe old, the young.\n\n\nThen the accounting will begin.",
+      "id": 68,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Life Everlasting",
+      "page": 85,
+      "date": null,
+      "body": "A child is born,\nhe grows up to be a Muslim, a Mumin.\nHe grows old,\nand dies.\nBut he is born again —\nin life everlasting.",
+      "id": 69,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Grief of Husain",
+      "page": 86,
+      "date": null,
+      "body": "The grief of Husain is an amazing thing.\nA Mumin cries his heart out in sorrow,\nknowing full well\nthat he will be at the feet of Husain —\nin ecstasy.",
+      "id": 70,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Aura of the Holy Five",
+      "page": 87,
+      "date": null,
+      "body": "No lightning can strike me,\nno ocean can drown me,\nno storm can shatter me —\n\nI am safe\nin the aura of the Holy Five.",
+      "id": 71,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Justice from Allah",
+      "page": 88,
+      "date": null,
+      "body": "It rains, it drizzles, it thunders, it strikes.\nIt nurtures, it floods, it destroys.\nEverything that happens\nis justice from Allah.",
+      "id": 72,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Holy Five Reunited",
+      "page": 89,
+      "date": "29 August 2022",
+      "body": "Husain has reached Karbala,\na land of anguish.\n\n\nMohammed, Ali, Fatema, Hasan have passed away.\nThey look down from their heavenly abode.\n\n\nAli sees his son, Abbas,\nriding hard to reach the tents and the children,\nhis two arms cut off,\nhis mouth holding the vessel of precious water,\nfalling, killed.\nMohammed sees the baby Ali\nmurdered in Husain’s arms.\nFatema has cleared the place of thorns\nwhere Husain is to be slain.\nHasan sees his brother stretched on the burning sand,\nShimr advancing, a dull knife in his cruel hand.\n\n\nKarbala is written in history with torture and blood,\nand in our hearts with agony and pain.\nBut the Holy Five\nare reunited again\nin heaven.",
+      "id": 73,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Six Trees",
+      "page": 90,
+      "date": null,
+      "body": "One tree went, another came; when the second tree withered, the third rose, and when it had exhausted its age, the fourth bloomed to give the sweet fragrance of remembrance of the third. When the fourth was passing away, the fifth was ready to take its place. When the fifth was ready to go, the time had come for the blossoming of the sixth. Time passed — and the sixth tree blossomed.\n\n\nEvery tree in blossoming followed the divine order and passed away only after the appointed time; it did not eternally subsist, yet its fragrance remained. The young, blossoming tree served as a remembrance of the one that had passed away.\n\n\nUnique are the trees, and unique their tales, passing through centuries. Whom shall we ask about them? Where shall we search for their secret? Perhaps on some far-distant shore we shall meet someone, or on the lonely heights of some mountain. Or is it not somebody hiding the secret in some deserted garden of palms, far from the crowded city?\n\n\nWhom shall we ask? Who will explain — six trees that are centuries old? After all, how vast is this earth, and where can such a secret lie?\n\n\nDear friend, do not wander afar: search for the secret in the recesses of your soul. After searching for the answer in my heart again and again, I received only one reply — surely you will discover these trees.\n\n\nAre you surprised? How is that? The heart knows that every tree is unique; when one passed away another bloomed to take its place, not only inheriting the virtues of the dying plant but adding the particular quality of its own, becoming even more special.\n\n\nYou may protest that we already know this, but have patience — why don’t we ask the sixth tree? How? Are you surprised?\n\n\nMy dear, the sixth tree has come to life after the fifth passed away. Yes — I see joy dancing in the light of your eyes. I thought you were satisfied with the idea that the sixth tree is with us, and that it can unfold the mysteries of its predecessors — let us go to it.\n\n\nWait a moment. I think that despite believing that the sixth tree exists, we do not know where to find it.\n\nThink deep, with complete faith in God — we will meet tomorrow.",
+      "id": 74,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "In Thanksgiving",
+      "page": 92,
+      "date": null,
+      "body": "I am grateful to Allah\nfor the countless bounties showered on me.\nAnd I pray in prostration\nthat He bless me\ntill the end of my days.\n\n\nIn thanksgiving\nis the receiving.",
+      "id": 75,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "When Love Lasts Through Old Age",
+      "page": 93,
+      "date": null,
+      "body": "When love lasts through old age,\nafter the first passion subsides,\nwhen children have grown\nand have lives of their own —\n\n\nIf there is still time\nto talk together,\nabout matters beyond\nthe day-to-day mundane things,\nthen that relationship is love.\n\n\nIf not,\nthen age has taken its toll\nphysically,\nand emotionally.",
+      "id": 76,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Heaven's Doorstep",
+      "page": 94,
+      "date": null,
+      "body": "If I have fervour in my heart for Mohammed,\nif I have passion in my soul for Ali,\nif I have sorrow in my being for Fatema,\nif I have endurance in my existence for Hasan,\nif I have tears in my eyes for Husain,\nI am at heaven’s doorstep —\nnay, I am already in heaven.",
+      "id": 77,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Hurr at the Crossroads",
+      "page": 95,
+      "date": null,
+      "body": "Hurr is at the crossroads.\nOne road leads to Yazid,\npaved with wealth and worldly triumph.\nThe other road leads to Husain,\npaved with death and agony.\n\n\nHe chooses Husain\nfor the wealth of heaven,\nand the ultimate victory.",
+      "id": 78,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Inspire Me, O Allah",
+      "page": 96,
+      "date": null,
+      "body": "Be willing to grasp my failing hand.\nLet me not drown in the mud of mindlessness\nthinking of nothing but food, and dress, and empty things.\n\n\nInspire me, O Allah.\nO Allah, inspire me to write, to write, to write.\nInspire me to lose myself in thoughts of You,\nso that worldly occasions affect only surface strings,\npainful, but passing.\n\n\nWhat remains always, forever,\nare thoughts of You, O Allah,\ncompelling me to put this on paper,\nfor therein is the balm,\ntherein is the medicine,\ntherein is the cure,\ntherein is health.\n\n\nIf You give me this, all else is unimportant.\nIf You give me this, all pain is gone.\nIf You give me this, all hopelessness becomes hope.\n\n\nThere are vistas and horizons before me,\nfar-out, everywhere —\nfresh winds blowing without limit,\nthe heart bursting with thought,\nthe mind drowned in emotion,\nenjoying every moment of life,\nexhilarating in its beauty and miracle.\n\n\nYou are the Giver of Life.\nGive me the vision of hope,\ncolouring nature with rosy hues,\nchanging gloom into shining rays of light.\n\n\nDo I ask too much?\nIs it too much to demand?\nI know I have sinned.\nI am drowned in sin —\nI have sinned so much that I have not the right to raise my head,\nnor ask You for anything at all.\nBut You have given me life.\nNow I ask You to give me Your gift of khidmat,\nwithout which life is meaningless, dark, sad, without joy.\n\n\nLet me not meet the end with no credit, only tears.\nLet me not meet the end with no service performed.\n\n\nAllah is All-Knowing, Just, Merciful, and Omnipotent.\nO Allah, temper justice with mercy.\nForgive me my sins, overlook my faults.\n\n\nMy ignorance is overwhelming,\nmy knowledge is puny.\n\n\nO Allah, You who are Omnipotent and Merciful,\ngive me knowledge, that I may recognize You.\nGive me the will to act according to Your will.\nGive me faith to love You unfailingly.\nGive me a heart that beats against the buffeting storms.\n\n\nHow does it survive?\nHow does it pass through?\nIt is a miracle, or yet another punishment?\n\n\nYet even in punishment, there is mercy.\nEven in pain, there is Your presence.\nFor wherever I turn, You are there —\nand in that knowing, O Allah,\nmy soul finds rest.",
+      "id": 79,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Creator and the Created",
+      "page": 98,
+      "date": null,
+      "body": "Allah is the Creator of the farthest galaxies,\nand the closest earth,\nof the largest planet and the smallest,\nand everything in between,\n\n\nof the coldest Pluto,\nand the hottest sun,\nof the tallest mountain,\nand the deepest volcano,\n\n\nof the lush forest,\nand the driest Sahara.\nof godly men and evil beings,\n\n\nof Ali and Husain, perfect men,\nand of Yazid and Muawiyah\nwho made themselves evil.\n\n\nWe are lovers of Ali and Husain,\nwe are on the path to heaven.\n\nO lovers of Muawiyah and Yazid —\nyou can go to hell!",
+      "id": 80,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Spark of Faith",
+      "page": 99,
+      "date": null,
+      "body": "O Mumin,\nlight that first spark of faith,\nfan it into a glow,\nnurture it into a flame —\nyou are on the path\nto eternity.",
+      "id": 81,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Tayyib after Tayyib unto Eternity",
+      "page": 100,
+      "date": null,
+      "body": "It is more than nine hundred years\nsince Imam Tayyib was born.\nThe sun rises every day and shines,\nto bear witness to that divine being.\n\n\nThe moon, the stars, the universe,\nshine and are illuminated\nby that holy presence.\n\n\nHe is still with us,\nTayyib after Tayyib,\ntill the end of time,\nunto eternity.",
+      "id": 82,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "You Are With Me",
+      "page": 101,
+      "date": null,
+      "body": "Remembering you is a joy,\nit is ecstasy,\nit is solace.\n\n\nYou are the breath in me,\nyou are the heartbeat in me,\nyou are the red in my blood,\nyou are the air that I breathe.\n\n\nWho says you are gone?\nYou are with me.",
+      "id": 83,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "It Is Just",
+      "page": 102,
+      "date": null,
+      "body": "It rains, it rains, it rains.\nIt floods, it inundates.\nIt nurtures the dry earth,\nit wreaks havoc,\nit gives life.\n\n\nMake of it what you will —\nit comes from above,\nand it is just.",
+      "id": 84,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "I Found You There",
+      "page": 103,
+      "date": null,
+      "body": "I searched for you everywhere,\nnorth, south, east, west,\nin the mountains,\nin the valleys.\n\n\nThen I remembered\nwhere I had forgotten to look.\n\n\nI looked into my heart —\nI found you there.",
+      "id": 85,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "How Shall We Thank You",
+      "page": 104,
+      "date": null,
+      "body": "How shall we thank You?\nDo honour, reverence, homage before You?\nKneel to beg Your mercy and prayers?\n\n\nSince to repay You is beyond\nwhat our passing minutes will allow —\neven the treasures of Your love\nelude our heart’s grasp.\n\n\nYour strength, Your power, overpowers.\nYour mercy engulfs, flooding,\npervading our hearts and minds.\n\n\nYou have given us ourselves,\nour souls to purify in sacrifice,\nlives to illuminate in Your service,\nhappiness and joy together,\nblessings of a little life\nenriched with Your love,\nand those little gifts\nas natural as the light and the wind,\nas flowing as a torrential river.\n\n\nSo we shall thank You\nas the world thanks the sun, the moon, the stars\nfor making it bright\nby shining with their brilliance.\n\n\nAs the flowers thank the sky\nfor bringing rain in mercy\nby giving off their fragrance.\n\n\nAs man thanks the air\nfor allowing him to breathe\nby service to Him\nwho has given him more than breath,\nmore than light,\nmore than sight,\ncolour, life, purpose, destiny.",
+      "id": 86,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Karbala is Husain and Husain is Karbala",
+      "page": 105,
+      "date": "11 August 2022",
+      "body": "Husain is journeying towards Karbala\nto pay a debt,\na debt he will pay in blood and thirst,\na debt he will pay by sacrifice and agony,\na debt he promised Mohammed he would pay,\na debt discharged for thousands of years to come.\n\n\nThe sun is scorching,\nthe sand is blistering.\n\n\nHusain is slaughtered.\nAbbas, Ali Akbar, Ali Asghar are slaughtered.\nThe faithful seventy-two are killed.\n\n\nBut the land of Karbala is blessed.\nHusain and his faithful are here.\n\n\nKarbala is Husain,\nand Husain is Karbala.",
+      "id": 87,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "My Dream Will Become a Reality",
+      "page": 106,
+      "date": null,
+      "body": "Heaven is described for us\nas a place of bliss,\nfree from all trials and tribulations of life.\n\n\nA place where rivers flow,\nrivers of milk and honey,\nrivers of pure water and pure sherbet.\n\n\nA place where Ali\nis standing at the pool of Kausar.\n\n\nWhen that time comes for me,\nmy dream will become a reality.",
+      "id": 88,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "O Mazoon-e-Dawat!",
+      "page": 107,
+      "date": null,
+      "body": "O Mazoon-e-Dawat,\nO Maula Burhanuddin,\nour spiritual mother,\nwe love you.\n\n\nFor the glow of sajda upon your forehead,\nfor the light of understanding in your eyes,\nfor the radiance that blossoms in your smile,\nfor your kindness and gentleness,\nfor your patience and care.\n\n\nBut after all is said and done,\nwho can surpass\na mother’s love\nfor her children?",
+      "id": 89,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Fusion of Extremes",
+      "page": 108,
+      "date": "10 August 2022",
+      "body": "Karbala is a fusion of extremes.\n\n\nThere is Husain,\nand there is Shimr.\nThere are women, children,\nand the loyal seventy-two;\nand there is an army of thousands.\n\n\nThere is supreme loyalty,\nand there is extreme revenge.\nThere is extreme thirst,\nand there is the overflowing Furat.\n\n\nThere is heaven,\nand there is hell.\n\n\nHusain is slaughtered.\nYazid’s army appears to have won.\nYet the name of Husain\nreverberates to the skies,\nand Yazid\nburns in the belly of the earth.",
+      "id": 90,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "He Wills and It Is",
+      "page": 109,
+      "date": null,
+      "body": "The sun blazes,\nthe moon glows,\nthe stars glitter,\nthe spheres revolve.\n\n\nThe cosmos is infinite,\nthe earth is habitable for man.\n\n\nIt is Allah’s creation —\nHe says “Do,” and it is done.\nHe says “Be,” and it becomes.",
+      "id": 91,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "God Transcendent",
+      "page": 110,
+      "date": null,
+      "body": "Birds fly in the sky,\nman is confined to the ground.\nBut by his God-given mind,\nhe can harness the sun,\nhe can reach the moon,\nhe can climb the highest mountain,\nhe can plumb the deepest ocean.\n\n\nYet when it comes to the Almighty,\nwe are struck blind, deaf, and dumb.",
+      "id": 92,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Last Debt",
+      "page": 111,
+      "date": null,
+      "body": "It is late in the day of Ashura.\nThe loyal seventy-two have given their lives for truth.\nThe sons, the brother, the men of the family of Husain\nare slain and strewn\nupon the hot sands of Karbala.\n\n\nHusain is alone,\nfighting with the strength of Haidar.\n\n\nBut the last debt is yet to be paid —\nand Husain sheaths his sword\nfor the will of Allah.",
+      "id": 93,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Savour Now",
+      "page": 112,
+      "date": null,
+      "body": "Born yesterday,\ndead tomorrow.\nSavour the time in between.\nSavour today.\nSavour now.",
+      "id": 94,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "We Are Home",
+      "page": 113,
+      "date": null,
+      "body": "From a seed to a mighty tree,\nfrom a trickle to a roaring torrent,\nfrom a small egg to a stupendous dinosaur,\nfrom a minuscule embryo to a marvellous man —\n\n\ntime crawls, walks, runs,\nand then it is gone.\n\n\nWe come to our journey’s end.\nThe curtain rises,\nall is aglow.\n\n\nWe are home.",
+      "id": 95,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Why?",
+      "page": 114,
+      "date": null,
+      "body": "Why? Because it is fate.\nWhy? Because it is destiny.\nWhy? Because it is Allah’s will,\nand Allah’s will is always for the best.\n\n\nWhy am I so desolate\nwhen I know all this —\nwhy?\n\n\nI am all alone,\namidst the noise,\namidst the world —\neven though he is alive in heaven.\n\n\nThere are answers and there are answers.\nNone of the answers stop my tears from flowing,\nnor my heart from breaking.\n\n\nReality has become elusive,\nphysicality has become meaningless,\nliving has become a chore,\nbreathing has become an effort.",
+      "id": 96,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Without You",
+      "page": 115,
+      "date": null,
+      "body": "Tears — where do they come from?\nFrom the thoughts,\nfrom the eyes,\nfrom the heart,\nfrom the blood ?\nI don’t know.\n\n\nDon’t you pity my tears that flow?\nDon’t you pity the pain that strikes my heart?\nDon’t you pity the emptiness that engulfs my being?\nDon’t you pity the despair that fills my soul?\n\n\nYes — you do pity,\nyes — you do see,\nyes — you do feel,\nyes — you do know.\n\n\nBut where do I go from here?\nYou taught me to live — but not without you.\nYou taught me to love — but not without you.\nYou taught me to feel — but not without you.\n\n\nWhy did you not teach me how to live without you?",
+      "id": 97,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "How Shall I Go On",
+      "page": 116,
+      "date": null,
+      "body": "Have to live — but how?\nHave to smile — but how?\nHave to function — but how?\n\n\nThere is a void that cannot be filled.\nThere is an emptiness that cannot be filled.\nThere is a longing that cannot be filled.\nThere is a future that cannot be filled.\n\n\nWhile the tears run down my cheeks,\nwhile my heart is shattered in a thousand pieces,\nwhile pain infuses my whole being —\n\n\ndeath is inevitable.\nDeath comes to everyone.\n\n\nBow to the angel of death.\nBow to the destined.\n\n\nThat is what my mind tells me.\nThat is what my reason tells me.\nThat is what my sanity tells me.\n\n\nWith you, I could battle any calamity.\nWith you, I could climb any mountain.\nWith you, I could brave any storm.\nWith you, I could face any problem.\n\n\nNow I am alone.\nHow shall I face the calamity?\nHow shall I climb the mountain?\nHow shall I brave the storm?\nHow shall I face the problems?\n\n\nHelp me.\nGuide me.\nBe with me.",
+      "id": 98,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "How Do I Miss You",
+      "page": 117,
+      "date": null,
+      "body": "How do I miss you?\nWith my eyes not seeing you,\nwith my ears not hearing you,\nwith my being, with my heart, with my mind, seeking you?\n\n\nWho will support me when I miss a step?\nWho will be beside me when I stumble?\nWho will guide me when I take a wrong turn?\nWho will encourage me when I need courage?\nWho will give answers to my questions?\n\n\nI am here in flesh\nand you are no more with me.\n\n\nHelp me, support me, answer me\nfrom wherever you are.",
+      "id": 99,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Mind and the Heart",
+      "page": 118,
+      "date": null,
+      "body": "The mind is reasonable.\nAccept destiny.\nLife is about death.\nCreation is about death.\nEvery living thing is subject to death.\nThat is reasonable, that is sane, that is logical.\n\n\nBut the heart sings a different tune.\nIt laments, it cries, it refuses to accept.\n\n\nMy beloved will walk through the door,\nhe will be here any moment,\nhe will call out my name.\n\nMy mind says he is with the Imam.\nMy heart says he is not with me.\nMy mind says he is drinking from the fountain of Kausar.\nMy heart says he is not with me.\nMy mind says he is looking down at us,\nremembering us more than we do him.\nMy heart says I want him here with me.\n\n\nIs it selfish on my part?\nAm I only thinking of myself?\n\n\nYou see,\nhe saturated my world,\nand in his absence\nI am left\nin a void.",
+      "id": 100,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "You Are Not Seen",
+      "page": 119,
+      "date": null,
+      "body": "Please come back to me.\nThere is a hollow inside me,\na vacuum within me,\nan emptiness in me,\nin the place where my heart beat for fifty-three years.\n\nI am left to fight against the wind,\nwithout ground beneath my feet.\n\n\nYou have given me such wonderful children,\neach one a gem,\nbut I want you with me, my beloved.\n\n\nI sit here alone,\nmy heart full of you,\nmy thoughts, my mind, full of you.\n\n\nBut alas —\nyou are not seen.",
+      "id": 101,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "A Vacuum",
+      "page": 120,
+      "date": null,
+      "body": "I may be —\nbut my heart has stopped feeling,\nselfish as it may be.\n\n\nYou see,\nhe pervaded my space,\nand now\nthat space\nis a vacuum.",
+      "id": 102,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "That Is Enough for Me",
+      "page": 121,
+      "date": null,
+      "body": "O Maula Ali,\nyou are the sun that cannot be reached,\nyou are the horizon that cannot be touched.\n\n\nYou know that I love you —\nthat is enough for me.",
+      "id": 103,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Dying Is About Life",
+      "page": 122,
+      "date": null,
+      "body": "A child is born.\nAll rejoice.\nHe grows up,\nhe grows old,\nhe dies.\n\n\nThat is what life is about.\nLife is about dying.\nBut for a Mumin,\ndying is about life.",
+      "id": 104,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "I Will Be",
+      "page": 123,
+      "date": null,
+      "body": "Yesterday, I was.\nToday, I am.\nTomorrow, I will be.\n\n\nAnd if I am not —\nI will be in heaven.",
+      "id": 105,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Under the Spectacular Canopy",
+      "page": 124,
+      "date": null,
+      "body": "The sun blazes,\nthe moon is cool and bright,\nthe stars sparkle and twinkle.\n\n\nI am on my path,\nunder this spectacular canopy,\nto my destination\nin heaven.",
+      "id": 106,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Age Overtakes Me",
+      "page": 125,
+      "date": null,
+      "body": "Age overtakes me,\nmy limbs grow weary,\nmy memory fails,\nmy body grows frail.\n\n\nI think constantly of coming death.\nWill it be sudden?\nWill it be slow?\nWill it be painless?\nWill it be swift?\n\n\nHowever it may be —\nI will be the winner,\nI will be in heaven,\nI will have conquered death.",
+      "id": 107,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Questions of the World",
+      "page": 126,
+      "date": null,
+      "body": "The scientist asks how.\nThe businessman asks what.\nThe philosopher asks why.\nThe religious man asks when.",
+      "id": 108,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "By His Grace",
+      "page": 127,
+      "date": null,
+      "body": "Allah was, is, and will be.\nBy the grace of Allah, we are,\nand by His mercy,\nwe will be.",
+      "id": 109,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "A Tear for Husain",
+      "page": 128,
+      "date": null,
+      "body": "What forms a tear?\nIt is the coming together\nof the heart, the mind, and the body.\n\n\nThat is why\na tear for Husain\nearns eight heavens.",
+      "id": 110,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Everything",
+      "page": 129,
+      "date": null,
+      "body": "When I was young,\nI looked around me —\nI wanted everything.\n\n\nNow that I am old,\nI look into my heart —\nI see that I have everything.",
+      "id": 111,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "No Regrets",
+      "page": 130,
+      "date": null,
+      "body": "If I pass away in my sleep,\nI will have no regrets.\nI was in heaven —\nI will be in heaven.",
+      "id": 112,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "How Can We Repay You",
+      "page": 131,
+      "date": null,
+      "body": "O Husain,\nyou gave your life\nso we could live.\n\n\nYou went thirsty,\nso we could drink.\n\nYou endured hardship,\nso we could live in peace.\n\n\nYou sacrificed your children,\nso ours could thrive and grow.\n\n\nO Husain, how can we repay you?\nOnly with our tears,\ntears that come not from our eyes,\nbut from our hearts —\nyet knowing they can never\nrepay you.",
+      "id": 113,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Gateway",
+      "page": 132,
+      "date": null,
+      "body": "Death is not the end of life,\nit is the gateway\nto everlasting peace.",
+      "id": 114,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Enter, O Mumin",
+      "page": 133,
+      "date": null,
+      "body": "I know I’m a sinner\nsteeped in sin from head to toe.\nBut when I reach the throne of the Almighty Judge,\nHe will hear the sound of the name of Ali,\nstill throbbing in my heart,\nthe name of Husain,\netched on every drop of my blood.\n\n\nAllah will order the gates of heaven\nto be opened for me:\n\n\nEnter, O Mumin,\nand dwell in peace\nforever.",
+      "id": 115,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "What's Heaven For",
+      "page": 134,
+      "date": null,
+      "body": "Allah says, “Wish,\nand I will give.”\n\n\nAll my life,\nI’ve been wishing,\nwishing,\nwishing.\n\n\nBut what’s heaven for?",
+      "id": 116,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "A Crescendo of Joy",
+      "page": 135,
+      "date": null,
+      "body": "The rain falls,\nthe thirsty trees drink,\nand there rises from the forest\na crescendo of joy.",
+      "id": 117,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Space Between",
+      "page": 136,
+      "date": null,
+      "body": "When I sprawled on my bed,\nmy mother scolded me for being lazy.\nBut that was not it —\nit was the space between.",
+      "id": 118,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "A Punishment That Is Beautiful",
+      "page": 137,
+      "date": null,
+      "body": "We are fallen,\nbut Allah has made for us\na punishment that is beautiful.\n\n\nSo when we rise —\nwhat will heaven be like?",
+      "id": 119,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Music of the Rain",
+      "page": 138,
+      "date": null,
+      "body": "Thunder roars,\nfloods inundate,\nlightning falls —\n\n\nbut the sound of the rain\nis music to my ears.",
+      "id": 120,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Bears Witness",
+      "page": 139,
+      "date": null,
+      "body": "The vastness of nature,\nthe prodigality of nature,\nthe greatness of nature,\nthe colours of nature,\nthe wonders of nature,\nthe miracle of nature,\nbears witness\nto the one and only Creator —\nAllah.",
+      "id": 121,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "What Is Faith",
+      "page": 140,
+      "date": null,
+      "body": "Faith — what is faith?\n\n\nFaith can make the dumb speak,\nfaith can make the deaf hear,\nfaith can heal the sick,\nfaith can move mountains.\n\n\nUltimately,\nfaith can open\nthe gates of heaven.",
+      "id": 122,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "To Know Allah",
+      "page": 141,
+      "date": null,
+      "body": "Seeing it transform\nfrom a tiny seed\nto a mighty tree\nis to know Allah,\n\n\nfrom a helpless infant\nto a man who can split the atom\nand reach the moon\nis to know Allah,\n\n\nfrom the darkest gloom\nto a moonlit plain\nand the rising sun\nis to know Allah,\n\n\nfrom the daytime heat\nto the cool of night\nis to know Allah.\n\n\nThat is as far as our minds can take us,\nbut I am content.\n\nAllah was,\nAllah is,\nAllah will be.",
+      "id": 123,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Canopy of the Skies",
+      "page": 142,
+      "date": null,
+      "body": "Allah says,\nO Mohammed,\nif not for you,\nI would not have created\nthe canopy of the skies.\n\n\nSo, O Mohammed,\nby your grace,\nwe shall be blessed\nwith the forgiveness of Allah.",
+      "id": 124,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "A Life That Will Be",
+      "page": 143,
+      "date": null,
+      "body": "A life that was\nin every stone.\nA life that is\nin every blade of grass.\nA life that will be\nin me.",
+      "id": 125,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "A Place in Heaven",
+      "page": 144,
+      "date": null,
+      "body": "We are imprisoned in the physical\nbut Allah is all-wise,\nAllah is forgiving.\n\n\nHe has also given\na mind to think,\nand a heart to feel,\nso that we may see truth,\nand love —\n\n\nand be given\na place in heaven.",
+      "id": 126,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Gift of Allah",
+      "page": 145,
+      "date": null,
+      "body": "The wind blows,\nbringing the manna of the skies.\nThe trees dance in ecstasy\nfor the gift of Allah\nthey are about to receive.",
+      "id": 127,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Hope",
+      "page": 146,
+      "date": null,
+      "body": "Hope — what is hope?\nThat after the darkest night, tomorrow will come.\nthat our tears for Husain will gain us eternal life.\nthat I will be given a sip of Kausar.\n\n\nThat is when hope will become reality,\nnay, it will become eternity.",
+      "id": 128,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "That's All I Wish For",
+      "page": 147,
+      "date": null,
+      "body": "O Maula Ali,\nyou are in the heavens,\nyou are in the sun,\nyou are in the moon,\nyou are in the green of forests,\nyou are in my heart —\n\n\nthat’s all I wish for.",
+      "id": 129,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Water Was Denied to You",
+      "page": 148,
+      "date": null,
+      "body": "Water was denied to you,\nO Husain —\nso we will cry for you,\nnot with water flowing from our eyes,\nbut with blood flowing from our hearts.",
+      "id": 130,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Essence of a Tear",
+      "page": 149,
+      "date": null,
+      "body": "A tear is not just water from the eyes —\nit is a sum of passion,\ngrief,\nlove,\nand longing,\nthat flows from the heart.",
+      "id": 131,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "From the Ashes of Karbala",
+      "page": 150,
+      "date": null,
+      "body": "The sun lost its gleam,\nthe moon lost its glow,\nthe stars lost their sparkle.\ntears flowed from the throne of Allah —\nHusain has been slain in Karbala.\n\nThen there rises a cry\nfrom the ashes of Karbala —\nHusain, Husain, Husain, Husain —\nreverberating\naround the world.",
+      "id": 132,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Remember the Creator",
+      "page": 151,
+      "date": null,
+      "body": "O man, O woman,\nwhen you observe the vastness of the sky,\nthe depth of the oceans,\nthe diversity on earth,\n\n\nwhen you look within yourself\nand see the marvellous complexity and harmony,\n\n\nremember\nthe singularity\nof the Creator.",
+      "id": 133,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "I Am Grateful",
+      "page": 152,
+      "date": null,
+      "body": "I am grateful\nto my parents, who gave me life,\nand drowned me in love,\nso I could swim\nagainst the vicissitudes of life.\n\n\nI am grateful to my husband\nfor holding my hand\nin tremors that shook my core.\n\n\nFor giving me children,\nthe pride of my life,\nthe pillars upon whom I rest.\n\n\nAnd I will be grateful\nwhen I draw my last breath,\nwhen I am in heaven,\nwith Maula Khuzaima,\nat the feet of Ali.",
+      "id": 134,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Lead Me to Heaven",
+      "page": 153,
+      "date": null,
+      "body": "I was drowning,\nand you saved me.\n\nI was going astray,\nand you showed me the path.\n\n\nI was sad,\nand you wiped away my tears.\n\nI was confused,\nand you showed me the way.\n\n\nI was in the dark,\nand you showed me the light.\n\n\nNow that I am alone,\nstay by my side,\nand lead me to heaven.",
+      "id": 135,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "What Is Life",
+      "page": 154,
+      "date": null,
+      "body": "What is life?\n\n\nIt is in the plant that grows.\nIt is in the animal that grows and moves.\nIt is in man who grows, moves, and thinks.\n\n\nAnimal eats plant —\nplant becomes animal.\nMan eats plant and animal —\nplant and animal become man.\n\n\nThen the journey\nto heaven or hell\nbegins.",
+      "id": 136,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "I Am Blessed",
+      "page": 155,
+      "date": null,
+      "body": "I am blessed.\nI am blessed when a tear for the love of Husain\ntrickles down my face.\n\n\nI am blessed when the greatness of Mohammed\nfills my heart.\nI am blessed when the name of Ali\nis on my lips.\n\n\nI am blessed when I hold fast\nto the rope of Allah today.\n\n\nI was blessed when I was born,\nI was blessed in my youth,\nI am blessed in my old age,\nand, Allah willing,\nI will be blessed in my grave.",
+      "id": 137,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "On the Path of Salvation",
+      "page": 156,
+      "date": null,
+      "body": "When I fell in love,\nAllah put me on the path of salvation.\nAllah put me on the road to heaven.\n\n\nAllah willing,\nmy dream will be reality soon.",
+      "id": 138,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Safe From Heat and Cold",
+      "page": 157,
+      "date": null,
+      "body": "I absorb the rays of the sun\nwithout being burnt.\nI cherish the coolness of the moon\nwithout being cold.\nI cherish the blowing of the wind\nwithout being swayed.\nI am amazed by the mighty tree\nwithout losing my worth.\n\n\nOn my straight path,\nI will not be scorched by the blaze of the sun,\nI will not be frozen by the cold of the moon,\nI will not be blown off course\nby the force of the wind.\n\n\nI will reach my destination\nin heaven\nand be safe\nfrom heat and cold.",
+      "id": 139,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Sun Will Rise Again",
+      "page": 158,
+      "date": null,
+      "body": "La Ilaha ill Allah, Mohammed Rasul Allah, Ali Wali Allah.\n\n\nThe words that made the idols\ncrash down from the Kaaba.\n\n\nBut then the sun of Imamat was eclipsed,\nyet it rose again from the West —\nand the world was flooded with grace.\n\n\nThen the sun set yet again,\nbut we were not in darkness —\nthe moon rose.\n\n\nIt gave us hope\nthat the sun will rise once more,\nand flood the earth and the heavens\nwith its glory and splendour.",
+      "id": 140,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Overflowing Bliss",
+      "page": 159,
+      "date": null,
+      "body": "I was blessed,\nI am blessed\nfor my nurturing\nin love, sincerity, and truth.\n\n\nThe clouds of\ndarkness and gloom\nbecame the harbingers\nof life-giving rain and hope.\n\n\nMy life is full\njust awaiting\nthe promise of mercy\nand reconciliation.\n\n\nThat will be heaven for me\nand it will complete\nthe overflowing bliss.",
+      "id": 141,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Yesterday and Tomorrow",
+      "page": 160,
+      "date": null,
+      "body": "I was born with a tomorrow.\nThen I grew into my youth.\nToday, now that I am old,\nI am thinking of yesterday.",
+      "id": 142,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Path to Heaven",
+      "page": 161,
+      "date": null,
+      "body": "Allah has created man\nwith a brain to think\nand a will to choose.\n\n\nOne road leads to heaven,\none path leads to hell.\n\n\nO Mumin, rest assured\nyou are surely\non the right path,\nthe path to heaven.",
+      "id": 143,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Final Message",
+      "page": 162,
+      "date": null,
+      "body": "The Angel Jibreel is sent with a message from Allah:\nRecite, O Mohammed —\nthere is no God but Allah,\nand Mohammed is Allah’s Messenger.\n\n\nThe hills of Mecca,\nthe skies above,\nthe trees, the mountains,\nreverberated with this message.\n\n\nTill the final message in Ghadeer:\nNow rise, O Mohammed —\nyour work is done.\nAli is now the Maula.\nThe seven heavens await you.\nAllah awaits you.",
+      "id": 144,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "To Reach Heaven",
+      "page": 163,
+      "date": null,
+      "body": "Man can climb\nthe highest mountain,\nhe can plumb\nthe deepest ocean.\nBut he must bow\nin prostration\nto reach heaven.",
+      "id": 145,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Two Paths",
+      "page": 164,
+      "date": null,
+      "body": "The descent to hell\nis easy and smooth.\nThe climb to heaven\nis arduous and long.\n\n\nO Mumin —\ndo you wish to be\non the swift and easy path,\nor the long and arduous one?",
+      "id": 146,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Colour Green",
+      "page": 165,
+      "date": null,
+      "body": "The colour green, after the sky’s blue,\nis the most pervasive in all the world.\nThe green of the trees,\nthe green of the grass,\nfills the earth with wonder.\n\n\nLike Islam,\nbelow the blue of the heavens,\nit gives shade to the weary,\nit gives succour to the hungry and the thirsty,\nit gives refuge to the lost,\nit gives hope to the disillusioned.\n\n\nSo come, O weary one,\ncome, O lost one,\ncome to the green of the earth —\nyou will have water to quench your thirst,\nyou will find purpose in your endless quest.\n\n\nYou will find heaven in your destiny.",
+      "id": 147,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Eight Paradises",
+      "page": 166,
+      "date": null,
+      "body": "What is the worth of a person,\nin whose remembrance a Mumin\nsheds a tear —\n\n\nand Almighty Allah\nrewards him\nwith eight paradises.",
+      "id": 148,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Gates of Heaven",
+      "page": 167,
+      "date": null,
+      "body": "Man lights a fire,\nthe flames rise up,\nbut they cannot reach heaven.\n\n\nMan flies high in the skies,\nbut he cannot reach heaven.\n\n\nThere is but one magic formula\nthat will open the gates of heaven for you:\n\n\n“La Ilaha illa -llah,\nMohammad Rasul Allah,\nAli Wali Allah.”",
+      "id": 149,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "What Is Death",
+      "page": 168,
+      "date": null,
+      "body": "What is death, after breathing stops?\nIt is a passage to the unknown.\n\n\nFor a Mumin\nit is an awakening into Jannat.\nFor an ingrate\nit is the beginning of punishment.\n\n\nFor a Mumin\nit is an abode of peace.\nFor an ingrate\nit is a burning in hell.\n\n\nSo, O Mumin,\ndo not be afraid.\nYou will be at the feet\nof Mohammed, Ali, Fatema, Hasan, and Husain.\n\n\nYou will be in heaven.\nWhat more can you ask for?",
+      "id": 150,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Time Is on the Move",
+      "page": 169,
+      "date": null,
+      "body": "Time is on the move —\nyesterday was hope,\ntoday is reality,\ntomorrow is memories.",
+      "id": 151,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "What Is Hope",
+      "page": 170,
+      "date": null,
+      "body": "Hope — what is hope?\n\n\nHope is a tree from a seed.\nHope is the light after darkness.\nHope is the day after night.\nHope is health after sickness.\nHope is rain after dark clouds.\nHope is heaven after death.",
+      "id": 152,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "No Escape",
+      "page": 171,
+      "date": null,
+      "body": "Man can build the tallest tower,\nman can plumb the depths of the seas,\nman can conquer the skies,\nand fly to the moon and beyond.\n\n\nBut when the earth shakes\nthere is no escape\nfrom the wrath of the Creator.",
+      "id": 153,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "What Is Love",
+      "page": 172,
+      "date": null,
+      "body": "Love — what is love?\n\n\nLove is faith.\nLove is trust.\nLove is the purpose.\nLove is the power\nthat makes the earth spin.\n\n\nLove is sacrifice.\nLove is ultimately\nour ladder to heaven.",
+      "id": 154,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Forgiveness and the Anger",
+      "page": 173,
+      "date": null,
+      "body": "The grass is green\nas far as the eye can see.\nThere is no horizon\nin the beauty and awe of creation.\n\n\nMan is sinful — from birth to death —\nyet there is immeasurable depth\nin the forgiveness of Allah.\n\n\nBut for those who reject Allah,\nthere is no punishment greater\nthan His anger.",
+      "id": 155,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "This Is Your Home for Eternity",
+      "page": 174,
+      "date": null,
+      "body": "I am at the gates of heaven.\nI am asked — who are you?\nI answer:\n\n\nI am of the party of Syedna Taher Fakhruddin,\nthe true heir of Syedna Khuzaima Qutbuddin.\n\n\nI hold as sacred in my heart\nMohammed, Ali, Fatema, Hasan, Husain,\nand the Imam who is on the face of the earth.\n\n\nThe guard at the gate says,\nWelcome, welcome —\nthis is your home\nfor eternity.",
+      "id": 156,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Work of Creation",
+      "page": 175,
+      "date": null,
+      "body": "“What a work of creation is man!”\nHe can plumb the deepest ocean,\nhe can scale the highest mountain,\nhe can conquer any raging storm.\n\n\nBy the power of his mind,\nhe can boastfully do anything —\nbut when it comes to the Creator,\nhe is struck deaf, dumb, and blind.",
+      "id": 157,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Where Is the Soul",
+      "page": 176,
+      "date": null,
+      "body": "Where is the soul?\nIt is not in the brain,\nit is not in the heart,\nit is not in the blood,\nit is not in the limbs.\n\n\nOne knows it exists\nonly when it leaves\nand the soul\nis no more.",
+      "id": 158,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "A Tree Without Roots",
+      "page": 177,
+      "date": null,
+      "body": "When you went away,\nI became a tree without roots,\na flower without fragrance,\na parched mouth without water\nliving,\nbut without life.",
+      "id": 159,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "A Drop Becomes an Ocean",
+      "page": 178,
+      "date": null,
+      "body": "A drop becomes an ocean.\nA seed becomes a mighty tree.\nA cell becomes a human.\n\n\nAllah is All-knowing, Almighty —\na trickle becomes a torrential river.",
+      "id": 160,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "That Is Life on Earth",
+      "page": 179,
+      "date": null,
+      "body": "The waning of the moon\nfrom full to a sliver,\nthat is life on earth.\n\n\nFrom birth to death,\nthat is life on earth.\nFrom youth to old age,\nthat is life on earth.\nFrom riches to rags,\nthat is life on earth.\nFrom warmth to cold,\nthat is life on earth.\n\n\nBut when we shake off\nthe shackles of life,\nthat is heaven,\nand everlasting life.",
+      "id": 161,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Beginning of Mercy",
+      "page": 180,
+      "date": null,
+      "body": "The beginning of mercy and benevolence\nwith a trumpet call of thunder and lightning,\nthe clouds open up,\nand life inundates the earth.",
+      "id": 162,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Let Us Dance Together, Wind",
+      "page": 181,
+      "date": null,
+      "body": "The cool wind blows.\nIt blows over the seas,\ncarrying its water to the parched.\n\n\nIt blows through the trees\nthe leaves dance in joy.\n\n\nCome, come, O wind —\nlet us dance together.",
+      "id": 163,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "I Am Proud to Be a Woman",
+      "page": 182,
+      "date": null,
+      "body": "I am proud to be a woman.\nI am the path through which\nAllah shows His mercy and forgiveness.\n\n\nI am the bearer of hope,\nthe lamppost of the future,\nthe beacon of tomorrow.\n\n\nAllah has made me\nto serve,\nand to be served.",
+      "id": 164,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Sorry, Sir",
+      "page": 183,
+      "date": null,
+      "body": "You said you loved me,\nI said I loved you more.\n\n\nSo when I am in heaven with you,\nwe will ask the Supreme Judge.\n\n\nSorry, Sir,\nI know He will rule\nin my favour.",
+      "id": 165,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Miracle of Faith",
+      "page": 184,
+      "date": null,
+      "body": "The earth is a slippery slope to hell.\nHow will a Mumin avoid this calamity?\nThat is the miracle of faith.",
+      "id": 166,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "If a Calamity Befalls Me",
+      "page": 185,
+      "date": null,
+      "body": "If a calamity\nbefalls me,\nI deserved it.\n\n\nIf I did not deserve,\nI will be rewarded\nfor my faith.\n\n\nAllah is All-knowing,\nBeneficent,\nForgiving.",
+      "id": 167,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Mumin Tree",
+      "page": 186,
+      "date": null,
+      "body": "A Mumin\nis like a strong and beautiful tree,\nwith roots deep in faith,\noffering fruit to the hungry,\nand shade to the weary.\n\n\nIt takes its succour from deep love,\nand takes joy in giving of its fruit.\n\n\nIt reaches out to the skies\nand its faith\nwill ultimately\nget him there.",
+      "id": 168,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "No End",
+      "page": 187,
+      "date": null,
+      "body": "Everything has an end.\nLife has an end.\nYouth has an end.\nHell has an end.\nJoy has an end.\nGrief has an end.\n\n\nBut, O Allah,\nYour mercy has no end.\nBliss in heaven\nhas no end.",
+      "id": 169,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "From Where to Where",
+      "page": 188,
+      "date": null,
+      "body": "The sun rises and sets,\nthe moon waxes and wanes.\nThe grass grows and withers,\nman is born, he grows old, and he dies.\n\n\nFrom where to where?\nFrom paradise to hell\nor from earth to paradise?",
+      "id": 170,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Through Fire to Heaven",
+      "page": 189,
+      "date": null,
+      "body": "It takes heat for water to boil,\nfor vapour to rise.\n\n\nIt takes trials\nto rid the soul of sin.\n\n\nSo take heed, O Mumin,\nthis heat,\nthese trials,\nwhen endured with faith,\n\n\nwill raise you\nto the seven heavens —\nto your ultimate goal,\nand eternal happiness.",
+      "id": 171,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "O Merciful One",
+      "page": 190,
+      "date": null,
+      "body": "O Allah, O Merciful One,\nYou have given me everything,\nloving and pious parents\nwho instilled Islam and Imaan in me.\nYou have given me\nthe love of my life.\nYou have given me\nthe best children I could wish for.\nYou have given me\na full and fulfilled life.\n\n\nAnd now, as I near my end,\nO Merciful One,\nbe Merciful.",
+      "id": 172,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Washed Away",
+      "page": 191,
+      "date": null,
+      "body": "I look around me,\nI see the filth of wickedness.\nI look inside me,\nI see the dross of sin.\n\n\nBut, O heart,\nfear no more.\n\n\nAll sin, all dross, will be washed away —\nsay:\n\n\nLa ilaha illa Allah,\nMohammedun Rasul Allah,\nAliyyun Wali Allah.",
+      "id": 173,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "When Will the Sun Rise Again",
+      "page": 192,
+      "date": null,
+      "body": "The days move on\nas I wait with bated breath\nfor the heavenly orbs to rise and set.\n\n\nThe moon waxes and wanes,\nthe stars twinkle and sparkle.\n\n\nThe days move on.\n\n\nWhen will the sun\nrise from the west\nagain?",
+      "id": 174,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Like a Date Palm",
+      "page": 193,
+      "date": null,
+      "body": "My love,\nyou are like a date palm,\ngiving shade to the weary who need shelter,\ngiving food to those who need sustenance.\n\n\nYou will be here for me,\ntill time itself is spent\nand I am united with you.",
+      "id": 175,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Mercy of Rain",
+      "page": 194,
+      "date": null,
+      "body": "The earth is parched,\nthe grass has withered,\nthe trees bow their branches in distress,\nthe birds have flown to other climes.\n\n\nThe air is heavy with sorrow,\nthe atmosphere is of distress.\n\n\nThen dark clouds gather,\nthe gloom deepens.\nAnd when the earth is most desperate,\nthere is a burst of lightning,\na roll of thunder,\nand then\nthe opening of Allah’s mercy.\n\n\nThe earth is inundated with life-giving rain —\nevery branch, every tree, every blade of grass\ndrinks thirstily,\nand it is dark no more.",
+      "id": 176,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "What Is Heaven",
+      "page": 195,
+      "date": null,
+      "body": "What is heaven?\nTo be united\nwith my loved ones,\nin eternal bliss\nat the feet of Ali.",
+      "id": 177,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Hope Begins to Emerge",
+      "page": 196,
+      "date": null,
+      "body": "The sun is distant,\nthe leaves are frozen,\nthere is silence.\nThen a gentle breeze begins to bloom.\n\n\nThe leaves take on another life,\nand begin to sway in ecstasy\nand hope begins to emerge.",
+      "id": 178,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Orchestra of Nature",
+      "page": 197,
+      "date": null,
+      "body": "The night draws to a close.\nThe first rays of the sun\nbreak the night sky.\nThe sun rises, dispelling the gloom,\nand the orchestra of nature\nbreaks into\nfull crescendo.",
+      "id": 179,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Final Call",
+      "page": 198,
+      "date": null,
+      "body": "The Mumin is bound to the earth —\nsteadfast, grounded in faith.\nWhen the final clarion call comes,\nhe will rise\nto the heaven that is eternity,\nand the ingrate\nwill be thrown\ninto the pit of the fire.",
+      "id": 180,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "What Is Time",
+      "page": 199,
+      "date": null,
+      "body": "What is time?\nYesterday is no more,\ntomorrow is yet to come.\nO Mumin, grasp today,\nso you may rise up,\nand always be —\nwith no yesterdays,\ntomorrows,\nor todays.",
+      "id": 181,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "For the Love of Ali",
+      "page": 200,
+      "date": null,
+      "body": "My heart beats\nfor the love of Ali.\n\n\nMy blood flows\nfor the love of Ali.\n\n\nMy mind thinks\nfor the love of Ali.\n\n\nMy limbs move\nfor the love of Ali —\n\n\nor else,\nwhy am I alive?",
+      "id": 182,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Mercy from Allah",
+      "page": 201,
+      "date": null,
+      "body": "The rain falls from the skies,\nthe land is inundated.\nThe parched earth drinks thirstily,\nthe grass turns green,\nthe birds sing in joy,\nthe seed sprouts,\nthe rivers flow.\n\n\nIt is mercy from Allah.",
+      "id": 183,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Every Child",
+      "page": 202,
+      "date": null,
+      "body": "Every child born is a miracle.\nEvery child is a renewal of continuity.\nEvery child is unique and special.\nEvery child is a hope for the future.\nEvery child is a beginning of faith.",
+      "id": 184,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Soul Makes Us Human",
+      "page": 203,
+      "date": null,
+      "body": "Where is the soul?\nIs it in the heart?\nIs it in the mind?\nIs it in the brain?\nIs it in the body elsewhere?\n\n\nActually, it is nowhere — and everywhere.\nIt is in the mind, the heart, the brain.\nIt is what makes the heart beats,\nit is what makes the mind work —\nit is what makes us human.\n\n\nWe know it was there\nonly when it is gone.",
+      "id": 185,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Eternity or the Snake",
+      "page": 204,
+      "date": null,
+      "body": "In the beginning,\nthere was It.\n\n\nThen It created beings —\nsome became eternal,\nsome were cast out.\n\n\nA garden was made for them,\na place of goodness\nand of snakes.\n\n\nNow, O Mumin,\nwill you rise to eternity,\nor stay with the dross and the serpent?\n\n\nThe choice is yours.",
+      "id": 186,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "From Earth to Eternity",
+      "page": 205,
+      "date": null,
+      "body": "Allah created life\nfrom soil to plant,\nfrom plant to animal,\nand from animal to human.\n\n\nThen death—\nwhen everlasting life begins.",
+      "id": 187,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Fatema, Heart of the Holy Five",
+      "page": 206,
+      "date": null,
+      "body": "Fatema — beloved child of Muhammad,\nhonoured wife of Ali,\nrevered mother of Hasan and Husain.\n\n\nO Fatema,\nyou are the heart of the Holy Five,\nthe light through whom blessings flow.",
+      "id": 188,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Colour of Islam",
+      "page": 207,
+      "date": null,
+      "body": "The colour green\nis the colour of Islam.\n\n\nThe trees of the forest attract water\nand quench the thirst of the thirsty.\nThey give their fruits\nto ease the hunger of the hungry.\n\n\nAnd they rise tall, reaching the clouds,\nabove which shine the sun, the moon, and the stars,\nand beyond them, Heaven.",
+      "id": 189,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Water of Faith",
+      "page": 208,
+      "date": null,
+      "body": "Water is what makes\na seed into a tree.\nWater is what makes\nthe desert bloom.\n\n\nBut the water of faith\nis what makes man a human—\ncapable of rising\nabove the mire and gross\nof the world,\nto a world of\neverlasting peace and bliss.",
+      "id": 190,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "My Hope is Heaven",
+      "page": 209,
+      "date": null,
+      "body": "What is Hope?\n\n\nHope makes the sun rise.\nHope makes the moon shine.\nHope makes the stars twinkle.\nHope turns each day into light.\n\nHope comes from a life of prayer.\nHope comes from Islam and Imaan.\n\nMy hope is Heaven.",
+      "id": 191,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "In the First Instance",
+      "page": 210,
+      "date": null,
+      "body": "In the first instance,\nit is why,\nthen it is how,\nand then it is when.\n\n\nThen Heaven and Hell\ncome into being.",
+      "id": 192,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "When You Lose Your Faith",
+      "page": 211,
+      "date": null,
+      "body": "When you lose your job,\nit is bad, but you find another one.\nWhen you lose your parents,\nit is sad, but life is bound to end in death.\nWhen you lose a child,\nit is devastating,\nno balm can ease the pain.\nBut when you lose your faith,\nyou are already on the road to hellfire.",
+      "id": 193,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Maula Ali Is Everywhere",
+      "page": 212,
+      "date": null,
+      "body": "O Maula Ali —\n\n\nyou are in the heavens,\nyou are in the blaze of the sun,\nyou are in the coolness of the moon,\nyou are in the twinkling of the stars,\nyou are in the vastness of the sky,\nyou are in the four corners of the earth,\nyou are in the all-embracing oceans,\nyou are in the green of the forests,\nyou are in the bloom of the flowers,\nyou are in the beat of my pulse,\nyou are in my heart.\n\nThat is all I wish for, pray for, am grateful for.",
+      "id": 194,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Qutbuddin Maula",
+      "page": 213,
+      "date": null,
+      "body": "“Qutbuddin Maula, I am childless.”\n“Qutbuddin Maula, I have no job.”\n“Qutbuddin Maula, I have no home.”\n“Qutbuddin Maula, pray for my exams.”\nAll their wishes were granted by Allah.\nThey came with tears in their eyes and woe in their hearts.\nThey left with a smile on their lips and hope in their hearts.",
+      "id": 195,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "When it Comes to the Creator",
+      "page": 214,
+      "date": null,
+      "body": "The horse can run faster than a man.\nThe lion is stronger than a man.\nThe elephant is larger than a man.\nThe fish can swim swifter than a man.\nThe birds can fly freely in the skies.\n\n\nBut there is one quality in man—\nthe God-given power of the mind.\n\n\nWe can harness the horse.\nWe can command the lion.\nWe can put the elephant to work.\nWe have mastered the seas.\nWe have conquered the skies.\n\n\nYet despite all his brilliance,\nwhen it comes to Allah, the Creator,\nman stands completely, utterly defeated.",
+      "id": 196,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Who is Allah",
+      "page": 215,
+      "date": null,
+      "body": "Who is Allah?\nWhere is Allah?\nHow is Allah?\nWhen is Allah?\n\n\nHe is near, He is far.\nHe is here, He is not here.\nHe is friend, He is foe.\nHe is listener, He is speaker.\nHe is compassionate, He is avenger.\nHe is in heaven, He is on earth.\n\n\nHe is all-knowing —\neven to the soft beat of our hearts,\nthe heartbeat of the living,\nthe heartbeat of those before us,\nthe heartbeat of those yet to come.\n\n\nHe was, He is, He will be.",
+      "id": 197,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Only Question is Why",
+      "page": 216,
+      "date": null,
+      "body": "The only question is “why.”\nWhy the sun, the moon, the stars, the firmament.\nWhy the spheres.\nWhy the only inhabited earth.\nWhy fair and ugly.\nWhy rich and poor.\nWhy clever and dull.\nWhy happy and sad.\nIf you believe in Allah —\nand I do —\nthere has to be an answer\nto the why.",
+      "id": 198,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Awakening in Heaven",
+      "page": 217,
+      "date": null,
+      "body": "What is death?\nIt is the end of life\nand the awakening in heaven.",
+      "id": 199,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "What Will Heaven Be Like",
+      "page": 218,
+      "date": null,
+      "body": "What will heaven be like,\nif the rose smells so fragrant?\nWhat will heaven be like,\nif the waterfall is so amazing?\nWhat will heaven be like,\nif the mountains are so grand?\nWhat will heaven be like,\nif the rivers are so sweet?\nWhat will heaven be like,\nif the oceans are so deep?\nWhat will heaven be like,\nif man is so magnificent?\nWhat will heaven be like?\nI will see when I get there,\nbeyond the lush green,\nbeyond the fragrance of the rose,\nbeyond the wonder of the waterfall,\nthe depth of the oceans, or the sweetness of the rivers.\nIt will be much, much more—\nI will be in heaven.",
+      "id": 200,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Out With the Dross",
+      "page": 219,
+      "date": null,
+      "body": "Out with the dross,\nand into the pure.\nOut with the darkness,\nand into the light.\nOut with sorrow,\nand into bliss.\nOut with the petty,\nand into the everlasting—\nforever and ever.",
+      "id": 201,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Cycle of Being",
+      "page": 220,
+      "date": null,
+      "body": "A child is born—\nthere is rejoicing.\nHe grows in years,\nhe matures,\nhe grows old,\nhe dies.\nHe completes the cycle of being.\nLife is the absence of death,\nand death the absence of life.\nSo in the brief space\nbetween the two,\nseize the fleeting years.\nLet your journey on earth\nnot be in vain.\nOh Mumin,\nearn your passageway,\nso you may return\nto your destination in heaven.",
+      "id": 202,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Rain of Life",
+      "page": 221,
+      "date": null,
+      "body": "Vapour rises from the earth.\nAllah, in His benevolence,\nwills the rain of life to fall.\nBlessed are those who partake of this blessing,\nand woe to those who turn away.",
+      "id": 203,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "When You Went Away",
+      "page": 222,
+      "date": null,
+      "body": "When you went away,\nI was alone.\nAmidst all my loved ones,\nI was alone.\nAmidst all the grandeur of life,\nI was alone.\nAmidst all the beauty of green,\nI was alone.\nYou left—\nleaving me alone.",
+      "id": 204,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Milk of Faith",
+      "page": 223,
+      "date": null,
+      "body": "I was born,\nand given the milk of faith in my heart\nthrough my mother,\nand nourished in that same faith in my heart\nby my father.\n\n\nThen I grew in age,\nand was blessed by Allah\nwith a thinking mind,\nand a blessed husband.\n\n\nNow the faith in my heart\nand the thoughts in my mind\ncome together\nfor my passage\nto heaven.",
+      "id": 205,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "You Are Everywhere",
+      "page": 224,
+      "date": null,
+      "body": "When you died,\nyou were raised to the highest heaven.\nBut I also found you\nin the throbbing of my heart.\nI see you in the beauty of the green,\nI inhale you in the fragrance of the rose.\nYou are gone—\nbut you are everywhere.",
+      "id": 206,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "When Life Begins",
+      "page": 225,
+      "date": null,
+      "body": "Life begins at birth?\nNo — it begins at death.\nFor a Mumin,\nit is everlasting bliss.\nFor the other,\nit is a recycling back\ninto stones, rocks, and trees.",
+      "id": 207,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Shortest Road",
+      "page": 226,
+      "date": null,
+      "body": "The shortest road\nto heaven\nis to say:\nLa ilaha illa -llah,\nMohammadun Rasulullah,\nAliyyun Waliyullah.",
+      "id": 208,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Spring Will Come",
+      "page": 227,
+      "date": null,
+      "body": "A poet has said:\nyou can destroy fields of roses,\nbut you cannot stop spring from coming.\n\n\nSo, O Yazid —\nyou destroyed the blooms of the house of Mohammed,\nyou slew Husain,\n\n\nbut the sun of Aale Mohammed\nrose from the West\nto bring spring\nto the world.",
+      "id": 209,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "If There Is Hope in Heaven",
+      "page": 228,
+      "date": null,
+      "body": "It is commonly said that life begins at birth,\nbut truly, it began eons ago.\n\n\nIt is coming together in you today\nby the spinning of the spheres,\nby the light of the stars,\nand we are given a chance to choose.\n\n\nShould we fritter away this precious time?\nDo we waste it in meaningless activity?\nOr do we count the hours, the minutes, the seconds in prayer?\n\n\nIf there is hope in heaven,\nif there is horror in hell,\nthe choice is clear.",
+      "id": 210,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "My Loved Ones Are Waiting",
+      "page": 229,
+      "date": null,
+      "body": "In Allah is forgiveness.\nIn Mohammad is hope.\nIn Ali is heaven.\nIn Fatema is compassion.\nIn Hasan is continuity.\nIn Husain is promise.\nIn the Dai is the link.\nWhat have I to fear?\nMy loved ones\nare waiting for me.",
+      "id": 211,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Ladder of Faith",
+      "page": 230,
+      "date": null,
+      "body": "Life is like a merry-go-round,\ngoing round and round,\nwith all its excitement and pleasure,\nround and round,\ntill it stops.\nI want to be on a ladder of faith,\nwhere the climb is tiring,\nbut the destination\nis pure bliss.",
+      "id": 212,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "I Have a Prayer in my Heart",
+      "page": 231,
+      "date": null,
+      "body": "I have a prayer in my heart —\nthat is Ali.\nI have a prayer in my being —\nthat is Ali.\nThis prayer will lead me to heaven,\nwhere I will be\nat the feet of Ali.",
+      "id": 213,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "O Lion of Allah",
+      "page": 232,
+      "date": null,
+      "body": "O lion of Allah,\nO brother of Mohammed,\nO Maula Ali,\nwho held aloft the mighty Zulfikar,\ndefeated the enemies of Islam,\nslew Abde-Wadd,\nkilled Marhab, Antar,\nprotected the Rasool —\nwhy have you sheathed your sword?\n\n\nAnd he replies —\nfor the defense of Islam,\nit was drawn.\nfor the safety of Islam,\nit is sheathed.",
+      "id": 214,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "The Horror of Karbala",
+      "page": 233,
+      "date": "19 January 2023",
+      "body": "It is blisteringly hot.\nHusain, with his party\nof women and children,\nhis sons and brothers,\nhis loyal seventy-two,\nhave reached Karbala,\nfacing an army of thousands.\n\n\nAnd then —\nthe tenth of Moharram dawns.\n\n\nBut Allah has not created the words\nto describe\nthe horror of Karbala.",
+      "id": 215,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Compensation",
+      "page": 234,
+      "date": null,
+      "body": "Jibreel comes to Mohammed,\nwith a message from Allah.\nMohammed conveys this message,\nhe lifts all out of ignorance,\nhe unites all under the banner of Islam,\nhe builds a just society,\nhe takes mankind on the road to heaven.\n\n\nHe does all this —\nand what does he ask in return?\nLove my family.\n\n\nYet the history of Mohammed’s family\nis written in revenge,\nin blood,\nand in agony.",
+      "id": 216,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Still Waiting",
+      "page": 235,
+      "date": null,
+      "body": "Are you never going to come back to me?\nHow can that be?\nWe were one — two hearts beating as one.\nYou were me, I was you.\n\n\nIt is presumptuous of me to say so,\nbut you made me feel at one with you.\nI would do anything, say anything —\nbut I knew you would love me in spite of it.\n\n\nNow this alienation — you far away,\nand me, alone in loneliness,\nwaiting for you to come through the door,\nwaiting for your smile,\nwaiting for you to ask for coffee, or tea, or whatever.\n\n\nWaiting.\nWaiting.\nStill waiting.\nBiding my time —\nstill waiting.\n\n\nWill you meet me when the waiting is over?\nWill we resume our life when the waiting is over?\nWill you tell me why you left so suddenly —\nleaving me behind?",
+      "id": 217,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "Man Can Endure Pain",
+      "page": 236,
+      "date": null,
+      "body": "Man can endure pain,\nnot the pain of Karbala.\nMan can endure thirst,\nnot the thirst of Karbala.\nMan can endure the death of a child,\nnot the massacre of a child\nin his father’s arms in Karbala.\n\n\nMan can endure suffering,\nnot the suffering of Karbala.\nMan can endure loss,\nnot the loss of Karbala.\n\n\nYet — if you wish to be rid of your pain,\nyour thirst, your agony, your suffering, your loss —\npervade your mind with the tragedy of Karbala.\n\n\nYou will be cleansed\nof all your pain,\nall your thirst,\nall your suffering,\nall your loss.\nYou will be washed clean.",
+      "id": 218,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "A Chance to Believe",
+      "page": 237,
+      "date": null,
+      "body": "The sun rises and sets.\nAllah gives us a chance\nto see\nand to believe.",
+      "id": 219,
+      "category": "Uncategorized"
+    },
+    {
+      "title": "When I See You",
+      "page": 238,
+      "date": null,
+      "body": "When I die,\nand my soul rises,\nand I see you there,\nI’ll know that I am in heaven.\n\n\nProduction Team\nShehzadi Dr Bazat Tahera bensaheba, Yaqutato Dawatil Haqq, editor\nShehzadi Fatema bensaheba, Jumanato Dawatil Haqq, artwork\nZahra bensaheba w/o Shehzada Dr Aziz bhaisaheb Qutbuddin, production\nMs Parveen Khan, typing\nSakina ben Bhaigora, general assistance\n\n\n\n\n[]",
+      "id": 220,
+      "category": "Uncategorized"
+    }
+  ],
+  "idToTitle": {
+    "1": "I Have Achieved Everything",
+    "2": "So, We Swam",
+    "3": "The Potter and the Pot",
+    "4": "What Fear Do I Have of Death",
+    "5": "Hurr Chooses Husain",
+    "6": "When the Waves Engulf",
+    "7": "Fakhruddin Maula",
+    "8": "What Do You Say",
+    "9": "I Am Part of Husain",
+    "10": "When You Left Me",
+    "11": "Iqra - The First Command",
+    "12": "Heaven Is Waiting for You",
+    "13": "\"In the Name of Allah, Read!\"",
+    "14": "The Lionesses of Karbala",
+    "15": "The Sun Rises",
+    "16": "The Boulder",
+    "17": "My Maula Is Taller Than the Mountain",
+    "18": "Calm Depths",
+    "19": "Where Does It Come From",
+    "20": "I Miss Him",
+    "21": "Born Unto You",
+    "22": "Aqa Mohammed Burhanuddin",
+    "23": "The Search for the Real",
+    "24": "The Moon in Ali's House",
+    "25": "Yaa Ali",
+    "26": "One Day, Two Faces",
+    "27": "Think of Husain",
+    "28": "The Extravagant Painter",
+    "29": "Only You",
+    "30": "By the Grace of the Divine Pen",
+    "31": "The Weight of Being Alone",
+    "32": "O Maula Ali",
+    "33": "The Price of a Promise",
+    "34": "The Pain is in the Pulse",
+    "35": "Follow Me",
+    "36": "Rejoice, O Mumineen",
+    "37": "The Story of Husain",
+    "38": "Allah Created a Magnificent Man",
+    "39": "A Tear is an Amazing Thing",
+    "40": "From \"La Ilaha\" to \"Illa -llah\"",
+    "41": "Being is Life",
+    "42": "Come to the Door of Ali",
+    "43": "Life-Giving Water",
+    "44": "Subhan Allah",
+    "45": "The Transience of Glory",
+    "46": "When the Sun Lies Down",
+    "47": "Earth Accepts",
+    "48": "You Accept the Light of Faiz, O Syedna Taher Saifuddin",
+    "49": "The Twelfth Night",
+    "50": "Truth is Here",
+    "51": "O Mumin",
+    "52": "The Big Question",
+    "53": "Come to the Qubba of Qutbuddin Maula",
+    "54": "Raudat un Noor",
+    "55": "The Waterfall",
+    "56": "The Seed of Man",
+    "57": "The Gift of a Child",
+    "58": "A Baby Child",
+    "59": "The Path of Islam and Imaan",
+    "60": "The Perfect Man",
+    "61": "Islam is Beautiful",
+    "62": "O Husain",
+    "63": "Mazoon-e-Dawat, O Maula Burhanuddin",
+    "64": "He Came to Khadija",
+    "65": "You Win Either Way",
+    "66": "When Will We Meet Again",
+    "67": "At the Feet of Husain",
+    "68": "The Accounting",
+    "69": "Life Everlasting",
+    "70": "The Grief of Husain",
+    "71": "The Aura of the Holy Five",
+    "72": "Justice from Allah",
+    "73": "The Holy Five Reunited",
+    "74": "The Six Trees",
+    "75": "In Thanksgiving",
+    "76": "When Love Lasts Through Old Age",
+    "77": "Heaven's Doorstep",
+    "78": "Hurr at the Crossroads",
+    "79": "Inspire Me, O Allah",
+    "80": "The Creator and the Created",
+    "81": "The Spark of Faith",
+    "82": "Tayyib after Tayyib unto Eternity",
+    "83": "You Are With Me",
+    "84": "It Is Just",
+    "85": "I Found You There",
+    "86": "How Shall We Thank You",
+    "87": "Karbala is Husain and Husain is Karbala",
+    "88": "My Dream Will Become a Reality",
+    "89": "O Mazoon-e-Dawat!",
+    "90": "The Fusion of Extremes",
+    "91": "He Wills and It Is",
+    "92": "God Transcendent",
+    "93": "The Last Debt",
+    "94": "Savour Now",
+    "95": "We Are Home",
+    "96": "Why?",
+    "97": "Without You",
+    "98": "How Shall I Go On",
+    "99": "How Do I Miss You",
+    "100": "The Mind and the Heart",
+    "101": "You Are Not Seen",
+    "102": "A Vacuum",
+    "103": "That Is Enough for Me",
+    "104": "Dying Is About Life",
+    "105": "I Will Be",
+    "106": "Under the Spectacular Canopy",
+    "107": "Age Overtakes Me",
+    "108": "Questions of the World",
+    "109": "By His Grace",
+    "110": "A Tear for Husain",
+    "111": "Everything",
+    "112": "No Regrets",
+    "113": "How Can We Repay You",
+    "114": "The Gateway",
+    "115": "Enter, O Mumin",
+    "116": "What's Heaven For",
+    "117": "A Crescendo of Joy",
+    "118": "The Space Between",
+    "119": "A Punishment That Is Beautiful",
+    "120": "Music of the Rain",
+    "121": "Bears Witness",
+    "122": "What Is Faith",
+    "123": "To Know Allah",
+    "124": "The Canopy of the Skies",
+    "125": "A Life That Will Be",
+    "126": "A Place in Heaven",
+    "127": "The Gift of Allah",
+    "128": "Hope",
+    "129": "That's All I Wish For",
+    "130": "Water Was Denied to You",
+    "131": "The Essence of a Tear",
+    "132": "From the Ashes of Karbala",
+    "133": "Remember the Creator",
+    "134": "I Am Grateful",
+    "135": "Lead Me to Heaven",
+    "136": "What Is Life",
+    "137": "I Am Blessed",
+    "138": "On the Path of Salvation",
+    "139": "Safe From Heat and Cold",
+    "140": "The Sun Will Rise Again",
+    "141": "Overflowing Bliss",
+    "142": "Yesterday and Tomorrow",
+    "143": "The Path to Heaven",
+    "144": "The Final Message",
+    "145": "To Reach Heaven",
+    "146": "The Two Paths",
+    "147": "The Colour Green",
+    "148": "Eight Paradises",
+    "149": "The Gates of Heaven",
+    "150": "What Is Death",
+    "151": "Time Is on the Move",
+    "152": "What Is Hope",
+    "153": "No Escape",
+    "154": "What Is Love",
+    "155": "The Forgiveness and the Anger",
+    "156": "This Is Your Home for Eternity",
+    "157": "The Work of Creation",
+    "158": "Where Is the Soul",
+    "159": "A Tree Without Roots",
+    "160": "A Drop Becomes an Ocean",
+    "161": "That Is Life on Earth",
+    "162": "The Beginning of Mercy",
+    "163": "Let Us Dance Together, Wind",
+    "164": "I Am Proud to Be a Woman",
+    "165": "Sorry, Sir",
+    "166": "The Miracle of Faith",
+    "167": "If a Calamity Befalls Me",
+    "168": "The Mumin Tree",
+    "169": "No End",
+    "170": "From Where to Where",
+    "171": "Through Fire to Heaven",
+    "172": "O Merciful One",
+    "173": "Washed Away",
+    "174": "When Will the Sun Rise Again",
+    "175": "Like a Date Palm",
+    "176": "The Mercy of Rain",
+    "177": "What Is Heaven",
+    "178": "Hope Begins to Emerge",
+    "179": "The Orchestra of Nature",
+    "180": "The Final Call",
+    "181": "What Is Time",
+    "182": "For the Love of Ali",
+    "183": "Mercy from Allah",
+    "184": "Every Child",
+    "185": "The Soul Makes Us Human",
+    "186": "Eternity or the Snake",
+    "187": "From Earth to Eternity",
+    "188": "Fatema, Heart of the Holy Five",
+    "189": "The Colour of Islam",
+    "190": "Water of Faith",
+    "191": "My Hope is Heaven",
+    "192": "In the First Instance",
+    "193": "When You Lose Your Faith",
+    "194": "Maula Ali Is Everywhere",
+    "195": "Qutbuddin Maula",
+    "196": "When it Comes to the Creator",
+    "197": "Who is Allah",
+    "198": "The Only Question is Why",
+    "199": "The Awakening in Heaven",
+    "200": "What Will Heaven Be Like",
+    "201": "Out With the Dross",
+    "202": "The Cycle of Being",
+    "203": "The Rain of Life",
+    "204": "When You Went Away",
+    "205": "The Milk of Faith",
+    "206": "You Are Everywhere",
+    "207": "When Life Begins",
+    "208": "The Shortest Road",
+    "209": "Spring Will Come",
+    "210": "If There Is Hope in Heaven",
+    "211": "My Loved Ones Are Waiting",
+    "212": "The Ladder of Faith",
+    "213": "I Have a Prayer in my Heart",
+    "214": "O Lion of Allah",
+    "215": "The Horror of Karbala",
+    "216": "Compensation",
+    "217": "Still Waiting",
+    "218": "Man Can Endure Pain",
+    "219": "A Chance to Believe",
+    "220": "When I See You"
+  },
+  "titleToId": {
+    "I Have Achieved Everything": 1,
+    "So, We Swam": 2,
+    "The Potter and the Pot": 3,
+    "What Fear Do I Have of Death": 4,
+    "Hurr Chooses Husain": 5,
+    "When the Waves Engulf": 6,
+    "Fakhruddin Maula": 7,
+    "What Do You Say": 8,
+    "I Am Part of Husain": 9,
+    "When You Left Me": 10,
+    "Iqra - The First Command": 11,
+    "Heaven Is Waiting for You": 12,
+    "\"In the Name of Allah, Read!\"": 13,
+    "The Lionesses of Karbala": 14,
+    "The Sun Rises": 15,
+    "The Boulder": 16,
+    "My Maula Is Taller Than the Mountain": 17,
+    "Calm Depths": 18,
+    "Where Does It Come From": 19,
+    "I Miss Him": 20,
+    "Born Unto You": 21,
+    "Aqa Mohammed Burhanuddin": 22,
+    "The Search for the Real": 23,
+    "The Moon in Ali's House": 24,
+    "Yaa Ali": 25,
+    "One Day, Two Faces": 26,
+    "Think of Husain": 27,
+    "The Extravagant Painter": 28,
+    "Only You": 29,
+    "By the Grace of the Divine Pen": 30,
+    "The Weight of Being Alone": 31,
+    "O Maula Ali": 32,
+    "The Price of a Promise": 33,
+    "The Pain is in the Pulse": 34,
+    "Follow Me": 35,
+    "Rejoice, O Mumineen": 36,
+    "The Story of Husain": 37,
+    "Allah Created a Magnificent Man": 38,
+    "A Tear is an Amazing Thing": 39,
+    "From \"La Ilaha\" to \"Illa -llah\"": 40,
+    "Being is Life": 41,
+    "Come to the Door of Ali": 42,
+    "Life-Giving Water": 43,
+    "Subhan Allah": 44,
+    "The Transience of Glory": 45,
+    "When the Sun Lies Down": 46,
+    "Earth Accepts": 47,
+    "You Accept the Light of Faiz, O Syedna Taher Saifuddin": 48,
+    "The Twelfth Night": 49,
+    "Truth is Here": 50,
+    "O Mumin": 51,
+    "The Big Question": 52,
+    "Come to the Qubba of Qutbuddin Maula": 53,
+    "Raudat un Noor": 54,
+    "The Waterfall": 55,
+    "The Seed of Man": 56,
+    "The Gift of a Child": 57,
+    "A Baby Child": 58,
+    "The Path of Islam and Imaan": 59,
+    "The Perfect Man": 60,
+    "Islam is Beautiful": 61,
+    "O Husain": 62,
+    "Mazoon-e-Dawat, O Maula Burhanuddin": 63,
+    "He Came to Khadija": 64,
+    "You Win Either Way": 65,
+    "When Will We Meet Again": 66,
+    "At the Feet of Husain": 67,
+    "The Accounting": 68,
+    "Life Everlasting": 69,
+    "The Grief of Husain": 70,
+    "The Aura of the Holy Five": 71,
+    "Justice from Allah": 72,
+    "The Holy Five Reunited": 73,
+    "The Six Trees": 74,
+    "In Thanksgiving": 75,
+    "When Love Lasts Through Old Age": 76,
+    "Heaven's Doorstep": 77,
+    "Hurr at the Crossroads": 78,
+    "Inspire Me, O Allah": 79,
+    "The Creator and the Created": 80,
+    "The Spark of Faith": 81,
+    "Tayyib after Tayyib unto Eternity": 82,
+    "You Are With Me": 83,
+    "It Is Just": 84,
+    "I Found You There": 85,
+    "How Shall We Thank You": 86,
+    "Karbala is Husain and Husain is Karbala": 87,
+    "My Dream Will Become a Reality": 88,
+    "O Mazoon-e-Dawat!": 89,
+    "The Fusion of Extremes": 90,
+    "He Wills and It Is": 91,
+    "God Transcendent": 92,
+    "The Last Debt": 93,
+    "Savour Now": 94,
+    "We Are Home": 95,
+    "Why?": 96,
+    "Without You": 97,
+    "How Shall I Go On": 98,
+    "How Do I Miss You": 99,
+    "The Mind and the Heart": 100,
+    "You Are Not Seen": 101,
+    "A Vacuum": 102,
+    "That Is Enough for Me": 103,
+    "Dying Is About Life": 104,
+    "I Will Be": 105,
+    "Under the Spectacular Canopy": 106,
+    "Age Overtakes Me": 107,
+    "Questions of the World": 108,
+    "By His Grace": 109,
+    "A Tear for Husain": 110,
+    "Everything": 111,
+    "No Regrets": 112,
+    "How Can We Repay You": 113,
+    "The Gateway": 114,
+    "Enter, O Mumin": 115,
+    "What's Heaven For": 116,
+    "A Crescendo of Joy": 117,
+    "The Space Between": 118,
+    "A Punishment That Is Beautiful": 119,
+    "Music of the Rain": 120,
+    "Bears Witness": 121,
+    "What Is Faith": 122,
+    "To Know Allah": 123,
+    "The Canopy of the Skies": 124,
+    "A Life That Will Be": 125,
+    "A Place in Heaven": 126,
+    "The Gift of Allah": 127,
+    "Hope": 128,
+    "That's All I Wish For": 129,
+    "Water Was Denied to You": 130,
+    "The Essence of a Tear": 131,
+    "From the Ashes of Karbala": 132,
+    "Remember the Creator": 133,
+    "I Am Grateful": 134,
+    "Lead Me to Heaven": 135,
+    "What Is Life": 136,
+    "I Am Blessed": 137,
+    "On the Path of Salvation": 138,
+    "Safe From Heat and Cold": 139,
+    "The Sun Will Rise Again": 140,
+    "Overflowing Bliss": 141,
+    "Yesterday and Tomorrow": 142,
+    "The Path to Heaven": 143,
+    "The Final Message": 144,
+    "To Reach Heaven": 145,
+    "The Two Paths": 146,
+    "The Colour Green": 147,
+    "Eight Paradises": 148,
+    "The Gates of Heaven": 149,
+    "What Is Death": 150,
+    "Time Is on the Move": 151,
+    "What Is Hope": 152,
+    "No Escape": 153,
+    "What Is Love": 154,
+    "The Forgiveness and the Anger": 155,
+    "This Is Your Home for Eternity": 156,
+    "The Work of Creation": 157,
+    "Where Is the Soul": 158,
+    "A Tree Without Roots": 159,
+    "A Drop Becomes an Ocean": 160,
+    "That Is Life on Earth": 161,
+    "The Beginning of Mercy": 162,
+    "Let Us Dance Together, Wind": 163,
+    "I Am Proud to Be a Woman": 164,
+    "Sorry, Sir": 165,
+    "The Miracle of Faith": 166,
+    "If a Calamity Befalls Me": 167,
+    "The Mumin Tree": 168,
+    "No End": 169,
+    "From Where to Where": 170,
+    "Through Fire to Heaven": 171,
+    "O Merciful One": 172,
+    "Washed Away": 173,
+    "When Will the Sun Rise Again": 174,
+    "Like a Date Palm": 175,
+    "The Mercy of Rain": 176,
+    "What Is Heaven": 177,
+    "Hope Begins to Emerge": 178,
+    "The Orchestra of Nature": 179,
+    "The Final Call": 180,
+    "What Is Time": 181,
+    "For the Love of Ali": 182,
+    "Mercy from Allah": 183,
+    "Every Child": 184,
+    "The Soul Makes Us Human": 185,
+    "Eternity or the Snake": 186,
+    "From Earth to Eternity": 187,
+    "Fatema, Heart of the Holy Five": 188,
+    "The Colour of Islam": 189,
+    "Water of Faith": 190,
+    "My Hope is Heaven": 191,
+    "In the First Instance": 192,
+    "When You Lose Your Faith": 193,
+    "Maula Ali Is Everywhere": 194,
+    "Qutbuddin Maula": 195,
+    "When it Comes to the Creator": 196,
+    "Who is Allah": 197,
+    "The Only Question is Why": 198,
+    "The Awakening in Heaven": 199,
+    "What Will Heaven Be Like": 200,
+    "Out With the Dross": 201,
+    "The Cycle of Being": 202,
+    "The Rain of Life": 203,
+    "When You Went Away": 204,
+    "The Milk of Faith": 205,
+    "You Are Everywhere": 206,
+    "When Life Begins": 207,
+    "The Shortest Road": 208,
+    "Spring Will Come": 209,
+    "If There Is Hope in Heaven": 210,
+    "My Loved Ones Are Waiting": 211,
+    "The Ladder of Faith": 212,
+    "I Have a Prayer in my Heart": 213,
+    "O Lion of Allah": 214,
+    "The Horror of Karbala": 215,
+    "Compensation": 216,
+    "Still Waiting": 217,
+    "Man Can Endure Pain": 218,
+    "A Chance to Believe": 219,
+    "When I See You": 220
+  }
+}

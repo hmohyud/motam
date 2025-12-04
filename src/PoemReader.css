@@ -1,7 +1,12 @@
 /* ---- Poem Reader Overlay ---- */
 .poem-reader-overlay {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  height: 100dvh;
   background: rgba(250, 252, 250, 0.97);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -10,6 +15,7 @@
   align-items: center;
   justify-content: center;
   animation: readerFadeIn 0.25s ease;
+  overscroll-behavior: contain;
 }
 
 @keyframes readerFadeIn {
@@ -106,10 +112,14 @@
   padding: 48px 56px;
   box-shadow: 0 8px 40px rgba(45, 60, 55, 0.08);
   max-height: 80vh;
+  max-height: 80dvh;
   overflow-y: auto;
   width: 100%;
   animation: readerSlideUp 0.3s ease;
   transition: opacity 0.15s ease, transform 0.15s ease;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 @keyframes readerSlideUp {
@@ -272,8 +282,11 @@
   .poem-reader-content {
     border-radius: 20px 20px 0 0;
     padding: 24px 20px 32px;
+    padding-bottom: calc(32px + env(safe-area-inset-bottom, 0));
     max-height: 90vh;
+    max-height: 90dvh;
     min-height: 50vh;
+    min-height: 50dvh;
     margin: 0;
     box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.15);
   }

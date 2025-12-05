@@ -89,6 +89,12 @@ function InfoModal({ isOpen, onClose }) {
           >
             Foreword
           </button>
+          <button
+            className={`info-tab ${activeTab === "credits" ? "active" : ""}`}
+            onClick={() => setActiveTab("credits")}
+          >
+            Credits
+          </button>
         </div>
 
         <div
@@ -206,6 +212,50 @@ function InfoModal({ isOpen, onClose }) {
               </p>
             </section>
           )}
+
+          {activeTab === "credits" && (
+            <section className="credits-section">
+              <h3 className="credits-heading">Production Team</h3>
+              <div className="credits-list">
+                <div className="credit-item">
+                  <span className="credit-name">
+                    Shehzadi Dr Bazat Tahera bensaheba
+                  </span>
+                  <span className="credit-role">
+                    Yaqutato Dawatil Haqq, Editor
+                  </span>
+                </div>
+                <div className="credit-item">
+                  <span className="credit-name">Shehzadi Fatema bensaheba</span>
+                  <span className="credit-role">
+                    Jumanato Dawatil Haqq, Artwork
+                  </span>
+                </div>
+                <div className="credit-item">
+                  <span className="credit-name">
+                    Zahra bensaheba w/o Shehzada Dr Aziz bhaisaheb Qutbuddin
+                  </span>
+                  <span className="credit-role">Production</span>
+                </div>
+                <div className="credit-item">
+                  <span className="credit-name">Ms Parveen Khan</span>
+                  <span className="credit-role">Typing</span>
+                </div>
+                <div className="credit-item">
+                  <span className="credit-name">Sakina ben Bhaigora</span>
+                  <span className="credit-role">General Assistance</span>
+                </div>
+              </div>
+              <div className="credits-divider">❧</div>
+              <h3 className="credits-heading">Website</h3>
+              <div className="credits-list">
+                <div className="credit-item">
+                  <span className="credit-name">Hyder Mohyuddin</span>
+                  <span className="credit-role">Design &amp; Development</span>
+                </div>
+              </div>
+            </section>
+          )}
         </div>
 
         {/* Scroll indicator */}
@@ -307,19 +357,19 @@ function IndexModal({ isOpen, onClose, poems, categoryOrder, onSelectPoem }) {
               <div className="index-toggle">
                 <button
                   className={`index-toggle-btn ${
-                    groupBy === "none" ? "active" : ""
-                  }`}
-                  onClick={() => setGroupBy("none")}
-                >
-                  None
-                </button>
-                <button
-                  className={`index-toggle-btn ${
                     groupBy === "category" ? "active" : ""
                   }`}
                   onClick={() => setGroupBy("category")}
                 >
                   Category
+                </button>
+                <button
+                  className={`index-toggle-btn ${
+                    groupBy === "none" ? "active" : ""
+                  }`}
+                  onClick={() => setGroupBy("none")}
+                >
+                  None
                 </button>
               </div>
             </div>
@@ -342,14 +392,14 @@ function IndexModal({ isOpen, onClose, poems, categoryOrder, onSelectPoem }) {
                 >
                   A-Z
                 </button>
-                {/* <button
+                <button
                   className={`index-toggle-btn ${
                     sortBy === "category" ? "active" : ""
                   }`}
                   onClick={() => setSortBy("category")}
                 >
                   Cat
-                </button> */}
+                </button>
               </div>
             </div>
           </div>

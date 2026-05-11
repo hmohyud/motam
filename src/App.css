@@ -226,7 +226,7 @@ body {
   background: rgba(255, 255, 255, 0.92);
 }
 
-.view-toggle.expanded {
+.view-toggle.active {
   border-color: var(--accent);
   color: var(--accent);
 }

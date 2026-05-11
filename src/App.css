@@ -144,12 +144,29 @@ body {
 }
 
 /* ---- Search ---- */
-.search-input {
-  display: block;
-  margin: 0 auto 20px auto;
-  padding: 11px 18px;
+.search-row {
   width: 100%;
   max-width: 380px;
+  animation: search-expand 0.25s ease;
+}
+
+@keyframes search-expand {
+  from {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 60px;
+    margin-top: 14px;
+  }
+}
+
+.search-input {
+  display: block;
+  padding: 11px 18px;
+  width: 100%;
   border-radius: 24px;
   border: 1px solid rgba(140, 160, 150, 0.35);
   background: rgba(255, 255, 255, 0.85);
@@ -170,6 +187,45 @@ body {
   font-style: italic;
 }
 
+/* ---- Search Toggle ---- */
+.search-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid rgba(140, 160, 150, 0.3);
+  border-radius: 2em;
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--ink-muted);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+  max-width: 160px;
+  overflow: hidden;
+}
+
+.search-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.search-toggle.has-query {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.search-toggle-query {
+  font-style: italic;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* ---- Filter Row ---- */
 .filter-row {
   display: flex;
@@ -177,6 +233,14 @@ body {
   align-items: center;
   gap: 14px;
   margin-bottom: 24px;
+}
+
+/* ---- Filter Controls Row ---- */
+.filter-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 /* ---- Category Toggle Button ---- */
@@ -1091,14 +1155,6 @@ body {
     opacity: 0.35;
   }
 
-  .search-input {
-    max-width: calc(100% - 24px);
-    width: calc(100% - 24px);
-    font-size: 1rem;
-    padding: 10px 16px;
-    margin-bottom: 16px;
-  }
-
   .filter-row {
     padding: 0;
     gap: 10px;
@@ -1108,6 +1164,20 @@ body {
   .category-toggle {
     font-size: 0.92rem;
     padding: 8px 16px;
+  }
+
+  .search-toggle {
+    font-size: 0.92rem;
+    padding: 8px 14px;
+  }
+
+  .search-row {
+    max-width: calc(100% - 24px);
+  }
+
+  .search-input {
+    font-size: 1rem;
+    padding: 10px 16px;
   }
 
   .category-bar {

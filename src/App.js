@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useRef } from "react";
 import PoemReader from "./PoemReader.js";
 import "./App.css";
 import WordCloudBackground from "./WordCloudBackground";
@@ -451,7 +451,9 @@ function App() {
   const [search, setSearch] = useState("");
   const [currentCat, setCurrentCat] = useState("All");
   const [loading, setLoading] = useState(true);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [catsOpen, setCatsOpen] = useState(false);
+  const searchRef = useRef(null);
   const [windowStart, setWindowStart] = useState(0);
   const [windowEnd, setWindowEnd] = useState(20);
   const [readerOpen, setReaderOpen] = useState(false);
@@ -610,46 +612,79 @@ function App() {
           </p>
         </div>
 
-        {/* Search */}
-        <input
-          className="search-input"
-          placeholder="Search poems…"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-
-        {/* Category toggle + expandable pills */}
+        {/* Filter controls */}
         <div className="filter-row">
-          <button
-            className={`category-toggle${catsOpen ? " open" : ""}${
-              currentCat !== "All" ? " has-filter" : ""
-            }`}
-            onClick={() => setCatsOpen((o) => !o)}
-          >
-            <span className="category-toggle-label">
-              {currentCat === "All" ? "Categories" : currentCat}
-            </span>
-            {!loading && (
-              <span className="category-toggle-count">
-                {currentCat === "All"
-                  ? filtered.length
-                  : byCat[currentCat]?.length || 0}
-              </span>
-            )}
-            <svg
-              className="category-toggle-chevron"
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+          <div className="filter-controls">
+            <button
+              className={`category-toggle${catsOpen ? " open" : ""}${
+                currentCat !== "All" ? " has-filter" : ""
+              }`}
+              onClick={() => setCatsOpen((o) => !o)}
             >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
+              <span className="category-toggle-label">
+                {currentCat === "All" ? "Categories" : currentCat}
+              </span>
+              {!loading && (
+                <span className="category-toggle-count">
+                  {currentCat === "All"
+                    ? filtered.length
+                    : byCat[currentCat]?.length || 0}
+                </span>
+              )}
+              <svg
+                className="category-toggle-chevron"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <button
+              className={`search-toggle${searchOpen ? " open" : ""}${
+                search ? " has-query" : ""
+              }`}
+              onClick={() => {
+                setSearchOpen(true);
+                setTimeout(() => searchRef.current?.focus(), 50);
+              }}
+              style={{ display: searchOpen ? "none" : undefined }}
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              {search && (
+                <span className="search-toggle-query">{search}</span>
+              )}
+            </button>
+          </div>
+          {searchOpen && (
+            <div className="search-row">
+              <input
+                ref={searchRef}
+                className="search-input"
+                placeholder="Search poems…"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                onBlur={() => setSearchOpen(false)}
+              />
+            </div>
+          )}
           {catsOpen && (
             <div className="category-bar">
               {allCat.map((cat, idx) => (

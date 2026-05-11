@@ -70,7 +70,6 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 8px rgba(50, 70, 60, 0.08);
-  transition: all 0.2s ease;
 }
 
 .top-button:hover {
@@ -216,7 +215,6 @@ body {
   background: rgba(255, 255, 255, 0.75);
   color: var(--ink-muted);
   cursor: pointer;
-  transition: all 0.25s ease;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
 }
 
@@ -239,7 +237,6 @@ body {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.25s ease;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
   max-width: 160px;
   overflow: hidden;
@@ -302,7 +299,6 @@ body {
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.25s ease;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
 }
 

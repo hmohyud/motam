@@ -216,6 +216,12 @@ body {
   background: rgba(255, 255, 255, 0.92);
 }
 
+.search-toggle:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
 .search-toggle-query {
   font-style: italic;
   font-size: 0.9rem;

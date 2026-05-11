@@ -653,7 +653,7 @@ function App() {
                 setSearchOpen(true);
                 setTimeout(() => searchRef.current?.focus(), 50);
               }}
-              style={{ display: searchOpen ? "none" : undefined }}
+              disabled={searchOpen}
             >
               <svg
                 width="16"

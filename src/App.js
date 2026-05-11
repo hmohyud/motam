@@ -219,17 +219,15 @@ function InfoModal({ isOpen, onClose }) {
               <div className="credits-list">
                 <div className="credit-item">
                   <span className="credit-name">
-                    Shehzadi Dr Bazat Tahera bensaheba
+                    Shehzadi Dr Bazat Tahera bensaheba, Yaqutato Dawatil Haqq
                   </span>
-                  <span className="credit-role">
-                    Yaqutato Dawatil Haqq, Editor
-                  </span>
+                  <span className="credit-role">Editor</span>
                 </div>
                 <div className="credit-item">
-                  <span className="credit-name">Shehzadi Fatema bensaheba</span>
-                  <span className="credit-role">
-                    Jumanato Dawatil Haqq, Artwork
+                  <span className="credit-name">
+                    Shehzadi Fatema bensaheba, Jumanato Dawatil Haqq
                   </span>
+                  <span className="credit-role">Artwork</span>
                 </div>
                 <div className="credit-item">
                   <span className="credit-name">
@@ -238,7 +236,7 @@ function InfoModal({ isOpen, onClose }) {
                   <span className="credit-role">Production</span>
                 </div>
                 <div className="credit-item">
-                  <span className="credit-name">Ms Parveen Khan</span>
+                  <span className="credit-name">Parveen Khan</span>
                   <span className="credit-role">Typing</span>
                 </div>
                 <div className="credit-item">
@@ -282,7 +280,6 @@ function InfoModal({ isOpen, onClose }) {
 
 // Index Modal Component
 function IndexModal({ isOpen, onClose, poems, categoryOrder, onSelectPoem }) {
-  const [groupBy, setGroupBy] = useState("none");
   const [sortBy, setSortBy] = useState("id");
 
   useEffect(() => {
@@ -311,7 +308,11 @@ function IndexModal({ isOpen, onClose, poems, categoryOrder, onSelectPoem }) {
     if (sortBy === "id") {
       sorted.sort((a, b) => Number(a.id) - Number(b.id));
     } else if (sortBy === "title") {
-      sorted.sort((a, b) => (a.title || "").localeCompare(b.title || ""));
+      const strip = (s) =>
+        s.replace(/^["'‘’“”]+/, "");
+      sorted.sort((a, b) =>
+        strip(a.title || "").localeCompare(strip(b.title || ""))
+      );
     } else if (sortBy === "category") {
       sorted.sort((a, b) => {
         const catA = categoryOrder.indexOf(a.category);
@@ -324,17 +325,15 @@ function IndexModal({ isOpen, onClose, poems, categoryOrder, onSelectPoem }) {
   }, [poems, sortBy, categoryOrder]);
 
   const groupedPoems = useMemo(() => {
-    if (groupBy === "none") {
-      return { "All Poems": sortedPoems };
-    }
+    if (sortBy !== "category") return null;
     return groupByCategory(sortedPoems, categoryOrder);
-  }, [sortedPoems, groupBy, categoryOrder]);
+  }, [sortedPoems, sortBy, categoryOrder]);
 
   if (!isOpen) return null;
 
   const handlePoemClick = (poem) => {
-    const idx = poems.findIndex((p) => p.id === poem.id);
-    onSelectPoem(idx, poems);
+    const idx = sortedPoems.findIndex((p) => p.id === poem.id);
+    onSelectPoem(idx, sortedPoems);
     onClose();
   };
 
@@ -352,27 +351,6 @@ function IndexModal({ isOpen, onClose, poems, categoryOrder, onSelectPoem }) {
         <div className="index-modal-header">
           <h2 className="index-modal-title">Index</h2>
           <div className="index-controls">
-            <div className="index-toggle-group">
-              <span className="index-toggle-label">Group</span>
-              <div className="index-toggle">
-                <button
-                  className={`index-toggle-btn ${
-                    groupBy === "category" ? "active" : ""
-                  }`}
-                  onClick={() => setGroupBy("category")}
-                >
-                  Category
-                </button>
-                <button
-                  className={`index-toggle-btn ${
-                    groupBy === "none" ? "active" : ""
-                  }`}
-                  onClick={() => setGroupBy("none")}
-                >
-                  None
-                </button>
-              </div>
-            </div>
             <div className="index-toggle-group">
               <span className="index-toggle-label">Sort</span>
               <div className="index-toggle">
@@ -398,7 +376,7 @@ function IndexModal({ isOpen, onClose, poems, categoryOrder, onSelectPoem }) {
                   }`}
                   onClick={() => setSortBy("category")}
                 >
-                  Cat
+                  Category
                 </button>
               </div>
             </div>
@@ -406,18 +384,39 @@ function IndexModal({ isOpen, onClose, poems, categoryOrder, onSelectPoem }) {
         </div>
 
         <div className="index-modal-content">
-          {Object.entries(groupedPoems).map(([category, catPoems]) => (
-            <div key={category} className="index-category-group">
-              {groupBy === "category" && (
-                <h3 className="index-category-header">
-                  {category}
-                  <span className="index-category-count">
-                    {catPoems.length}
-                  </span>
-                </h3>
-              )}
+          {sortBy === "category" && groupedPoems
+            ? Object.entries(groupedPoems).map(([category, catPoems]) => (
+                <div key={category} className="index-category-group">
+                  <h3 className="index-category-header">
+                    {category}
+                    <span className="index-category-count">
+                      {catPoems.length}
+                    </span>
+                  </h3>
+                  <ul className="index-poem-list">
+                    {catPoems.map((poem) => (
+                      <li
+                        key={poem.id}
+                        className="index-poem-item"
+                        onClick={() => handlePoemClick(poem)}
+                        tabIndex={0}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            handlePoemClick(poem);
+                          }
+                        }}
+                      >
+                        <span className="index-poem-number">{poem.id}</span>
+                        <span className="index-poem-title">{poem.title}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))
+            : (
               <ul className="index-poem-list">
-                {catPoems.map((poem) => (
+                {sortedPoems.map((poem) => (
                   <li
                     key={poem.id}
                     className="index-poem-item"
@@ -432,16 +431,13 @@ function IndexModal({ isOpen, onClose, poems, categoryOrder, onSelectPoem }) {
                   >
                     <span className="index-poem-number">{poem.id}</span>
                     <span className="index-poem-title">{poem.title}</span>
-                    {groupBy === "none" && (
-                      <span className="index-poem-category">
-                        {poem.category}
-                      </span>
-                    )}
+                    <span className="index-poem-category">
+                      {poem.category}
+                    </span>
                   </li>
                 ))}
               </ul>
-            </div>
-          ))}
+            )}
         </div>
       </div>
     </div>
@@ -454,7 +450,10 @@ function App() {
   const [bookMeta, setBookMeta] = useState(null);
   const [search, setSearch] = useState("");
   const [currentCat, setCurrentCat] = useState("All");
-  const [sortBy, setSortBy] = useState("id"); // Default to numbered
+  const [loading, setLoading] = useState(true);
+  const [catsOpen, setCatsOpen] = useState(false);
+  const [windowStart, setWindowStart] = useState(0);
+  const [windowEnd, setWindowEnd] = useState(20);
   const [readerOpen, setReaderOpen] = useState(false);
   const [readerPoems, setReaderPoems] = useState([]);
   const [readerStart, setReaderStart] = useState(0);
@@ -485,8 +484,12 @@ function App() {
         }
 
         if (data.meta) setBookMeta(data.meta);
+        setLoading(false);
       })
-      .catch((err) => console.error("Failed to load poems:", err));
+      .catch((err) => {
+        console.error("Failed to load poems:", err);
+        setLoading(false);
+      });
 
     // Load pre-generated word cloud data
     fetch(process.env.PUBLIC_URL + "/wordCloudData.json")
@@ -494,6 +497,11 @@ function App() {
       .then(setWordCloudData)
       .catch((err) => console.warn("Word cloud data not found:", err));
   }, []);
+
+  useEffect(() => {
+    setWindowStart(0);
+    setWindowEnd(20);
+  }, [currentCat, search]);
 
   const filtered = useMemo(() => {
     return poems.filter(
@@ -515,29 +523,11 @@ function App() {
 
   const allCat = ["All", ...categories];
 
-  // Compute displayed poems based on filter and sort
   const displayData = useMemo(() => {
-    let poemsToShow = currentCat === "All" ? filtered : byCat[currentCat] || [];
-
-    if (sortBy === "id") {
-      // Flat list sorted by ID
-      const sorted = [...poemsToShow].sort(
-        (a, b) => Number(a.id) - Number(b.id)
-      );
-      return { type: "flat", poems: sorted };
-    } else {
-      // Grouped by category
-      if (currentCat === "All") {
-        return {
-          type: "grouped",
-          groups: groupByCategory(poemsToShow, categoryOrder),
-        };
-      } else {
-        // Single category - show as flat list
-        return { type: "flat", poems: poemsToShow };
-      }
-    }
-  }, [currentCat, filtered, byCat, sortBy, categoryOrder]);
+    const poemsToShow =
+      currentCat === "All" ? filtered : byCat[currentCat] || [];
+    return [...poemsToShow].sort((a, b) => Number(a.id) - Number(b.id));
+  }, [currentCat, filtered, byCat]);
 
   function handlePoemClick(index, groupPoems) {
     setReaderPoems(groupPoems);
@@ -628,102 +618,96 @@ function App() {
           onChange={(e) => setSearch(e.target.value)}
         />
 
-        {/* Category pills with integrated sort */}
+        {/* Category toggle + expandable pills */}
         <div className="filter-row">
-          <div className="category-bar">
-            {allCat.map((cat) => (
-              <button
-                key={cat}
-                className={`category-pill${
-                  currentCat === cat ? " selected" : ""
-                }`}
-                onClick={() => setCurrentCat(cat)}
-              >
-                {cat}
-                <span className="cat-count-pill">
-                  {cat === "All" ? filtered.length : byCat[cat]?.length || 0}
-                </span>
-              </button>
-            ))}
-          </div>
-          <div className="sort-control">
-            <span className="sort-label">Sort:</span>
-            <button
-              className={`sort-option ${sortBy === "id" ? "active" : ""}`}
-              onClick={() => setSortBy("id")}
-              title="Sort by number"
+          <button
+            className={`category-toggle${catsOpen ? " open" : ""}${
+              currentCat !== "All" ? " has-filter" : ""
+            }`}
+            onClick={() => setCatsOpen((o) => !o)}
+          >
+            <span className="category-toggle-label">
+              {currentCat === "All" ? "Categories" : currentCat}
+            </span>
+            <span className="category-toggle-count">
+              {currentCat === "All"
+                ? filtered.length
+                : byCat[currentCat]?.length || 0}
+            </span>
+            <svg
+              className="category-toggle-chevron"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              1-220
-            </button>
-            <button
-              className={`sort-option ${sortBy === "category" ? "active" : ""}`}
-              onClick={() => setSortBy("category")}
-              title="Group by category"
-            >
-              By Category
-            </button>
-          </div>
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          {catsOpen && (
+            <div className="category-bar">
+              {allCat.map((cat, idx) => (
+                <button
+                  key={cat}
+                  className={`category-pill${
+                    currentCat === cat ? " selected" : ""
+                  }`}
+                  style={{ animationDelay: `${idx * 25}ms` }}
+                  onClick={() => {
+                    setCurrentCat(cat);
+                    setCatsOpen(false);
+                  }}
+                >
+                  {cat}
+                  <span className="cat-count-pill">
+                    {cat === "All"
+                      ? filtered.length
+                      : byCat[cat]?.length || 0}
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Poem Grid */}
         <div className="poem-list-root">
-          {displayData.type === "flat" && displayData.poems.length === 0 && (
+          {loading ? (
+            <div className="loading-poems">Loading poems…</div>
+          ) : displayData.length === 0 ? (
             <div className="no-poems">No poems found.</div>
-          )}
-
-          {displayData.type === "grouped"
-            ? // Grouped by category
-              Object.entries(displayData.groups).map(([cat, catPoems]) =>
-                catPoems?.length ? (
-                  <div key={cat} className="category-group">
-                    <h2 className="cat-header">
-                      <span className="cat-header-text">{cat}</span>
-                      <span className="cat-header-count">
-                        {catPoems.length}
-                      </span>
-                    </h2>
-                    <div>
-                      {catPoems.map((poem, i) => (
-                        <div
-                          className="poem-card"
-                          key={poem.id + "-" + poem.title}
-                          tabIndex={0}
-                          onClick={() => handlePoemClick(i, catPoems)}
-                          onKeyDown={(e) => {
-                            if (e.key === "Enter" || e.key === " ") {
-                              e.preventDefault();
-                              handlePoemClick(i, catPoems);
-                            }
-                          }}
-                          role="button"
-                        >
-                          <div className="poem-meta">
-                            <span className="poem-chip">
-                              <span className="poem-num">{poem.id}</span>
-                            </span>
-                          </div>
-                          <div className="poem-title">{poem.title}</div>
-                          {poem.date && (
-                            <div className="poem-date">{poem.date}</div>
-                          )}
-                          <pre className="poem-body">{poem.body}</pre>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ) : null
-              )
-            : // Flat list
-              displayData.poems.map((poem, i) => (
+          ) : (
+            <>
+              {windowStart > 0 && (
+                <button
+                  className="show-more-btn show-earlier-btn"
+                  onClick={() => {
+                    const newStart = Math.max(0, windowStart - 20);
+                    const newEnd =
+                      windowEnd - newStart > 60 ? newStart + 60 : windowEnd;
+                    setWindowStart(newStart);
+                    setWindowEnd(newEnd);
+                  }}
+                >
+                  Show earlier poems ({windowStart} above)
+                </button>
+              )}
+              {displayData.slice(windowStart, windowEnd).map((poem, i) => (
                 <div
                   className="poem-card"
                   key={poem.id + "-" + poem.title}
                   tabIndex={0}
-                  onClick={() => handlePoemClick(i, displayData.poems)}
+                  onClick={() =>
+                    handlePoemClick(windowStart + i, displayData)
+                  }
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
-                      handlePoemClick(i, displayData.poems);
+                      handlePoemClick(windowStart + i, displayData);
                     }
                   }}
                   role="button"
@@ -741,9 +725,32 @@ function App() {
                   </div>
                   <div className="poem-title">{poem.title}</div>
                   {poem.date && <div className="poem-date">{poem.date}</div>}
-                  <pre className="poem-body">{poem.body}</pre>
+                  <pre className="poem-body">
+                    {poem.body.split("\n").length > 4
+                      ? poem.body.split("\n").slice(0, 4).join("\n")
+                      : poem.body}
+                  </pre>
                 </div>
               ))}
+              {windowEnd < displayData.length && (
+                <button
+                  className="show-more-btn"
+                  onClick={() => {
+                    const newEnd = Math.min(
+                      windowEnd + 20,
+                      displayData.length
+                    );
+                    const newStart =
+                      newEnd - windowStart > 60 ? newEnd - 60 : windowStart;
+                    setWindowEnd(newEnd);
+                    setWindowStart(newStart);
+                  }}
+                >
+                  Show more ({displayData.length - windowEnd} remaining)
+                </button>
+              )}
+            </>
+          )}
         </div>
 
         <footer className="repo-footer">

@@ -179,11 +179,81 @@ body {
   margin-bottom: 24px;
 }
 
+/* ---- Category Toggle Button ---- */
+.category-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid rgba(140, 160, 150, 0.3);
+  border-radius: 2em;
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--ink-soft);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+.category-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.category-toggle.has-filter {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.category-toggle-count {
+  font-size: 0.85em;
+  font-weight: 500;
+  color: var(--ink-muted);
+  border: 1px solid rgba(140, 160, 150, 0.25);
+  border-radius: 1.4em;
+  padding: 2px 9px;
+  transition: all 0.15s;
+}
+
+.category-toggle.has-filter .category-toggle-count {
+  border-color: var(--accent-light);
+  color: var(--accent);
+}
+
+.category-toggle-chevron {
+  transition: transform 0.3s ease;
+  opacity: 0.5;
+}
+
+.category-toggle.open .category-toggle-chevron {
+  transform: rotate(180deg);
+}
+
+/* ---- Category Bar (expandable) ---- */
 .category-bar {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
+}
+
+@keyframes pill-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.category-bar .category-pill {
+  animation: pill-enter 0.3s ease backwards;
 }
 
 .category-pill {
@@ -397,14 +467,43 @@ body {
   background: none;
   border: none;
   padding: 0 0 4px 0;
+  max-height: 6.8em;
+  overflow: hidden;
 }
 
-.no-poems {
+.no-poems,
+.loading-poems {
   text-align: center;
   color: var(--ink-muted);
   font-size: 1.1rem;
   font-style: italic;
   margin: 36px 0 24px 0;
+}
+
+.show-more-btn {
+  display: block;
+  margin: 24px auto;
+  padding: 12px 32px;
+  border: 1px solid var(--card-border);
+  border-radius: 2em;
+  background: var(--card-bg);
+  color: var(--ink-soft);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(50, 70, 60, 0.06);
+}
+
+.show-more-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--card-bg-hover);
+}
+
+.show-earlier-btn {
+  margin-bottom: 24px;
+  margin-top: 0;
 }
 
 /* ---- Footer ---- */
@@ -1002,8 +1101,13 @@ body {
 
   .filter-row {
     padding: 0;
-    gap: 12px;
+    gap: 10px;
     margin-bottom: 20px;
+  }
+
+  .category-toggle {
+    font-size: 0.92rem;
+    padding: 8px 16px;
   }
 
   .category-bar {

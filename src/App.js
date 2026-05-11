@@ -453,7 +453,9 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [searchOpen, setSearchOpen] = useState(false);
   const [catsOpen, setCatsOpen] = useState(false);
-  const [compact, setCompact] = useState(false);
+  const [compact, setCompact] = useState(() => {
+    try { return localStorage.getItem("motam-compact") === "true"; } catch { return false; }
+  });
   const searchRef = useRef(null);
   const [windowStart, setWindowStart] = useState(0);
   const [windowEnd, setWindowEnd] = useState(20);
@@ -648,7 +650,7 @@ function App() {
             </button>
             <button
               className="view-toggle"
-              onClick={() => setCompact((c) => !c)}
+              onClick={() => setCompact((c) => { const next = !c; try { localStorage.setItem("motam-compact", next); } catch {} return next; })}
               aria-label={compact ? "Expand all poems" : "Compact view"}
               title={compact ? "Expand all" : "Compact view"}
             >

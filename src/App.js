@@ -451,6 +451,8 @@ function App() {
   const [search, setSearch] = useState("");
   const [currentCat, setCurrentCat] = useState("All");
   const [loading, setLoading] = useState(true);
+  const [splashDone, setSplashDone] = useState(false);
+  const [minTimePassed, setMinTimePassed] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [catsOpen, setCatsOpen] = useState(false);
   const [compact, setCompact] = useState(() => {
@@ -504,6 +506,15 @@ function App() {
   }, []);
 
   useEffect(() => {
+    const timer = setTimeout(() => setMinTimePassed(true), 800);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!loading && minTimePassed) setSplashDone(true);
+  }, [loading, minTimePassed]);
+
+  useEffect(() => {
     setWindowStart(0);
     setWindowEnd(20);
   }, [currentCat, search]);
@@ -542,6 +553,17 @@ function App() {
 
   return (
     <div className="page-wrapper">
+      {!splashDone && (
+        <div className="splash-screen">
+          <img
+            src={process.env.PUBLIC_URL + "/flurish.svg"}
+            alt=""
+            className="splash-flourish"
+          />
+          <h1 className="splash-title">From Earth to Eternity</h1>
+          <p className="splash-subtitle">Poems of Devotion, Gratitude, and Love</p>
+        </div>
+      )}
       <WordCloudBackground wordCloudData={wordCloudData} />
 
       <div className="app-root">

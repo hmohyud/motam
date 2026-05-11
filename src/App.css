@@ -19,6 +19,67 @@
   box-sizing: border-box;
 }
 
+/* ---- Splash / Loading Screen ---- */
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--page-bg);
+}
+
+.splash-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 6px;
+  text-align: center;
+  animation: splash-text-in 0.6s ease-out 0.25s backwards;
+}
+
+.splash-subtitle {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin: 0;
+  text-align: center;
+  animation: splash-text-in 0.6s ease-out 0.4s backwards;
+}
+
+.splash-flourish {
+  width: 80px;
+  margin-bottom: 16px;
+  opacity: 0.7;
+  animation: splash-flourish-in 0.8s ease-out backwards;
+}
+
+@keyframes splash-flourish-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.85);
+  }
+  to {
+    opacity: 0.7;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes splash-text-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 html,
 body {
   height: 100%;
@@ -70,6 +131,7 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 8px rgba(50, 70, 60, 0.08);
+  transition: all 0.2s ease;
 }
 
 .top-button:hover {
@@ -216,6 +278,7 @@ body {
   color: var(--ink-muted);
   cursor: pointer;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
 }
 
 .view-toggle:hover {
@@ -238,6 +301,7 @@ body {
   font-size: 1rem;
   cursor: pointer;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
   max-width: 160px;
   overflow: hidden;
 }
@@ -300,6 +364,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
 }
 
 .category-toggle:hover {
@@ -373,9 +438,9 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
-  transition: all 0.18s ease;
   outline: none;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.18s ease;
 }
 
 .category-pill.selected,
@@ -489,7 +554,6 @@ body {
   border: 1px solid var(--card-border);
   background: var(--card-bg);
   box-shadow: 0 4px 20px rgba(50, 70, 60, 0.06);
-  transition: all 0.2s ease;
   cursor: pointer;
 }
 
@@ -609,8 +673,8 @@ body {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.2s ease;
   box-shadow: 0 2px 8px rgba(50, 70, 60, 0.06);
+  transition: all 0.2s ease;
 }
 
 .show-more-btn:hover {

@@ -647,14 +647,14 @@ function App() {
               </svg>
             </button>
             <button
-              className={`view-toggle${compact ? " active" : ""}`}
+              className="view-toggle"
               onClick={() => setCompact((c) => !c)}
               aria-label={compact ? "Expand all poems" : "Compact view"}
               title={compact ? "Expand all" : "Compact view"}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="7 4 12 9 17 4"></polyline>
-                <polyline points="7 20 12 15 17 20"></polyline>
+                <polyline points="7 9 12 4 17 9"></polyline>
+                <polyline points="7 15 12 20 17 15"></polyline>
               </svg>
             </button>
             <button

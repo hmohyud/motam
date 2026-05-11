@@ -560,8 +560,6 @@ function App() {
             alt=""
             className="splash-flourish"
           />
-          <h1 className="splash-title">From Earth to Eternity</h1>
-          <p className="splash-subtitle">Poems of Devotion, Gratitude, and Love</p>
         </div>
       )}
       <WordCloudBackground wordCloudData={wordCloudData} />

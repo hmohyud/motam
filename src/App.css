@@ -19,65 +19,25 @@
   box-sizing: border-box;
 }
 
-/* ---- Splash / Loading Screen ---- */
+/* ---- Loading Screen ---- */
 .splash-screen {
   position: fixed;
   inset: 0;
   z-index: 9999;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: var(--page-bg);
 }
 
-.splash-title {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: var(--ink);
-  margin: 0 0 6px;
-  text-align: center;
-  animation: splash-text-in 0.6s ease-out 0.25s backwards;
-}
-
-.splash-subtitle {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.1rem;
-  font-style: italic;
-  color: var(--ink-muted);
-  margin: 0;
-  text-align: center;
-  animation: splash-text-in 0.6s ease-out 0.4s backwards;
-}
-
 .splash-flourish {
-  width: 80px;
-  margin-bottom: 16px;
-  opacity: 0.7;
-  animation: splash-flourish-in 0.8s ease-out backwards;
+  width: 90px;
+  animation: splash-pulse 1.6s ease-in-out infinite;
 }
 
-@keyframes splash-flourish-in {
-  from {
-    opacity: 0;
-    transform: translateY(-20px) scale(0.85);
-  }
-  to {
-    opacity: 0.7;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes splash-text-in {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes splash-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
 }
 
 html,

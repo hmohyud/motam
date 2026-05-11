@@ -629,11 +629,13 @@ function App() {
             <span className="category-toggle-label">
               {currentCat === "All" ? "Categories" : currentCat}
             </span>
-            <span className="category-toggle-count">
-              {currentCat === "All"
-                ? filtered.length
-                : byCat[currentCat]?.length || 0}
-            </span>
+            {!loading && (
+              <span className="category-toggle-count">
+                {currentCat === "All"
+                  ? filtered.length
+                  : byCat[currentCat]?.length || 0}
+              </span>
+            )}
             <svg
               className="category-toggle-chevron"
               width="14"

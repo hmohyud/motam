@@ -683,6 +683,19 @@ function App() {
                 onChange={(e) => setSearch(e.target.value)}
                 onBlur={() => setSearchOpen(false)}
               />
+              {search && (
+                <button
+                  className="search-clear"
+                  onMouseDown={(e) => e.preventDefault()}
+                  onClick={() => {
+                    setSearch("");
+                    searchRef.current?.focus();
+                  }}
+                  aria-label="Clear search"
+                >
+                  ×
+                </button>
+              )}
             </div>
           )}
           {catsOpen && (

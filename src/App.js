@@ -453,6 +453,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [searchOpen, setSearchOpen] = useState(false);
   const [catsOpen, setCatsOpen] = useState(false);
+  const [compact, setCompact] = useState(true);
   const searchRef = useRef(null);
   const [windowStart, setWindowStart] = useState(0);
   const [windowEnd, setWindowEnd] = useState(20);
@@ -646,6 +647,26 @@ function App() {
               </svg>
             </button>
             <button
+              className={`view-toggle${!compact ? " expanded" : ""}`}
+              onClick={() => setCompact((c) => !c)}
+              aria-label={compact ? "Expand all poems" : "Compact view"}
+              title={compact ? "Expand all" : "Compact view"}
+            >
+              {compact ? (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+              ) : (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="3" y1="15" x2="21" y2="15"></line>
+                </svg>
+              )}
+            </button>
+            <button
               className={`search-toggle${searchOpen ? " open" : ""}${
                 search ? " has-query" : ""
               }`}
@@ -775,11 +796,13 @@ function App() {
                   </div>
                   <div className="poem-title">{poem.title}</div>
                   {poem.date && <div className="poem-date">{poem.date}</div>}
-                  <pre className="poem-body">
-                    {poem.body.split("\n").length > 4
-                      ? poem.body.split("\n").slice(0, 4).join("\n")
-                      : poem.body}
-                  </pre>
+                  <div className={`poem-body-wrap${compact && poem.body.split("\n").length > 4 ? " truncated" : ""}`}>
+                    <pre className="poem-body">
+                      {compact && poem.body.split("\n").length > 4
+                        ? poem.body.split("\n").slice(0, 4).join("\n")
+                        : poem.body}
+                    </pre>
+                  </div>
                 </div>
               ))}
               {windowEnd < displayData.length && (

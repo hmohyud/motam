@@ -205,6 +205,32 @@ body {
   font-style: italic;
 }
 
+/* ---- View Toggle ---- */
+.view-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid rgba(140, 160, 150, 0.3);
+  border-radius: 2em;
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+.view-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.view-toggle.expanded {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* ---- Search Toggle ---- */
 .search-toggle {
   display: flex;
@@ -544,6 +570,21 @@ body {
   margin-bottom: 8px;
 }
 
+.poem-body-wrap {
+  position: relative;
+}
+
+.poem-body-wrap.truncated::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.4em;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.95));
+  pointer-events: none;
+}
+
 .poem-body {
   font-family: "Lora", Georgia, serif;
   font-size: 1rem;
@@ -555,8 +596,6 @@ body {
   background: none;
   border: none;
   padding: 0 0 4px 0;
-  max-height: 6.8em;
-  overflow: hidden;
 }
 
 .no-poems,

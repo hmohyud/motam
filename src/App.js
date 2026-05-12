@@ -848,12 +848,10 @@ function App() {
 
         <footer className="repo-footer">
           <div className="footer-publisher">
-            {bookMeta?.publisher || "Fatemi Dawat Publications"} ·{" "}
-            {bookMeta?.yearHijriGregorian || "1447/2025"}
+            &copy; {bookMeta?.publisher || "Fatemi Dawat Publications"}
           </div>
           <div className="footer-copy">
-            &copy; {new Date().getFullYear()}{" "}
-            {bookMeta?.copyright || "Fatemi Dawat Publications"}
+            1447 AH · 2025 CE
           </div>
         </footer>
       </div>
